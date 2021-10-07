@@ -1,4 +1,4 @@
-# JAVA_PROJECTS
+# PROGRAMACION JAVA
 ---
 _Este repositorio son trabajos de clase, tiene projectos de aprendizaje del lenguaje JAVA.
 Cada apartado tiene sus comandos y su explicación de uso._
