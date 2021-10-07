@@ -40,11 +40,11 @@ javac -version //Compilador
 Aqui podemos usar diversos entornos de desarrollo como **[Visual Studio Code](https://code.visualstudio.com/)**, **[IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/)**, **[Netbeans](https://netbeans.apache.org/download/index.html)**, etc.
 
 En nuestro caso vamos a utilizar **Netbeans**:
-#### Instalacion en windows
+* #### Instalacion en windows
 Desde la web de **Netbeans** podemos descargar la ultima versión.
 <https://netbeans.apache.org/download/index.html>
 
-#### Instalación en Ubuntu
+* #### Instalación en Ubuntu
 - **Instalamos el paquete snap**
 `````
 sudo apt install snap
