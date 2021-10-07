@@ -1,0 +1,6 @@
+[submodule "TEMA 2/p21JesusNarbona"]
+	path = TEMA 2/p21JesusNarbona
+	url = ../PracticaTema2.git
+[submodule "TEMA 2/Repaso"]
+	path = TEMA 2/Repaso
+	url = ../Repaso.git
