@@ -9,15 +9,15 @@ _**Java** utiliza un entorno de ejecución para los programas compilados, este e
 ## - INSTALACIÓN DE JDK 11
 ### UBUNTU
 - **ACTUALIZAR REPOSITORIOS**
-````
+````bash
 sudo apt update
 ````
 - **INSTALAR PAQUETE JDK 11**
-````
+````bash
 sudo apt install default-jdk
 ````
 - _**Para comprobar la versión de compilador y de la JVM**_
-````
+````bash
 java -version //JVM
 
 javac -version //Compilador
@@ -28,7 +28,7 @@ javac -version //Compilador
 <https://adoptopenjdk.net/index.html>
 
 - _**Para comprobar la versión de compilador y de la JVM**_
-````
+````powershell
 java -version //JVM
 
 javac -version //Compilador
@@ -48,14 +48,14 @@ Desde la web de **Netbeans** podemos descargar la ultima versión.
 
  #### Instalación en Ubuntu 🐧
 - **Instalamos el paquete snap**
-`````
+`````bash
 sudo apt install snap
 `````
 
 
 
 - **Instalamos netbeans utilizando el administrador de paquetes snap**
-`````
+`````bash
 sudo snap install netbeans --classic
 `````
 
