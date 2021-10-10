@@ -3,7 +3,7 @@
 ## Estructura de selección
 
 * **Estructura if**
-La **estructura if** se denomina estructura de selección única porque ejecuta un bloque de sentencias **sólo cuando se cumple la condición del if**. Si la **condición es verdadera se ejecuta el bloque** de sentencias. Si la condición es **falsa, el flujo del programa continúa** en la sentencia inmediatamente **posterior al if**.
+    La **estructura if** se denomina estructura de selección única porque ejecuta un bloque de sentencias **sólo cuando se cumple la condición del if**. Si la **condición es verdadera se ejecuta el bloque** de sentencias. Si la condición es **falsa, el flujo del programa continúa** en la sentencia inmediatamente **posterior al if**.
 
     <br>
 
@@ -20,7 +20,7 @@ La **estructura if** se denomina estructura de selección única porque ejecuta 
     ~~~
 
 * **Estructura if else**
-Si **se cumple la condición**, **se ejecuta el bloque de sentencias asociado al if**. Si la **condición no se cumple**, entonces se **ejecuta el bloque de sentencias asociado al else**.
+    Si **se cumple la condición**, **se ejecuta el bloque de sentencias asociado al if**. Si la **condición no se cumple**, entonces se **ejecuta el bloque de sentencias asociado al else**.
 
     <br>
 
@@ -50,7 +50,7 @@ Si **se cumple la condición**, **se ejecuta el bloque de sentencias asociado al
     >~~~
 
     **Ejemplo uso if-else:**
-    _Comprobar la entrada a una atracción de un parque, se pide que la edad supere los 16 años y que la altura sea minimo 1,50m._
+        _Comprobar la entrada a una atracción de un parque, se pide que la edad supere los 16 años y que la altura sea minimo 1,50m._
     ~~~java
     if(edad>16 && altura>=1.50){ //Solo si cumple esos requisitos podrá entrar
         System.out.println("Acceso permitido");
