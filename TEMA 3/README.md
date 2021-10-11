@@ -75,7 +75,6 @@
     ~~~
 
     **Ejemplo uso if-else-if:**
-    <br>
     Por ejemplo para calificaciones:
     ~~~java
     if (calificacion == 10) { 
