@@ -21,6 +21,10 @@ public class Ej14 {
              inicializada con un valor leído por teclado, en segundos, y queremos conocer este tiempo pero expresado en horas, minutos y segundos, mostrando los resultados por pantalla.
         */
         
+        //Declaro constantes
+        final double SEGUNDOS_MINUTOS = 60;
+        final double MINUTOS_HORAS = 60;
+        
         //Inicializamos Scanner
         Scanner entradaTeclado = new Scanner(System.in);
         
@@ -30,16 +34,12 @@ public class Ej14 {
         //Pregunto el tiempo 
         System.out.println("¿Dime el tiempo en segundos?: ");
         tiempo = entradaTeclado.nextInt();
+
         
-        //Hago el calculo
-        final int SEGUNDOS_MINUTOS = 60;
-        final int MINUTOS_HORAS = 60;
-        
-        int tiempoFinalMinutos = tiempo / SEGUNDOS_MINUTOS;
-        int tiempoFinalHoras = tiempoFinalMinutos / MINUTOS_HORAS;
-        
-        System.out.println(tiempo);
-        System.out.println(tiempoFinalMinutos);
-        System.out.println(tiempoFinalHoras);
+        //Calculo segun las partes decimales es decir si es una 1.3h 0.3*60 van a ser los minutos, y con los segundos igualmente
+        double horas =((tiempo/SEGUNDOS_MINUTOS)/MINUTOS_HORAS);
+        double minutos = (horas - (int)horas)*60;
+        double segundos = (minutos - (int)minutos)*60;
+        System.out.println((int)horas + " hora, " + (int)minutos + " minutos, " + (int)segundos + " segundos");
     }
 }
