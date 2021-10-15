@@ -24,18 +24,20 @@ public class EjB {
         Scanner entradaTeclado = new Scanner(System.in);
         
         //Variables
-        System.out.println("Introduce algun numero: ");
-        int numero = entradaTeclado.nextInt();
+        System.out.println("Introduce algun caracter: ");
+        String entradaCaracter = entradaTeclado.next();
+        
+        char caracterUnicode = entradaCaracter.charAt(0);
         
         //Logica
-        if(numero>=48 && numero<=57){
-            System.out.println("El numero introducido se corresponde a un digito en la tabla ASCII [" + (char)numero +"]");
-        } else if(numero>=65 && numero<=90){
-            System.out.println("El numero introducido se corresponde a una letra mayúscula en la tabla ASCII ["+ (char)numero +"]");
-        } else if(numero>=97 && numero<=122){
-            System.out.println("El numero introducido se corresponde a una letra minuscula en la tabla ASCII ["+ (char)numero +"]");
+        if(caracterUnicode>=48 && caracterUnicode<=57){
+            System.out.println("El caracter introducido se corresponde a un digito en la tabla ASCII [" + caracterUnicode +"]");
+        } else if(caracterUnicode>=65 && caracterUnicode<=90){
+            System.out.println("El caracter introducido se corresponde a una letra mayúscula en la tabla ASCII ["+ caracterUnicode +"]");
+        } else if(caracterUnicode>=97 && caracterUnicode<=122){
+            System.out.println("El caracter introducido se corresponde a una letra minuscula en la tabla ASCII ["+ caracterUnicode +"]");
         } else{
-            System.out.println("El numero introducido no entra dentro de estos ejemplos, aunque sería este caracter [" + (char)numero +"]");
+            System.out.println("El caracter introducido no entra dentro de estos ejemplos, aunque sería este caracter [" + caracterUnicode +"]");
         }
         
         
