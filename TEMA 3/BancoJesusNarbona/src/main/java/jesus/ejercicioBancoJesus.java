@@ -31,16 +31,81 @@ public class ejercicioBancoJesus {
         */
         
         /*
-            Datos a pedir: edad, sueldo bruto
+            Datos a pedir: edad, sueldo bruto, dinero a solicitar, años a pagar
+            Condiciones: ser de 18 a 65 años, sueldoAnual*5,85<prestamos, menor de 30 y mayor de 5 años, edad+años>75
         */
-        String edadString = JOptionPane.showInputDialog(null, "Introduce tu edad: ");
+        
+        //Constantes
+        final int MESES_DE_UN_AÑO = 12;
+        final double FACTOR_MULTIPLICATIVO_TETIMO = 5.85;
+        
+        //Menu de bienvenidad programa
+        int menu = JOptionPane.showConfirmDialog(null, "Hola, buenos dias, ¿estas preparado para ser timado?","Elige una opcion...",JOptionPane.YES_NO_OPTION);
+        //Condicion de salida de programa
+        if(menu == 1){
+            System.exit(0);
+        }
+        
+        //Variables solicitadas
+        String edadString = JOptionPane.showInputDialog(null, "Introduce tu edad");
         int edad = Integer.parseInt(edadString);
         
-        String sueldoString = JOptionPane.showInputDialog(null, "Introduce tu sueldo: ");
-        double sueldo = Double.parseDouble(sueldoString);
+        double sueldoMensual;     
+        double pastaSolicitar;
+        int añosDevolverHipoteca;
         
-        if(edad){
+        //Condiciones
+        if(edad>=18 && edad<=65){ //Edad mayor o igual a 18 y menor o igual a 65     ----Primera condicion
             
+            //Solicito sueldo mensual
+            String sueldoMensualString = JOptionPane.showInputDialog(null, "Introduce tu sueldo mensual");
+            sueldoMensual = Double.parseDouble(sueldoMensualString);
+            double sueldoAnual = sueldoMensual * MESES_DE_UN_AÑO;
+            
+            //Solicito dinero para pedir
+            String pastaSolicitarString = JOptionPane.showInputDialog(null,"¿Cuanto dinero deseas solicitar para su hipoteca?");
+            pastaSolicitar = Double.parseDouble(pastaSolicitarString);
+            
+            if(pastaSolicitar<(sueldoAnual*FACTOR_MULTIPLICATIVO_TETIMO)){ //Dinero a solicitar menor al suledo anual por el factor multiplicativo   ---Segunda condicion
+                
+                //Solicito los años de devolucion
+                String añosDevolverHipotecaString = JOptionPane.showInputDialog(null,"¿En cuantos años quieres devolver la hipoteca?");
+                añosDevolverHipoteca = Integer.parseInt(añosDevolverHipotecaString);
+                
+                if(añosDevolverHipoteca < 30 && añosDevolverHipoteca > 5 && (añosDevolverHipoteca+edad) < 75){ // --- Tercera condicion
+                //Años devlocuion menor de 30 y mayor que 5, y que la suma de edad y los años no sea mayor a 75      
+                
+                    JOptionPane.showMessageDialog(null, "Se ha aceptado su prestamo, enhorabuena!"); //Se acepta el prestamo
+                    
+                } else{
+                    if(añosDevolverHipoteca > 30){ //Años devolver el dinero mayor a 30
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, superas el limite de años para pagar");
+                    } else if(añosDevolverHipoteca < 5){ //Años devolver el dinero menor a 5
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, 5 años es el minimo de años para pagar");
+                    } else{ //La suma de años de devolucion y la edad supera 75
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, eres demasiado mayor para poder aceptar el plazo");
+                    }
+                }
+            } else{
+                JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, no nos renta timarte");
+            }
+            
+        } else{
+            if(edad<18){ //Edad menor a 18
+                JOptionPane.showMessageDialog(null, "Eres menor de edad, no cumples con los requisitos");
+            } else{ //Edad mayor a 65
+                JOptionPane.showMessageDialog(null, "Su edad supera nuestros criterios, no cumples con los requisitos");
+            }
         }
+        
+        //Pruebas realizadas
+        //-------------------
+        //edad=18, sueldo=1500, prestamo=48_000, añosdevolucion= 15 ----> RESULTADO correcto
+        //edad=17 ----> RESULTADO erroneo no cumple con la edad
+        //edad=65, sueldo= 1000, prestamos = 50_000, añosdevolucion= 15 ----> RESULTADO erroneo supera los 75 años con la suma de los años de devolucion y su edad
+        //edad=67 ----> RESULTADO erroneo no cumple con la edad
+        //edad= 50, sueldo= 500, prestamo=50_000 ----> RESULTADO erroneo la cantidad solicitada no es menor que el sueldo anual por el valor multiplicativo
+        //edad=30, sueldo=1500, prestamo=20_000, añosdevolucion= 30 ---> RESULTADO erroneo supera los años limite de devolucion
+        //edad=30, sueldo=1500, prestamo=20_000, añosdevolucion= 4  ---> RESULTADO erroneo no supera los años minimos de devolucion
     }
 }
