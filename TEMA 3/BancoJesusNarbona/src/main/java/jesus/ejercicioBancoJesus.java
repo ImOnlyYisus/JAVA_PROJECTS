@@ -54,13 +54,13 @@ public class ejercicioBancoJesus {
         double pastaSolicitar;
         int añosDevolverHipoteca;
         
+        //Solicito sueldo mensual
+        String sueldoMensualString = JOptionPane.showInputDialog(null, "Introduce tu sueldo mensual");
+        sueldoMensual = Double.parseDouble(sueldoMensualString);
+        double sueldoAnual = sueldoMensual * MESES_DE_UN_AÑO;
+        
         //Condiciones
         if(edad>=18 && edad<=65){ //Edad mayor o igual a 18 y menor o igual a 65     ----Primera condicion
-            
-            //Solicito sueldo mensual
-            String sueldoMensualString = JOptionPane.showInputDialog(null, "Introduce tu sueldo mensual");
-            sueldoMensual = Double.parseDouble(sueldoMensualString);
-            double sueldoAnual = sueldoMensual * MESES_DE_UN_AÑO;
             
             //Solicito dinero para pedir
             String pastaSolicitarString = JOptionPane.showInputDialog(null,"¿Cuanto dinero deseas solicitar para su hipoteca?");
