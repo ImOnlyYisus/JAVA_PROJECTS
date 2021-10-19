@@ -38,6 +38,8 @@ public class ejercicioBancoJesus {
         //Constantes
         final int MESES_DE_UN_AÑO = 12;
         final double FACTOR_MULTIPLICATIVO_TETIMO = 5.85;
+        final int PLAZO_MINIMO = 5;
+        final int PLAZO_MAXIMO = 30;
         
         //Menu de bienvenidad programa
         int menu = JOptionPane.showConfirmDialog(null, "Hola, buenos dias, ¿estas preparado para ser timado?","Elige una opcion...",JOptionPane.YES_NO_OPTION);
@@ -72,15 +74,15 @@ public class ejercicioBancoJesus {
                 String añosDevolverHipotecaString = JOptionPane.showInputDialog(null,"¿En cuantos años quieres devolver la hipoteca?");
                 añosDevolverHipoteca = Integer.parseInt(añosDevolverHipotecaString);
                 
-                if(añosDevolverHipoteca < 30 && añosDevolverHipoteca > 5 && (añosDevolverHipoteca+edad) < 75){ // --- Tercera condicion
+                if(añosDevolverHipoteca < PLAZO_MAXIMO && añosDevolverHipoteca > PLAZO_MINIMO && (añosDevolverHipoteca+edad) < 75){ // --- Tercera condicion
                 //Años devlocuion menor de 30 y mayor que 5, y que la suma de edad y los años no sea mayor a 75      
                 
                     JOptionPane.showMessageDialog(null, "Se ha aceptado su prestamo, enhorabuena!"); //Se acepta el prestamo
                     
                 } else{
-                    if(añosDevolverHipoteca > 30){ //Años devolver el dinero mayor a 30
+                    if(añosDevolverHipoteca > PLAZO_MAXIMO){ //Años devolver el dinero mayor a 30
                         JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, superas el limite de años para pagar");
-                    } else if(añosDevolverHipoteca < 5){ //Años devolver el dinero menor a 5
+                    } else if(añosDevolverHipoteca < PLAZO_MINIMO){ //Años devolver el dinero menor a 5
                         JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, 5 años es el minimo de años para pagar");
                     } else{ //La suma de años de devolucion y la edad supera 75
                         JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, eres demasiado mayor para poder aceptar el plazo");
