@@ -5,7 +5,7 @@ package jesus;
  *
  * @author jesus
  */
-public class ej10 {
+public class Ej10 {
     public static void main(String[] args) {
         /*
             10.- Implementa un programa Java que permita visualizar todas las letras minúsculas, desde la 'a' hasta la 'z', usando un for.

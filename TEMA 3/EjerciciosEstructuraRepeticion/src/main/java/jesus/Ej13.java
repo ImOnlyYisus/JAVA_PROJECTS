@@ -5,7 +5,7 @@ package jesus;
  *
  * @author jesus
  */
-public class ej13 {
+public class Ej13 {
     public static void main(String[] args) {
         /*
         13.- Modifica el programa del ejercicio 11 para que se vea el código numérico (número entero) de cada una de las letras.

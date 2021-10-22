@@ -5,7 +5,7 @@ package jesus;
  *
  * @author jesus
  */
-public class ej08 {
+public class Ej08 {
     public static void main(String[] args) {
         /*
             8.- Intenta averiguar qué realiza el siguiente programa, sin implementarlo. Implementa el programa en el entorno y compara tus resultados

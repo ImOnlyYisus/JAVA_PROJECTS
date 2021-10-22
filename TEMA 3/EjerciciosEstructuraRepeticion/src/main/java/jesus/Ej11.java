@@ -5,7 +5,7 @@ package jesus;
  *
  * @author jesus
  */
-public class ej11 {
+public class Ej11 {
     public static void main(String[] args) {
         /*
             11.- Implementa un programa Java que permita visualizar todas las letras mayúsculas, desde la 'A' hasta la 'Z', usando un do – while.

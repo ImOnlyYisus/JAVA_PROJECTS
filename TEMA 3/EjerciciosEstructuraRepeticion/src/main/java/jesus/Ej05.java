@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author jesus
  */
-public class ej05 {
+public class Ej05 {
     public static void main(String[] args) {
         /*
             5.- Implementa el programa del ejercicio 2 usando un do – while.

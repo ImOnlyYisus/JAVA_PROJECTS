@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author jesus
  */
-public class ej02 {
+public class Ej02 {
     public static void main(String[] args) {
         /*
             2.-Intenta averiguar qué realiza el siguiente programa, sin implementarlo. Implementa el programa en el entorno y compara tus resultados

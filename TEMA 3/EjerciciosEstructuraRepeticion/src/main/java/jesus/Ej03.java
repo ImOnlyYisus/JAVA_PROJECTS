@@ -5,7 +5,7 @@ package jesus;
  *
  * @author jesus
  */
-public class ej03 {
+public class Ej03 {
     public static void main(String[] args) {
         /*
             3.- Realizar un programa que imprima 25 términos de la serie 15 - 30 - 60 - 120, etc. No se introducen valores por teclado.

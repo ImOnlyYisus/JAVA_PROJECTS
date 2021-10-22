@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author jesus
  */
-public class ej06 {
+public class Ej06 {
     public static void main(String[] args) {
         /*
             6.- Implementa el programa del ejercicio 2 usando un for.
