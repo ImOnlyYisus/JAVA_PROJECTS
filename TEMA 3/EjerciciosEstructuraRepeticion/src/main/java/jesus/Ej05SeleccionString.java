@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author jesus
  */
-public class Ej05Seleccion {
+public class Ej05SeleccionString {
     //Main para ejecucion
     public static void main(String[] args) {
         //Codigo para ejecutar
@@ -20,7 +20,7 @@ public class Ej05Seleccion {
         final double PI = 3.14159265359;
         
         Scanner entrada = new Scanner(System.in);
-        int opcion;
+        String opcion;
  
         //Menu de opciones
         do{
@@ -29,13 +29,13 @@ public class Ej05Seleccion {
             System.out.println("1. Calcular el área de un Cuadrado");
             System.out.println("2. Calcular el área de un Triángulo");
             System.out.println("3. Calcular el área de un Círculo");
-            System.out.println("4. Finalizar");
+            System.out.println("4. SALIR");
 
             System.out.print("Elija una opción: ");
-            opcion = entrada.nextInt();
+            opcion = entrada.nextLine();
                 
                 switch(opcion){
-                case 1:
+                case "1":
                     System.out.println("Ha seleccionado calcular el área de un cuadrado...");
                     System.out.println("Introduce el lado:");
                     double ladoCuadrado = entrada.nextDouble();
@@ -46,7 +46,7 @@ public class Ej05Seleccion {
 
                     break;
 
-                    case 2:
+                case "2":
                     System.out.println("Ha seleccionado calcular el área de un triángulo...");
                     System.out.println("Introduce la base: ");
                     double baseTriangulo = entrada.nextDouble();
@@ -58,7 +58,7 @@ public class Ej05Seleccion {
                     System.out.printf("El area del triangulo de base [%.2f] y altura [%.2f] es de: %.2f", baseTriangulo, alturaTriangulo, areaTriangulo);
 
                     break;
-                case 3:
+                case "3":
                     System.out.println("Ha seleccionado calcular el área de un círculo...");
                     System.out.println("Introduce el radio: ");
                     double radioCirculo = entrada.nextDouble();
@@ -68,7 +68,7 @@ public class Ej05Seleccion {
                     System.out.printf("El area del circulo de radio [%.2f] es de: %.2f", radioCirculo, areaCirculo);
 
                     break;
-                case 4: 
+                case "SALIR": 
                     System.out.println("Ha seleccionado terminar");
 
                     break;
@@ -79,7 +79,7 @@ public class Ej05Seleccion {
                 }
             
             
-        } while(opcion!=4);
+        } while(!opcion.equalsIgnoreCase("SALIR"));
  
         
 
