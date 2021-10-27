@@ -191,3 +191,82 @@
         
 
     ~~~
+
+    ## Estructura de repetición
+
+    * ### **Bucle while**
+        La estructura de repetición while repite el bloque de sentencias mientras la condición del while es verdadera.
+
+        ~~~java
+        inicialización;
+
+        while (condición) { 
+	        bloque-de-sentencias; actualizacion;
+
+        }
+        ~~~
+        Un ejemplo puede ser imprimir numero del 1 al 10:
+
+        ~~~java
+        int numero=0;
+
+        while (numero>=10) { //Condicion que el numero al incrementarse sea 10
+	        System.out.println(numero);
+            System.out.println(",”);
+            numero++; //Se incrementa el valor
+        }
+        ~~~
+
+    * ### **Bucle do while**
+        La estructura de repetición do-while ejecuta el bloque de sentencias al menos una vez. Después comprueba la condición y repite el bloque de sentencias mientras la condición es verdadera.
+
+        ~~~java
+        inicialización;
+
+        do{ 
+	        bloque-de-sentencias; actualizacion;
+
+        }while(condicion);
+        ~~~
+        Un ejemplo puede ser pedir al usuario para acceder a un menu:
+        >Se suele utilizar para menu, ya que do while primero hace y luego comprueba la condicion del while
+
+        ~~~java
+        Scanner entrada = new Scanner(System.in);
+        int opcion;
+
+        do{
+            System.out.println("Menú de opciones");
+            System.out.println("-------------------------");
+            System.out.println("1. Calcular el área de un Cuadrado");
+            System.out.println("2. Calcular el área de un Triángulo");
+            System.out.println("3. Calcular el área de un Círculo");
+            System.out.println("4. Finalizar");
+
+            System.out.print("Elija una opción: ");
+            opcion = entrada.nextInt();
+        } while(opcion!=4); //Mientras no pulse el 4 se va a repetir el codigo de dentro
+        ~~~
+
+    * ### **Bucle for**
+        La estructura de repetición for repite el bloque de sentencias mientras la condición  del  for es  verdadera.  Un  for es  un  caso  particular  de  la estructura while. Solo se debe utilizar cuando se sabe el número de veces que se debe repetir el bloque de sentencias.
+
+        ~~~java
+        for (inicialización; condición; actualización) {
+
+            bloque-de-sentencias;
+
+        }
+        ~~~
+
+        Un ejemplo al igual que el anterior imprimir numeros de 1 al 10:
+        >**for** se suele utilizar cuando sabes cuantas vueltas va dar el bucle
+
+        ~~~java
+        for(int i=0; i<=10; i++) { 
+        //Se declara la variable, se hace la condicion y se incrementa
+            System.out.println(i);
+            System.out.println(",”);
+
+        }
+        ~~~
