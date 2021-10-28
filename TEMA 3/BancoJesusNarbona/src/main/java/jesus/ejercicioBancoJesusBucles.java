@@ -51,59 +51,58 @@ public class ejercicioBancoJesusBucles {
         do {
             //Menu de bienvenidad programa
             menu = JOptionPane.showConfirmDialog(null, "Hola, buenos dias, ¿estas preparado para ser timado?", "Elige una opcion...", JOptionPane.YES_NO_OPTION);
-            if(menu==1){
-                break;
+            if(menu!=1){
+
+                do { //Bucle, que se pide la edad y comprueba que sea mayor de edad o meno o igual a 45
+
+                    //Variables solicitadas
+                    String edadString = JOptionPane.showInputDialog(null, "Introduce tu edad");
+                    edad = Integer.parseInt(edadString);
+
+                    if(edad<18){ //Edad menor a 18
+                        JOptionPane.showMessageDialog(null, "Eres menor de edad, no cumples con los requisitos, introduzca un valor valido");
+                    }
+                    if(edad>65){ //Edad mayor a 65
+                        JOptionPane.showMessageDialog(null, "Su edad supera nuestros criterios, no cumples con los requisitos, introduzca un valor valido");
+                    }
+
+                } while (!(edad > 17 && edad <= 65));
+
+                do {
+                    //Solicito sueldo mensual
+                    String sueldoMensualString = JOptionPane.showInputDialog(null, "Introduce tu sueldo mensual");
+                    sueldoMensual = Double.parseDouble(sueldoMensualString);
+                    sueldoAnual = sueldoMensual * MESES_DE_UN_AÑO;
+
+                    //Solicito dinero para pedir
+                    String pastaSolicitarString = JOptionPane.showInputDialog(null, "¿Cuanto dinero deseas solicitar para su hipoteca?");
+                    pastaSolicitar = Double.parseDouble(pastaSolicitarString);
+
+                    if(pastaSolicitar>(sueldoAnual*FACTOR_MULTIPLICATIVO_TETIMO)){
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, no nos renta timarte");
+                    }
+                } while (!(pastaSolicitar < (sueldoAnual * FACTOR_MULTIPLICATIVO_TETIMO)));
+
+                do {
+                    //Solicito los años de devolucion
+                    String añosDevolverHipotecaString = JOptionPane.showInputDialog(null, "¿En cuantos años quieres devolver la hipoteca?");
+                    añosDevolverHipoteca = Integer.parseInt(añosDevolverHipotecaString);
+
+                    if (añosDevolverHipoteca > PLAZO_MAXIMO) { //Años devolver el dinero mayor a 30
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, superas el limite de años para pagar");
+                    }
+                    if (añosDevolverHipoteca < PLAZO_MINIMO) { //Años devolver el dinero menor a 5
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, 5 años es el minimo de años para pagar");
+                    }
+                    if ((añosDevolverHipoteca + edad) > 75){ //La suma de años de devolucion y la edad supera 75
+                        JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, eres demasiado mayor para poder aceptar el plazo");
+                    }
+
+
+                } while (!(añosDevolverHipoteca <= PLAZO_MAXIMO && añosDevolverHipoteca >= PLAZO_MINIMO && (añosDevolverHipoteca + edad) < 75));
+
+                JOptionPane.showMessageDialog(null, "Se ha aceptado su prestamo, enhorabuena!"); //Se acepta el prestamo
             }
-
-            do { //Bucle, que se pide la edad y comprueba que sea mayor de edad o meno o igual a 45
-
-                //Variables solicitadas
-                String edadString = JOptionPane.showInputDialog(null, "Introduce tu edad");
-                edad = Integer.parseInt(edadString);
-                
-                if(edad<18){ //Edad menor a 18
-                    JOptionPane.showMessageDialog(null, "Eres menor de edad, no cumples con los requisitos, introduzca un valor valido");
-                }
-                if(edad>65){ //Edad mayor a 65
-                    JOptionPane.showMessageDialog(null, "Su edad supera nuestros criterios, no cumples con los requisitos, introduzca un valor valido");
-                }
-
-            } while (!(edad > 17 && edad <= 65));
-
-            do {
-                //Solicito sueldo mensual
-                String sueldoMensualString = JOptionPane.showInputDialog(null, "Introduce tu sueldo mensual");
-                sueldoMensual = Double.parseDouble(sueldoMensualString);
-                sueldoAnual = sueldoMensual * MESES_DE_UN_AÑO;
-
-                //Solicito dinero para pedir
-                String pastaSolicitarString = JOptionPane.showInputDialog(null, "¿Cuanto dinero deseas solicitar para su hipoteca?");
-                pastaSolicitar = Double.parseDouble(pastaSolicitarString);
-                
-                if(pastaSolicitar>(sueldoAnual*FACTOR_MULTIPLICATIVO_TETIMO)){
-                    JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, no nos renta timarte");
-                }
-            } while (!(pastaSolicitar < (sueldoAnual * FACTOR_MULTIPLICATIVO_TETIMO)));
-
-            do {
-                //Solicito los años de devolucion
-                String añosDevolverHipotecaString = JOptionPane.showInputDialog(null, "¿En cuantos años quieres devolver la hipoteca?");
-                añosDevolverHipoteca = Integer.parseInt(añosDevolverHipotecaString);
-                
-                if (añosDevolverHipoteca > PLAZO_MAXIMO) { //Años devolver el dinero mayor a 30
-                    JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, superas el limite de años para pagar");
-                }
-                if (añosDevolverHipoteca < PLAZO_MINIMO) { //Años devolver el dinero menor a 5
-                    JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, 5 años es el minimo de años para pagar");
-                }
-                if ((añosDevolverHipoteca + edad) > 75){ //La suma de años de devolucion y la edad supera 75
-                    JOptionPane.showMessageDialog(null, "Se rechaza el prestamo, eres demasiado mayor para poder aceptar el plazo");
-                }
-
-                
-            } while (!(añosDevolverHipoteca <= PLAZO_MAXIMO && añosDevolverHipoteca >= PLAZO_MINIMO && (añosDevolverHipoteca + edad) < 75));
-            
-            JOptionPane.showMessageDialog(null, "Se ha aceptado su prestamo, enhorabuena!"); //Se acepta el prestamo
         } while (menu != 1);
         
         //Pruebas realizadas
