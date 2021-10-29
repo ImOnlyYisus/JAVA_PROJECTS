@@ -18,10 +18,11 @@ public class RandomEjemplo {
         int segundoNumeroAleatorio = numeroAleatorio.nextInt(2) + 1; //Numero aleatorio del 1 al 2
         System.out.println(segundoNumeroAleatorio);
         
-        int tercerNumeroAleatorio = numeroAleatorio.nextInt(50-10+1) + 10; //Numero aleatorio del 1 al 2
+        int tercerNumeroAleatorio = numeroAleatorio.nextInt(50-10+1) + 10; //Numero aleatorio del 10 al 50
         System.out.println(tercerNumeroAleatorio);
         
         double cuartoNumeroAleatorio = numeroAleatorio.nextDouble();
         System.out.println(cuartoNumeroAleatorio);
+        
     }
 }
