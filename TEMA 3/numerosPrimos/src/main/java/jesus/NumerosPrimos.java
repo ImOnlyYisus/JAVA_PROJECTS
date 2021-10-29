@@ -88,7 +88,7 @@ public class NumerosPrimos {
                     //VARIABLE PARA VER N/2
                     mitadRango = numero/2;
                     
-                    for (int i = 3; i <= mitadRango; i++) {
+                    for (int i = 3; i <= mitadRango; i+=2) {
                         if((numero%i)==0){
                             esPrimo = false;
                             break;
@@ -96,7 +96,6 @@ public class NumerosPrimos {
                         else{
                             esPrimo = true;
                         }
-                        i++;
                     }
                     
                     if(esPrimo){
