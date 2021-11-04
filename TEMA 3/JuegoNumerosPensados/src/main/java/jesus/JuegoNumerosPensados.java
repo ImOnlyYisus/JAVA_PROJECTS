@@ -39,6 +39,10 @@ public class JuegoNumerosPensados {
         
         do{ //SE REPITE EL BUCLE SIEMPRE QUE EL JUGADOR NO SELECCION (escriba) SALIR
             
+            //REINICIO LAS VARIABLES
+            puntosJ1=0;
+            puntosJ2=0;
+            
             System.out.println("----------------------------------------");
             System.out.println("PRESIONE (1) PARA COMENZAR EL JUEGO\n");
             System.out.println("JUGADOR 1: "+ nombreJugador1);
@@ -65,7 +69,7 @@ public class JuegoNumerosPensados {
                     }while((rondas%2) == 0);
                     
                     //CREO UNA VARIABLE QUE VA A SER EL MAXIMO DE PUNTOS DE UNA PARTIDA
-                    double puntosMaximosPartida = Math.ceil((double)rondas/2); //REDONDEO AL MAYOR PARA SABER EL NUMERO DE VICTORIAS (EJ: 5 RONDAS / 2 --> 3 GANAS)
+                    int puntosMaximosPartida =(rondas/2) +1; //LAS MITAD DE LAS RONDAS + 1, PARA QUE PUEDA GANAR ALGUIEN (EJ: 5 RONDAS / 2 --> 3 GANAS)
                     
                     for(int i=1; i<=rondas ; i++){ //SE REPITE HASTA QUE SE CUMPLA LA CANTIDAD DE RONDAS INTRODUCIDA O SI EL JUGADOR HA CONSEGUIDO LOS PUNTOS MAXIMOS
                         //Numeros aleatorios jugadores
@@ -82,7 +86,8 @@ public class JuegoNumerosPensados {
                             puntosJ2 ++;
                             ganador = nombreJugador2;
                         } else{
-                            ganador = "NADIE (EMPATE)";
+                            i--;
+                            ganador = "NADIE (EMPATE), se repite ronda";
                         }
                         
                         //----------------------------------------------------------------------
@@ -98,7 +103,7 @@ public class JuegoNumerosPensados {
                         System.out.println("\nRONDA:" + i);
                         System.out.println("*********************************************************************************************************************************************");
                         
-                        if(puntosJ2 == (int)puntosMaximosPartida || puntosJ1 == (int)puntosMaximosPartida){ //MIRO SI LOS PUNTOS DE LOS JUGADORE SON LOS MAXIMOS
+                        if(puntosJ2 == puntosMaximosPartida || puntosJ1 == puntosMaximosPartida){ //MIRO SI LOS PUNTOS DE LOS JUGADORE SON LOS MAXIMOS
                                                                                                             //SI LO SON SALGO DEL BUCLE CON BREAK
                             break;
                         }
