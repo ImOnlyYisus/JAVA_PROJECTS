@@ -51,14 +51,15 @@ public class Calculadora {
         return resultado;
     }
     
-    private static int comprobarEntradaEnteros(int a){
+    private static int comprobarEntradaEnteros(){
         Scanner sc = new Scanner(System.in);
         boolean centinela = true;
+        int numero = 0;
         do{
             centinela = true;
             try{
                 System.out.println("Introduce un numero:");
-                a = sc.nextInt();
+                numero = sc.nextInt();
                 centinela = false;
             }catch(InputMismatchException ime){
                 System.out.println("Has introducido una letra, intentalo de nuevo");
@@ -66,7 +67,7 @@ public class Calculadora {
             }
         }while(centinela);
         
-        return a;
+        return numero;
     }
 
     public static void main(String[] args) {
@@ -78,8 +79,8 @@ public class Calculadora {
 
         do {
             System.out.println("Los numeros deben de estar en rango de -100 a 100");
-            operando1 = comprobarEntradaEnteros(operando1);
-            operando2 = comprobarEntradaEnteros(operando2);
+            operando1 = comprobarEntradaEnteros();
+            operando2 = comprobarEntradaEnteros();
                 
         } while (!((operando1 > -100 && operando1 < 100) && (operando2 > -100 && operando2 < 100)));
         
