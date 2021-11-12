@@ -28,7 +28,7 @@ public class AdivinaAdivinanzaJesus {
         Random random = new Random();
         int cambioDeOrden;
 
-        //Controlo si el numero inicial es mayor al final
+        //Controlo si el numero inicial es mayor al final, en caso de que lo sean se cambian los valores de las variables entre ellas
         if(inicioRango>finalRango){
             cambioDeOrden= inicioRango;
             inicioRango = finalRango;
@@ -36,6 +36,11 @@ public class AdivinaAdivinanzaJesus {
         }
 
         return (random.nextInt(finalRango - inicioRango +1) + inicioRango);
+    }
+
+    //METODO QUE COMPRUEBA SI ES MAYOR O MENOR, DEVUELVE TRUE SI ES MAYOR, FALSE SI ES MENOR
+    private static boolean numeroEsMayor(int primerNumero, int segundoNumero){
+        return (primerNumero>segundoNumero);
     }
 
     //---------------------------------------------------------------------------------------------------
@@ -69,9 +74,9 @@ public class AdivinaAdivinanzaJesus {
             System.out.println("Intento numero [" + i + "]: ");
             int numeroSugerido = pedirNumero();
 
-            if(numeroAleatorio > numeroSugerido){
+            if(numeroEsMayor(numeroAleatorio, numeroSugerido)){
                 System.out.println((i<3) ? "El numero es mayor" : "Se acabo el juego");
-            } else if(numeroAleatorio < numeroSugerido){
+            } else if(!numeroEsMayor(numeroAleatorio, numeroSugerido)){
                 System.out.println((i<3) ? "El numero es menor" : "Se acabo el juego");
             } else{
                 victoria = true;
