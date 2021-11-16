@@ -68,10 +68,13 @@ public class AdivinaAdivinanzaJesus {
         boolean esCorrecto = true;
         int numero=0;
         do{
+            esCorrecto = true;
             try {
                 numero = sc.nextInt();
             } catch (InputMismatchException ime){
                 esCorrecto = false;
+                System.out.println("Introduce un numero!");
+                sc.nextLine();
             }
         }while(!esCorrecto);
 
