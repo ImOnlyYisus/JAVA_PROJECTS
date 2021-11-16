@@ -1,31 +1,51 @@
 package daw.vehiculos;
 
 public class Vehiculos {
-    String marca;
-    String color;
     String matricula;
-    String tipo;
+    String marca;
+    String modelo;
+    String color;
+    double tarifa;
+    boolean disponible;
 
-    public Vehiculos(String marca, String color, String martricula, String tipo){
-        this.marca = marca;
-        this.color = color;
-        this.matricula = matricula;
-        this.tipo = tipo;
+    // el método constructor de la clase Vehiculo
+    public Vehiculos(String matricula,
+                    String marca, String modelo, String color, double tarifa) {
+        this.matricula = matricula; this.marca = marca;
+        this.modelo = modelo; this.color = color;
+        this.tarifa = tarifa;
+        this.disponible = false;
     }
-
-    public String getMarca(){
-        return this.marca;
-    }
-
-    public String getColor(){
-        return this.color;
-    }
-
-    public String getMatricula(){
+    // los métodos ‘get’ y ‘set’ de la clase Vehiculo
+    public String getMatricula() {
         return this.matricula;
     }
 
-    public String getTipo(){
-        return this.tipo;
+    public String getMarca() {
+        return this.marca;
     }
+    public String getModelo() {
+        return this.modelo;
+    }
+    public String getColor() {
+        return this.color;
+    }
+    public double getTarifa() {
+        return this.tarifa;
+    }
+    public boolean getDisponible() {
+        return this.disponible;
+    }
+    public void setTarifa(double tarifa) {
+        this.tarifa = tarifa;
+
+    }
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public void setMatricula(String matricula){
+        this.matricula = matricula;
+    }
+
 }
