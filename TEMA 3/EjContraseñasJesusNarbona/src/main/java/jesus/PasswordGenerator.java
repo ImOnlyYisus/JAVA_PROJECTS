@@ -30,16 +30,15 @@ public class PasswordGenerator {
             tercerDigito = generarRandom(0,9);
             cuartoDigito = generarRandom(0,9);
 
+            //AÑADO LETRA MAYUSCULA DE LA "F" A LA "X", F=70 y X=88
+            password=""+primerDigito+segundoDigito+tercerDigito+cuartoDigito+(char)generarRandom(70,88);
+            System.out.println(password);
         }while((primerDigito == segundoDigito || primerDigito == tercerDigito || primerDigito == cuartoDigito ||
                 segundoDigito == tercerDigito || segundoDigito == cuartoDigito || tercerDigito == cuartoDigito) ||
                 ((primerDigito+cuartoDigito)%2==0) || (segundoDigito*tercerDigito)%2!=0);
 
-        //AÑADO LETRA MAYUSCULA DE LA "F" A LA "X", F=70 y X=88
-        password=""+primerDigito+segundoDigito+tercerDigito+cuartoDigito+(char)generarRandom(70,88);
 
-        System.out.println(password);
-
-
+        System.out.println("LA CONTRASEÑA CORRECTA [" + password + "]");
     }
 
     //METODO PARA GENERAR UN NUMERO RANDOM, DEVUELVE EL NUMERO RANDOM
