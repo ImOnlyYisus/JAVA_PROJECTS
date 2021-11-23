@@ -16,11 +16,11 @@ public class Vehiculos {
         this.tarifa = tarifa;
         this.disponible = false;
     }
+
     // los métodos ‘get’ y ‘set’ de la clase Vehiculo
     public String getMatricula() {
         return this.matricula;
     }
-
     public String getMarca() {
         return this.marca;
     }
@@ -47,5 +47,6 @@ public class Vehiculos {
     public void setMatricula(String matricula){
         this.matricula = matricula;
     }
+
 
 }
