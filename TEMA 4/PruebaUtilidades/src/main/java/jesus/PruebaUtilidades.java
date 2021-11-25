@@ -1,10 +1,10 @@
 package jesus;
-import jesus.utilities;
+import jesus.utilities.*;
 
 public class PruebaUtilidades {
     public static void main(String[] args) {
-        Utili
-
-        System.out.println();
+        Utilidades utilidadesJesus = new Utilidades();
+        System.out.println(utilidadesJesus.generarIntAleatorioRangos(1,10));
+        System.out.println(utilidadesJesus.leerDatosInt());
     }
 }

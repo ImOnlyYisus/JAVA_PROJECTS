@@ -7,10 +7,6 @@ public class CajaCarton {
     private double alto; //milimetros
 
     public CajaCarton (){
-        this.alto = 0.0;
-        this.largo = 0.0;
-        this.peso = 0.0;
-        this.ancho = 0.0;
     }
 
     public CajaCarton(double ancho, double alto, double largo, double peso) {
@@ -52,9 +48,14 @@ public class CajaCarton {
         this.alto = alto;
     }
 
-    public String getAllValues(){
-        String tmp = this.ancho +", "+this.alto+ ", " + this.largo +", "+ this.peso;
-        return tmp;
+    @Override
+    public String toString() {
+        return "{" +
+                "ancho=" + ancho +
+                ", largo=" + largo +
+                ", peso=" + peso +
+                ", alto=" + alto +
+                '}';
     }
 
     public void abrir(){
