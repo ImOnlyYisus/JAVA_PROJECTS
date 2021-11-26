@@ -14,7 +14,7 @@
     ~~~
     ~~~java
     if (calificacion == 10) {  //Solo se ejecutaria la el sout si la calificacion es igual a 10
-	    System.out.println("Matrícula de Honor");
+        System.out.println("Matrícula de Honor");
     }
     ~~~
 
@@ -79,22 +79,22 @@
     Por ejemplo para calificaciones:
     ~~~java
     if (calificacion == 10) { 
-	    System.out.println("Matrícula de Honor");
+        System.out.println("Matrícula de Honor");
     } 
     else if (calificacion == 9)  { 
-	    System.out.println("Sobresaliente");
+        System.out.println("Sobresaliente");
     } 
     else if (calificacion >= 7) { 
-	    System.out.println("Notable");
+        System.out.println("Notable");
     } 
     else if (calificacion == 6) { 
-	    System.out.println("Bien");
+        System.out.println("Bien");
     } 
     else if (calificacion == 5) {
         System.out.println("Aprobado");
     } 
     else { 
-	    System.out.println("Suspenso");
+        System.out.println("Suspenso");
     }
     ~~~
 
@@ -135,21 +135,21 @@
     Una sentencia switch tiene la siguiente sintaxis:
     ~~~java
     switch (expresion) {
-	    case valor-1:
-		bloque-de-sentencias-1;
+        case valor-1:
+        bloque-de-sentencias-1;
             break;
 
-	    case valor-2:
-		bloque-de-sentencias-2;
-		break;
+        case valor-2:
+        bloque-de-sentencias-2;
+        break;
 
- 	    case valor-3: 
-		bloque-de-sentencias-3;
-		break;
+         case valor-3: 
+        bloque-de-sentencias-3;
+        break;
 
-	    default:
-		bloque-de-sentencias-default;		
-		break;
+        default:
+        bloque-de-sentencias-default;		
+        break;
     }
     ~~~
     Por ejemplo, las calificaciones del ejemplo de antes se podrían poner de la siguiente forma:
@@ -201,7 +201,7 @@
         inicialización;
 
         while (condición) { 
-	        bloque-de-sentencias; actualizacion;
+            bloque-de-sentencias; actualizacion;
 
         }
         ~~~
@@ -211,7 +211,7 @@
         int numero=0;
 
         while (numero>=10) { //Condicion que el numero al incrementarse sea 10
-	        System.out.println(numero);
+            System.out.println(numero);
             System.out.println(",”);
             numero++; //Se incrementa el valor
         }
@@ -224,7 +224,7 @@
         inicialización;
 
         do{ 
-	        bloque-de-sentencias; actualizacion;
+            bloque-de-sentencias; actualizacion;
 
         }while(condicion);
         ~~~
@@ -270,3 +270,37 @@
 
         }
         ~~~
+
+  ## Estructura de excepciones
+    
+  - ### **Try Catch**
+    Son situaciones anómalas producidas durante la ejecución de un programa.
+    La forma en la que el programador gestione la excepción es lo que se conoce como tratamiento de excepciones o manejo de errores.
+    Cuando se produce una excepción pueden ocurrir tres cosas:
+    La excepción se captura mediante bloques try{} catch{} y se gestionan las instrucciones en función del error producido.
+    La excepción se lanza mediante la instrucción throws en el método que se produce.
+    El programa termina al producirse el error porque la excepción ni se captura ni se lanza.
+
+    Estructura try catch:
+  ~~~java
+  try{
+    (bloque de codigo para comprobar)
+  }catch(expcepcion que quieres controlar){
+    (bloque de codigo si entra dentro del error captado)
+  }
+  ~~~
+  
+  ~~~java
+  Scanner sc = new Scanner(System.in)
+  boolean esCorrecto = true;
+  
+  do{ //Se va a repetir hasta que el caracter introducido por Scanner sea correcto
+    esCorrecto = true;
+    try{
+        int numero = sc.nextInt();
+    }catch(InputMismatchException ime){
+        System.out.println("Ha ocurrido un error al introducir un numero");
+        esCorrecto=!esCorrecto;
+    }
+  } while(!esCorrecto);
+  ~~~
