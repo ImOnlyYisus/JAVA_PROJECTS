@@ -5,7 +5,7 @@ public class Empleados {
     private String apellidos;
     private String nif;
     private double sueldoBase;
-    private double pagoHorasExtras;
+    private double pagoHorasExtras; //entre 10 y 25 €
     private double horasExtras;
     private double IRPF;
     private boolean casado;
@@ -14,15 +14,19 @@ public class Empleados {
     public Empleados(){
     }
 
-    public Empleados(String nombre, String apellidos, String nif, double sueldoBase, double pagoHorasExtras, double horasExtras,double IRPF, boolean casado, int hijos) {
+    public Empleados(String nombre, String apellidos, String nif, double sueldoBase, double pagoHorasExtras, double horasExtras,double IRPF,
+                     boolean casado, int hijos) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nif = nif;
         this.sueldoBase = sueldoBase;
         this.horasExtras = horasExtras;
+        if(pagoHorasExtras<10 || pagoHorasExtras>25){
+            throw new IllegalArgumentException("Pago por horas extras fuera de rango");
+        }
         this.pagoHorasExtras = pagoHorasExtras;
         this.IRPF = 20;
-        if(IRPF > 10 && IRPF <20){ //Controlo entre 10% y 20%
+        if(IRPF > 1 && IRPF <20){ //Controlo entre 1% y 20%
             this.IRPF = IRPF;
         }
 
@@ -75,6 +79,9 @@ public class Empleados {
     }
 
     public void setPagoHorasExtras(double pagoHorasExtras) {
+        if(pagoHorasExtras<10 || pagoHorasExtras>25){
+            throw new IllegalArgumentException("Pago por horas extras fuera de rango");
+        }
         this.pagoHorasExtras = pagoHorasExtras;
     }
 
@@ -84,7 +91,7 @@ public class Empleados {
 
     public void setIRPF(double IRPF) {
         this.IRPF = 20;
-        if(IRPF > 10 && IRPF <20){ //Controlo entre 10% y 20%
+        if(IRPF > 1 && IRPF <20){ //Controlo entre 1% y 20%
             this.IRPF = IRPF;
         }
     }
@@ -125,19 +132,21 @@ public class Empleados {
     }
 
     public double sueldoBruto(){
-        return complementoHoras()+sueldoBase;
+        return complementoHoras()+this.sueldoBase;
     }
 
     public double calcularIRPF(){
         double irpf = this.IRPF;
         if(this.hijos !=0){
-            for(int i=0; i <= this.hijos; i++){
-                irpf--;
-            }
+            irpf-=this.hijos;
         }
 
         if(this.casado){
             irpf-=2;
+        }
+
+        if(irpf<0){
+            irpf =0;
         }
 
         return ((irpf*sueldoBruto())/100);
@@ -164,7 +173,7 @@ public class Empleados {
                 "Sueldo base: " + this.sueldoBase + "\n" +
                 "Complemento horas extras: " + complementoHoras() + "\n" +
                 "Sueldo bruto: " + sueldoBruto() + "\n" +
-                "Retencion IRPF" + calcularIRPF() + "\n" +
+                "Retencion IRPF: " + calcularIRPF() + "\n" +
                 "Sueldo neto: " + sueldoNeto() + "\n");
     }
 }
