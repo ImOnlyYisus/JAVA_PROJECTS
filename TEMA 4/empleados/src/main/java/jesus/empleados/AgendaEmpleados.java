@@ -3,7 +3,7 @@ package jesus.empleados;
 public class AgendaEmpleados {
     public static void main(String[] args) {
         Empleados empleado = new Empleados(); //Construtor vacio
-        Empleados empleado2 = new Empleados("Paco","Rodrigez","12313A",1400,50,40,1,true,3);
+        Empleados empleado2 = new Empleados("Paco","Rodrigez","12313A",1400,22,40,1,true,3);
         System.out.println(empleado.toString());
         System.out.println(empleado2.toString());
 
@@ -11,7 +11,7 @@ public class AgendaEmpleados {
         empleado.setApellidos("Gonzalez");
         empleado.setNif("123123213E");
         empleado.setSueldoBase(1300);
-        empleado.setPagoHorasExtras(40);
+        empleado.setPagoHorasExtras(14);
         empleado.setHorasExtras(100);
         empleado.setIRPF(12);
         empleado.setCasado(false);
