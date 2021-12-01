@@ -28,6 +28,9 @@ public class Cafetera {
 
     public void servirTaza(double cantidadAServir){
         cantidadAServir = Math.abs(cantidadAServir);
+        if(cantidadActual<=0){
+            throw new IllegalArgumentException("No hay nada de cafe, no se puede servir");
+        }
         if(cantidadAServir>cantidadActual){
             System.out.println("Voy a servir lo que me queda ");
             vaciarCafetera();
@@ -55,5 +58,13 @@ public class Cafetera {
 
     public double getCantidadActual() {
         return cantidadActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Cafetera{" +
+                "capacidadMaxima=" + capacidadMaxima +
+                ", cantidadActual=" + cantidadActual +
+                '}';
     }
 }
