@@ -9,7 +9,8 @@ public class Cafetera {
         this.cantidadActual=0;
     }
     public Cafetera(double capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
+        //Si la capacidad maxima introducidad es negativa se convierte en positiva
+        this.capacidadMaxima = Math.abs(capacidadMaxima);
         this.cantidadActual = this.capacidadMaxima;
     }
     public Cafetera(double capacidadMaxima, double cantidadActual){
@@ -26,11 +27,13 @@ public class Cafetera {
     }
 
     public void servirTaza(double cantidadAServir){
+        cantidadAServir = Math.abs(cantidadAServir);
         if(cantidadAServir>cantidadActual){
-            System.out.println("Voy a servir lo que me queda "+ this.cantidadActual);
+            System.out.println("Voy a servir lo que me queda ");
+            vaciarCafetera();
         } else{
-            System.out.println("Voy a servir "+ cantidadAServir);
             this.cantidadActual-=cantidadAServir;
+            System.out.println("Voy a servir "+ cantidadAServir + ", te queda " + this.cantidadActual);
         }
     }
 
@@ -42,7 +45,15 @@ public class Cafetera {
         if(cantidadAgregar<(capacidadMaxima-cantidadActual)){
             this.cantidadActual+=cantidadAgregar;
         } else{
-            this.cantidadActual= this.capacidadMaxima;
+            throw new IllegalArgumentException("No se puede llenar con la cantidad indicada, supera la capacidad maxima");
         }
+    }
+
+    public double getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public double getCantidadActual() {
+        return cantidadActual;
     }
 }
