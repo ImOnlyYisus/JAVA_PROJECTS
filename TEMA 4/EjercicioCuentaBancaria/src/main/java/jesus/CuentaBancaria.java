@@ -18,7 +18,7 @@ public class CuentaBancaria {
         this.NIF = NIF;
         this.nombreCliente = nombreCliente;
         this.saldoActual = saldoActual;
-        if(!(interesAnual<0.1 && interesAnual>3)){
+        if(!(interesAnual<0.1 || interesAnual>3)){
             this.interesAnual = interesAnual;
         }
     }
@@ -58,7 +58,7 @@ public class CuentaBancaria {
     }
 
     public void setInteresAnual(double interesAnual) {
-        if(!(interesAnual<0.1 && interesAnual>3)){
+        if(!(interesAnual<0.1 || interesAnual>3)){
             this.interesAnual = interesAnual;
         }
     }
@@ -66,12 +66,14 @@ public class CuentaBancaria {
     //METODOS
     //aumenta el saldo de la cuenta, aplicando el interés anual [saldo = saldo + (interés * saldo)].
     public void ingresarIntereses(){
-        this.saldoActual += (this.interesAnual*this.saldoActual);
+        this.saldoActual = this.saldoActual + (this.interesAnual*this.saldoActual);
     }
 
     //permite ingresar una cantidad en la cuenta.
     public void ingresarDinero(double dineroIngresar){
-        dineroIngresar=Math.abs(dineroIngresar);
+        if(dineroIngresar<0){
+            dineroIngresar*=-1;
+        }
         this.saldoActual+= dineroIngresar;
     }
 
