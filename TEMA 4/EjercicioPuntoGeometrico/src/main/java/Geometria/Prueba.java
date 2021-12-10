@@ -9,5 +9,23 @@ public class Prueba {
 
         System.out.println(puntoA);
         System.out.println(puntoB);
+
+        Linea primeraLinea = new Linea();
+        primeraLinea.mostrarLinea();
+
+        Linea segundaLinea = new Linea(puntoA,puntoB);
+        segundaLinea.mostrarLinea();
+
+        segundaLinea.mueveArriba(3);
+        segundaLinea.mostrarLinea();
+
+        segundaLinea.mueveAbajo(3);
+        segundaLinea.mostrarLinea();
+
+        segundaLinea.mueveDerecha(3);
+        segundaLinea.mostrarLinea();
+
+        segundaLinea.mueveIzquierda(3);
+        segundaLinea.mostrarLinea();
     }
 }

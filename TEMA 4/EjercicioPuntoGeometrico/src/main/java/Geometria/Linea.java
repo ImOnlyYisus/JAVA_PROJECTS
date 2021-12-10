@@ -57,6 +57,6 @@ public class Linea {
     }
 
     public void mostrarLinea(){
-        System.out.println("["+this.puntoA+", "+ this.puntoB +"]");
+        System.out.println("[("+this.puntoA.getX()+", "+this.puntoA.getY()+"), ("+ this.puntoB.getX()+", "+ this.puntoB.getY() +")]");
     }
 }
