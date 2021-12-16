@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 package daw.poo;
 
+=======
+>>>>>>> main
 import daw.poo.CajaCarton;
 
 public class TestCajaCarton {
@@ -9,8 +12,11 @@ public class TestCajaCarton {
 
         System.out.println("cajaChica"+cajaChica.toString());
         System.out.println("cajaGrande"+cajaGrande.toString());
+<<<<<<< HEAD
 
         cajaChica.setPeso(1200);
         System.out.println(cajaChica.getPeso());
+=======
+>>>>>>> main
     }
 }

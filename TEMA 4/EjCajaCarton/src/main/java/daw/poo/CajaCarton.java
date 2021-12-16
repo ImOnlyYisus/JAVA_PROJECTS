@@ -12,10 +12,14 @@ public class CajaCarton {
     public CajaCarton(double ancho, double alto, double largo, double peso) {
         this.ancho = ancho;
         this.largo = largo;
+<<<<<<< HEAD
         if((peso>0 && peso<=1000)){
             this.peso = peso;
         }
 
+=======
+        this.peso = peso;
+>>>>>>> main
         this.alto = alto;
     }
 
@@ -40,12 +44,16 @@ public class CajaCarton {
     }
 
     public void setPeso(double peso) {
+<<<<<<< HEAD
         if((peso>0 && peso<=1000)){
             this.peso = peso;
         } else{
             System.out.println("No es valido, se establece a 0");
             this.peso = 0;
         }
+=======
+        this.peso = peso;
+>>>>>>> main
     }
 
     public double getAlto() {
@@ -73,5 +81,8 @@ public class CajaCarton {
     public void cerrar(){
 
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 }
