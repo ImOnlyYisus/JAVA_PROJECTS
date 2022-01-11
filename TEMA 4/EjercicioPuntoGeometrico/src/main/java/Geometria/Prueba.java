@@ -27,5 +27,10 @@ public class Prueba {
 
         segundaLinea.mueveIzquierda(3);
         segundaLinea.mostrarLinea();
+
+        //Cambiar coordenada X del punto a de la segunda línea
+        System.out.println(segundaLinea.getPuntoA());
+        segundaLinea.getPuntoA().setX(4);
+        System.out.println(segundaLinea.getPuntoA());
     }
 }
