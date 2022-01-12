@@ -1,5 +1,6 @@
 package jesus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EjercicioSinArrays {
@@ -12,8 +13,20 @@ public class EjercicioSinArrays {
         double pesoElefantesTotal=0;
         double contadorElefantes=0;
         do{
-            System.out.println("Cuanto pesa el elefante:");
-            pesoElefantes=sc.nextDouble();
+            boolean verificarNumero=true;
+            do{
+                verificarNumero=true;
+                System.out.println("Cuanto pesa el elefante:");
+                try {
+                    pesoElefantes=sc.nextDouble();
+                }catch (InputMismatchException ime){
+                    verificarNumero=!verificarNumero;
+                    System.out.println("Introduce un numero!");
+                    sc.nextLine();
+                }
+
+            }while(!verificarNumero);
+
             pesoElefantesTotal+=pesoElefantes;
 
             if(pesoElefantesTotal<=pesoTela){
@@ -21,7 +34,14 @@ public class EjercicioSinArrays {
             }
 
         }while(pesoElefantes!=0);
-        System.out.printf("Se puedieron montar %.0f el siguiente se cayó, ya que no soportaba el peso de la tela", contadorElefantes);
+            if(pesoElefantesTotal<=pesoTela){
+                contadorElefantes--;
+            }
+        if(pesoElefantesTotal>pesoTela) {
+            System.out.printf("Se puedieron montar %.0f el siguiente se cayó, ya que no soportaba el peso de la tela", contadorElefantes);
+        }else{
+            System.out.printf("Se puedieron montar %.0f y se balancearon", contadorElefantes);
+        }
     }
 
 
