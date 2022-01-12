@@ -1,4 +1,5 @@
 package jesus;
+//AUTOR:JESUS NARBONA
 
 public class Complejo {
     private double numeroReal;
@@ -11,20 +12,20 @@ public class Complejo {
         instancias++;
     }
 
-    public Complejo(double a, double b) {
-        this.numeroReal = a;
-        this.numeroImaginario = b;
+    public Complejo(double nuemeroReal, double numeroImaginario) {
+        this.numeroReal = nuemeroReal;
+        this.numeroImaginario = numeroImaginario;
         instancias++;
     }
 
     //GETTER SETTER
 
-    public double getA() {
+    public double getNumeroReal() {
         return numeroReal;
     }
 
-    public void setA(double a) {
-        this.numeroReal = a;
+    public void setNumeroReal(double numeroReal) {
+        this.numeroReal = numeroReal;
     }
 
     public double getNumeroImaginario() {
@@ -38,27 +39,29 @@ public class Complejo {
     @Override
     public String toString() {
         return "Complejo{" +
-                "a=" + numeroReal +
-                ", b=" + numeroImaginario +
+                "numeroReal=" + numeroReal +
+                ", numeroImaginario=" + numeroImaginario +
                 '}';
     }
 
     //METODOS
-    public static Complejo suma(Complejo z1, Complejo z2){
-        return (new Complejo(z1.numeroReal+ z2.numeroReal, z1.numeroImaginario+z2.numeroImaginario));
+    public static Complejo suma(Complejo numeroComplejo1, Complejo numeroComplejo2){
+        return (new Complejo(numeroComplejo1.numeroReal+ numeroComplejo2.numeroReal, numeroComplejo1.numeroImaginario+numeroComplejo2.numeroImaginario));
     }
 
-    public static Complejo resta(Complejo z1, Complejo z2){
-        return (new Complejo(z1.numeroReal- z2.numeroReal, z1.numeroImaginario-z2.numeroImaginario));
+    public static Complejo resta(Complejo numeroComplejo1, Complejo numeroComplejo2){
+        return (new Complejo(numeroComplejo1.numeroReal- numeroComplejo2.numeroReal, numeroComplejo1.numeroImaginario-numeroComplejo2.numeroImaginario));
     }
 
-    public static Complejo multiplicacion(Complejo z1, Complejo z2){
-        return (new Complejo((z1.numeroReal* z2.numeroReal) - (z1.numeroImaginario*z2.numeroImaginario), (z1.numeroReal* z2.numeroImaginario) + (z2.numeroReal*z1.numeroImaginario)));
+    public static Complejo multiplicacion(Complejo numeroComplejo1, Complejo numeroComplejo2){
+        double operacionZ1=(numeroComplejo1.numeroReal* numeroComplejo2.numeroReal) - (numeroComplejo1.numeroImaginario*numeroComplejo2.numeroImaginario);
+        double operacionZ2=((numeroComplejo1.numeroReal* numeroComplejo2.numeroImaginario) + (numeroComplejo2.numeroReal*numeroComplejo1.numeroImaginario));
+        return (new Complejo(operacionZ1,operacionZ2));
     }
 
-    public static Complejo division(Complejo z1, Complejo z2){
-        double operacionZ1=((z1.numeroReal*z2.numeroReal)+(z1.numeroImaginario*z2.numeroImaginario))/(Math.pow(z2.numeroReal,2)+Math.pow(z2.numeroImaginario,2));
-        double operacionZ2=((z1.numeroImaginario*z2.numeroReal)-(z1.numeroReal*z2.numeroImaginario))/(Math.pow(z2.numeroReal,2)+Math.pow(z2.numeroImaginario,2));
+    public static Complejo division(Complejo numeroComplejo1, Complejo numeroComplejo2){
+        double operacionZ1=((numeroComplejo1.numeroReal*numeroComplejo2.numeroReal)+(numeroComplejo1.numeroImaginario*numeroComplejo2.numeroImaginario))/(Math.pow(numeroComplejo2.numeroReal,2)+Math.pow(numeroComplejo2.numeroImaginario,2));
+        double operacionZ2=((numeroComplejo1.numeroImaginario*numeroComplejo2.numeroReal)-(numeroComplejo1.numeroReal*numeroComplejo2.numeroImaginario))/(Math.pow(numeroComplejo2.numeroReal,2)+Math.pow(numeroComplejo2.numeroImaginario,2));
         return (new Complejo(operacionZ1,operacionZ2));
     }
 
