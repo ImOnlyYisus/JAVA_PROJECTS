@@ -23,5 +23,8 @@ public class Prueba {
         System.out.println(fecha.menorQue(fecha2));
 
         System.out.println(Fecha.diasEntreFechas(fecha,fecha2));
+        System.out.println(fecha.hashCode());
+        System.out.println(fecha.copia().hashCode());
+        System.out.println(fecha);
     }
 }

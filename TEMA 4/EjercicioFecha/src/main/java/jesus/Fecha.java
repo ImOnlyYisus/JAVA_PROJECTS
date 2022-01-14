@@ -1,5 +1,8 @@
 package jesus;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
@@ -119,9 +122,7 @@ public class Fecha {
     }
 
     public Fecha copia() {
-        Fecha fechaCopia;
-        fechaCopia = this;
-        return fechaCopia;
+        return new Fecha(this.dia, this.mes, this.anio);
     }
 
     public boolean igualQue(Fecha fechaPasada) {
@@ -149,4 +150,9 @@ public class Fecha {
         return ChronoUnit.DAYS.between(incio, ultima);
     }
 
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
+    }
 }
