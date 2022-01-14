@@ -10,5 +10,7 @@ public class Prueba {
         System.out.println(Complejo.resta(z1,z2));
         System.out.println(Complejo.multiplicacion(z1,z2));
         System.out.println(Complejo.division(z1,z2));
+
+        System.out.println(Complejo.getInstancias());
     }
 }

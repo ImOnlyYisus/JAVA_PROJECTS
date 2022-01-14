@@ -65,5 +65,9 @@ public class Complejo {
         return (new Complejo(operacionZ1,operacionZ2));
     }
 
+    public static int getInstancias(){
+        return instancias;
+    }
+
 
 }
