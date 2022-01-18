@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.time.DateTimeException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.*;
@@ -82,7 +82,7 @@ public class Fecha {
     }
 
     public int diasMes() {
-        return LocalDate.of(this.anio, this.mes, this.dia).getDayOfMonth();
+        return LocalDate.of(this.anio, this.mes, this.dia).lengthOfMonth();
     }
 
     public String mostrarFechaCorta() {
@@ -98,9 +98,9 @@ public class Fecha {
         return formateoFecha.format(fecha);
     }
 
-    public String diaSemana() {
+    public int diaSemana() {
         LocalDate fecha = LocalDate.of(this.anio, this.mes, this.dia);
-        return ("" + fecha.getDayOfWeek());
+        return (fecha.getDayOfWeek().getValue());
     }
 
     public void siguiente() {
@@ -114,7 +114,7 @@ public class Fecha {
 
     public void anterior() {
         LocalDate fecha = LocalDate.of(this.anio, this.mes, this.dia);
-        fecha=fecha.plusDays(-1);//Pasar dia
+        fecha=fecha.plusDays(-1);//Ir atras un dia
 
         this.dia = fecha.getDayOfMonth();
         this.mes = fecha.getMonthValue();
@@ -127,19 +127,19 @@ public class Fecha {
 
     public boolean igualQue(Fecha fechaPasada) {
         LocalDate fecha = LocalDate.of(this.anio, this.mes, this.dia);
-        ChronoLocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
-        return (fecha.isEqual(pasada));
+        LocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
+        return (fecha.equals(pasada));
     }
 
     public boolean mayorQue(Fecha fechaPasada) {
         LocalDate fecha = LocalDate.of(this.anio, this.mes, this.dia);
-        ChronoLocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
+        LocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
         return (fecha.isAfter(pasada));
     }
 
     public boolean menorQue(Fecha fechaPasada) {
         LocalDate fecha = LocalDate.of(this.anio, this.mes, this.dia);
-        ChronoLocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
+        LocalDate pasada = LocalDate.of(fechaPasada.getAnio(), fechaPasada.getMes(), fechaPasada.getDia());
         return (fecha.isBefore(pasada));
     }
 
