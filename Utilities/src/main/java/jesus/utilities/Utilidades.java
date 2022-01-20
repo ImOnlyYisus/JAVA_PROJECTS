@@ -41,4 +41,37 @@ public class Utilidades {
 
         return numero;
     }
+
+    //Copiar Arrays
+    public static int[] copiarArray(int[] arrayNumeros){ //Entero
+        int[] copia= new int[arrayNumeros.length];
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            copia[i]=arrayNumeros[i];
+        }
+        return copia;
+    }
+
+    public static double[] copiarArray(double[] arrayNumeros){ //Double
+        double[] copia= new double[arrayNumeros.length];
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            copia[i]=arrayNumeros[i];
+        }
+        return copia;
+    }
+
+    public static String[] copiarArray(String[] arrayNumeros){ //String
+        String[] copia= new String[arrayNumeros.length];
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            copia[i]=arrayNumeros[i];
+        }
+        return copia;
+    }
+
+    public static Object[] copiarArray(Object[] arrayNumeros){ //Object
+        Object[] copia= new Object[arrayNumeros.length];
+        for (int i = 0; i < arrayNumeros.length; i++) {
+            copia[i]=arrayNumeros[i];
+        }
+        return copia;
+    }
 }
