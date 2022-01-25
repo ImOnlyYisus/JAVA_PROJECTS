@@ -6,9 +6,12 @@ public class Ejercicio01 {
         // Instancia e inicializa el array en el programa, sin leer nada por teclado, con los siguientes
         // valores {1, 2, 3, 4, 5, 6}.
         int[] arrayNumeros ={1,2,3,4,5,6};
+        int suma=0;
 
         for (int i = 0; i <arrayNumeros.length ; i++) {
             System.out.println(arrayNumeros[i]);
+            suma+=arrayNumeros[i];
         }
+        System.out.println("Suma:" + suma);
     }
 }
