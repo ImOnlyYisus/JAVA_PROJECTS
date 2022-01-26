@@ -45,7 +45,7 @@ public class Ejercicio05 {
     }
 
     private static int[] contarPositivosNegativosCeros(int[] arrayNumeros){
-        int[] positivosNegativosCeros = new int[3];
+        int[] positivosNegativosCeros = new int[3]; //[0]positivos [1]negativos [2]cero
 
         for (int i = 0; i <arrayNumeros.length ; i++) {
             if(arrayNumeros[i]==0){
