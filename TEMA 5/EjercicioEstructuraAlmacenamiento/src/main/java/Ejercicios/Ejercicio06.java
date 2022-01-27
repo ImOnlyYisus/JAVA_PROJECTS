@@ -14,15 +14,67 @@ public class Ejercicio06 {
 
         int[] arr3={1,2,3,4};
 
-        int[] arr5={1,2,2};
+        int[] arr4={1,2,2};
 
+        //API JAVA
         System.out.println(Arrays.toString(arr1)+"\n"+Arrays.toString(arr2));
         System.out.println(Arrays.equals(arr1,arr2));
 
         System.out.println(Arrays.toString(arr3)+"\n"+Arrays.toString(arr2));
         System.out.println(Arrays.equals(arr3,arr2));
 
+        System.out.println(Arrays.toString(arr1)+"\n"+Arrays.toString(arr4));
+        System.out.println(Arrays.equals(arr1,arr4));
+
+        //Recursiva
+        boolean isEqual=true;
+
+        if(arr1.length==arr2.length) {
+            for (int i = 0; i < arr1.length; i++) {
+                if (arr1[i] != arr2[i]) {
+                    isEqual = false;
+                    break;
+                }
+            }
+        }else{
+            isEqual=false;
+        }
+
         System.out.println(Arrays.toString(arr1)+"\n"+Arrays.toString(arr2));
-        System.out.println(Arrays.equals(arr1,arr2));
+        System.out.println(isEqual);
+
+        isEqual=true;
+
+        if(arr3.length==arr2.length){
+            for (int i = 0; i < arr3.length ; i++) {
+
+                    if(arr3[i]!=arr2[i]){
+                        isEqual=false;
+                        break;
+                    }
+
+            }
+        }else{
+            isEqual=false;
+        }
+
+        System.out.println(Arrays.toString(arr3)+"\n"+Arrays.toString(arr2));
+        System.out.println(isEqual);
+
+        isEqual=true;
+        if(arr1.length==arr4.length){
+            for (int i = 0; i < arr1.length ; i++) {
+                if(arr4[i]!=arr1[i]){
+                    isEqual=false;
+                    break;
+                }
+            }
+        }else{
+            isEqual=false;
+        }
+
+        System.out.println(Arrays.toString(arr1)+"\n"+Arrays.toString(arr4));
+        System.out.println(isEqual);
+
     }
 }
