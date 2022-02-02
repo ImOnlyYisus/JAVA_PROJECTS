@@ -6,7 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;
 
 public class Vehiculo {
-
+//Atributos
     private String bastidor;
     private String matricula;
     private String marca;
@@ -15,6 +15,7 @@ public class Vehiculo {
     private double tarifa;
     private boolean disponible;
 
+//Variables
     private static Random rd = new Random();
     private static String[] marcaCoches = {"Mercedes","Audi","BMW","KIA","RENAULT","FORD","LAMBORGUINI","OPEL"};
     private static String [] modeloCoches = {"Turismo","Sport","Berlina","Monovolumen", "Furgoneta","Familiar"};

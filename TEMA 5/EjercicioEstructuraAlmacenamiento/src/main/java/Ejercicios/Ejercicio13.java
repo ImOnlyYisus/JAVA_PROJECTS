@@ -1,5 +1,7 @@
 package Ejercicios;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,29 +14,33 @@ public class Ejercicio13 {
     */
 
     public static void main(String[] args) {
-        int [] arrayNumeros = new int[5];
-        rellenarArray(arrayNumeros);
-        System.out.println(generarHistograma(arrayNumeros));
+        int [] numeroSolicitados = numerosSolicitados();
+        System.out.println(generarHistograma(numeroSolicitados));
     }
 
     private static String generarHistograma(int[] array){
         String histograma= "";
-        for (int i = 0; i <array.length ; i++) {
-            histograma+= array[i]+":";
-            for (int j = 0; j <array[i] ; j++) {
+        int [] posibilidades = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int [] contadoresVeces = new int[posibilidades.length];
+
+        for (int i = 0; i <posibilidades.length ; i++) {
+            for (int j = 0; j <array.length ; j++) {
+                if(posibilidades[i]==array[j]){
+                    contadoresVeces[i]++;
+                }
+            }
+        }
+
+
+        for (int i = 0; i <posibilidades.length ; i++) {
+            histograma+=posibilidades[i]+":";
+            for (int j = 0; j <contadoresVeces[i] ; j++) {
                 histograma+="*";
             }
             histograma+="\n";
         }
 
         return histograma;
-    }
-
-    private static void rellenarArray(int [] arrayIntroducir){
-
-        for (int i = 0; i <arrayIntroducir.length ; i++) {
-            arrayIntroducir[i]=pedirNumeros();
-        }
     }
 
     private static int pedirNumeros(){
@@ -60,5 +66,21 @@ public class Ejercicio13 {
 
 
         return numero;
+    }
+
+    private static int[] numerosSolicitados(){
+        int numero=0;
+        String cadenaNumeros="";
+        do{
+            numero=pedirNumeros();
+            cadenaNumeros+=numero;
+        }while (numero!=0);
+
+        int [] arrayNumeros = new int[cadenaNumeros.length()];
+        for (int i = 0; i <arrayNumeros.length ; i++) {
+            arrayNumeros[i]=Integer.valueOf(cadenaNumeros.charAt(i));
+        }
+        System.out.println(Arrays.toString(arrayNumeros));
+        return arrayNumeros;
     }
 }
