@@ -1,8 +1,9 @@
 import javaapptest1.Metodos;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import java.lang.reflect.Executable;
+
+import static org.junit.Assert.*;
 
 public class TestClaseMetodos {
     @Test
@@ -62,4 +63,15 @@ public class TestClaseMetodos {
         assertNotEquals(0.0, ivaPrueba);
         assertEquals(12.1,ivaPrueba,2);
     }
+
+    @Test
+    public void testTallaDiferente(){
+        Metodos metodos=new Metodos();
+
+        String clasificacion= metodos.Tallas("no esta");
+
+        assertNotEquals(null,clasificacion);
+        assertEquals("XS",clasificacion);
+    }
+
 }
