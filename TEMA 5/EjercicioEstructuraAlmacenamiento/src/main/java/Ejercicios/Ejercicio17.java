@@ -19,11 +19,7 @@ public class Ejercicio17 {
         String cadenaTextoNueva = cadenaTexto.toLowerCase();
         cadenaTextoNueva = cadenaTextoNueva.replaceAll("\\s","");
 
-        char [] arrayChar = new char[cadenaTextoNueva.length()];
-
-        for (int i = 0; i <cadenaTextoNueva.length() ; i++) {
-            arrayChar[i] = cadenaTextoNueva.charAt(i);
-        }
+        char [] arrayChar = cadenaTextoNueva.toCharArray();
 
         return arrayChar;
     }

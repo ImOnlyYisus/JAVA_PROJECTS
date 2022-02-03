@@ -1,4 +1,5 @@
 package jesus.practicaenum;
+import jesus.practicaenum.*;
 
 public class Prueba {
     public static void main(String[] args) {

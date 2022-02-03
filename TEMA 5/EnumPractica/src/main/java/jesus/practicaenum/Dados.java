@@ -1,5 +1,7 @@
 package jesus.practicaenum;
 
+import jesus.practicaenum.Response;
+
 import java.util.Random;
 
 public class Dados {
