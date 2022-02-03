@@ -60,7 +60,7 @@ public class Ejercicio13 {
                 }
             }while (!verifyInt);
             if (numero<0 || numero>20){
-                System.out.println("Introduce numero entre 0 y 20");
+                System.out.println("Introduce numero entre 1 y 20");
             }
         }while (numero<0 || numero>20);
 
@@ -73,12 +73,13 @@ public class Ejercicio13 {
         String cadenaNumeros="";
         do{
             numero=pedirNumeros();
-            cadenaNumeros+=numero;
+            cadenaNumeros+=numero+",";
         }while (numero!=0);
 
-        int [] arrayNumeros = new int[cadenaNumeros.length()];
-        for (int i = 0; i <arrayNumeros.length ; i++) {
-            arrayNumeros[i]=Integer.valueOf(cadenaNumeros.charAt(i));
+        String [] arrayNumerosString = cadenaNumeros.split(",");
+        int [] arrayNumeros = new int[arrayNumerosString.length];
+        for (int i = 0; i <arrayNumeros.length-1 ; i++) {
+            arrayNumeros[i]=Integer.parseInt(arrayNumerosString[i]);
         }
         System.out.println(Arrays.toString(arrayNumeros));
         return arrayNumeros;
