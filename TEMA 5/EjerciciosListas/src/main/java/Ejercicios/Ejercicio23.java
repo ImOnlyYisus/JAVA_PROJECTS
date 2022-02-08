@@ -60,18 +60,9 @@ public class Ejercicio23 {
 
     private static ArrayList<Integer> listaDeNumerosRestantes(ArrayList<Integer> lista1,ArrayList<Integer>lista2){
         ArrayList<Integer> lista3 = new ArrayList<>();
-        boolean noTieneNumero=true;
-        //lista1 {1,2,3,4,5,6}
-        //lista2 {8,5,10,4}
 
         for (int i = 0; i <lista1.size() ; i++) {
-            for (int j = 0; j <lista2.size() ; j++) {
-                if(lista1.get(i)==lista2.get(j)){
-                    noTieneNumero=false;
-                    break;
-                }
-            }
-            if (noTieneNumero){
+            if(!lista2.contains(lista1.get(i))){
                 lista3.add(lista1.get(i));
             }
         }

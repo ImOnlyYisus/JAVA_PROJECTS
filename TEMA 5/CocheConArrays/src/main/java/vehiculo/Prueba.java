@@ -20,5 +20,6 @@ public class Prueba {
         for (Vehiculo vehiculos:vehiculosArr){
             System.out.println(vehiculos);
         }
+
     }
 }
