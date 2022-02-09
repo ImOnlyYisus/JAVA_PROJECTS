@@ -1,4 +1,4 @@
-package EjercicioParecido20;
+package ejercicio20.jesusnarbona;
 
 import java.util.ArrayList;
 
@@ -17,6 +17,16 @@ public class Cartelera {
         cartelera.forEach(e -> {
             System.out.println("["+e+"]");
         });
+    }
+
+    public boolean modificar(Peliculas peliculas, Peliculas peliculaNueva){ //Modificar una pelicula pasando la pelicula que quieres modificar
+        int index=cartelera.indexOf(peliculas);
+        if(index!=-1){
+            cartelera.set(index,peliculaNueva);
+            return true;
+        }
+
+        return false;
     }
 
     public boolean removePelicula(Peliculas pelicula){ //REMOVER UNA PELICULA SEGUN EL OBJETO PASADO, DEVUELVE TRUE SI SE REALIZA Y FALSE
