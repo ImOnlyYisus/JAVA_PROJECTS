@@ -15,6 +15,7 @@ public class Peliculas {
         this.tipoPelicula = tipoPelicula;
     }
 
+    //Getters y setters
     public String getTitulo() {
         return titulo;
     }

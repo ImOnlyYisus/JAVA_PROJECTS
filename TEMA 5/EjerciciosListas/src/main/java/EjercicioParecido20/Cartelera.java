@@ -13,13 +13,13 @@ public class Cartelera {
         cartelera.add(pelicula);
     }
 
-    public void imprimirPeliculas(){
+    public void imprimirPeliculas(){ //IMPRIMIR DATOS DE LA LISTA
         cartelera.forEach(e -> {
             System.out.println("["+e+"]");
         });
     }
 
-    public boolean removePelicula(Peliculas pelicula){
+    public boolean removePelicula(Peliculas pelicula){ //REMOVER UNA PELICULA SEGUN EL OBJETO PASADO, DEVUELVE TRUE SI SE REALIZA Y FALSE
         if(cartelera.remove(pelicula)){
             return true;
         }
@@ -28,7 +28,7 @@ public class Cartelera {
 
     public int numeroPeliculas(){
         return cartelera.size();
-    }
+    } //OBTENER EL NUMERO DE DATOS DE LA LISTA
 
     //BUSCAR DATOS
     public ArrayList<Peliculas> buscarPeliculaDirector(String director){ //BUSQUEDA POR DIRECTOR
