@@ -67,7 +67,14 @@ public class Pila {
     }
 
     //char[] sacarElementos(), saca los elementos de la pila y los devuelva en un array de char. La pila queda vacía.
-    public
+    public char[] sacarElementos(){
+        char[] output = new char[pila.size()];
 
+        for (int i = 0; i <pila.size() ; i++) {
+            output[i]=pila.get(i);
+        }
+
+        return output;
+    }
 
 }
