@@ -1,9 +1,6 @@
 package jesus.calcetines;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Random;
+import java.util.*;
 
 public class CajonCalcetines {
     private static Random rd = new Random();
@@ -21,36 +18,44 @@ public class CajonCalcetines {
     }
 
     public Calcetines[] parejar() {
-        ArrayList<Calcetines> cajonCopia = new ArrayList<>();
-
-        for (int i = 0; i < this.cajon.length; i++) {
-            cajonCopia.add(this.cajon[i]);
+        boolean[] restantesConfirm =new boolean[cajon.length];
+        for (int i = 0; i < cajon.length ; i++) {
+            restantesConfirm[i]=false;
         }
 
-        for (int i = 0; i < cajonCopia.size(); i++) {
-            for (int j = 0; j < cajonCopia.size() ; j++) {
-                if(cajonCopia.get(i).equals(cajonCopia.get(j))){
-                    Calcetines c= cajonCopia.get(i);
-                    cajonCopia.remove(c);
-                    cajonCopia.remove(c);
+        for (int i = 0; i <cajon.length ; i++) {
+            for (int j = i+1; j < cajon.length ; j++) {
+                if(cajon[i].equals(cajon[j])){
+                    restantesConfirm[i]=true;
+                    restantesConfirm[j]=true;
+                    break;
                 }
             }
         }
 
-        if (!cajonCopia.isEmpty()) {
-            Calcetines[] parejas = new Calcetines[cajonCopia.size()];
-            for (int i = 0; i < cajonCopia.size(); i++) {
-                parejas[i] = cajonCopia.get(i);
+        ArrayList<Calcetines> sinParejaList = new ArrayList<>();
+        for (int i = 0; i < restantesConfirm.length ; i++) {
+            if(!restantesConfirm[i]){
+                sinParejaList.add(cajon[i]);
             }
-            return parejas;
+        }
+
+        if(!sinParejaList.isEmpty()) {
+            Calcetines[] sinPareja = new Calcetines[sinParejaList.size()];
+            for (int i = 0; i < sinPareja.length; i++) {
+                sinPareja[i] = sinParejaList.get(i);
+            }
+
+            return sinPareja;
         }
 
         return null;
+
     }
 
     public static void printCajon(CajonCalcetines cajon) {
         for (int i = 0; i < cajon.cajon.length; i++) {
-            System.out.println("[" + cajon.cajon[i] + "]");
+            System.out.println(i+"-->"+"[" + cajon.cajon[i] + "]");
         }
     }
 

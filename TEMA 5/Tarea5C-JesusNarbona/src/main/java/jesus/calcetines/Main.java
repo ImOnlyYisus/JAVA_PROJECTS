@@ -6,7 +6,7 @@ public class Main {
 
         CajonCalcetines.printCajon(cajon);
 
-        System.out.println("\n\n");
+        System.out.println("\n");
 
 
         Calcetines[] parejas = cajon.parejar();

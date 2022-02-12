@@ -3,7 +3,7 @@ package jesus.calcetines;
 import java.util.Objects;
 import java.util.Random;
 
-public class Calcetines {
+public class Calcetines{
     private Colores color; //negro, gris_claro, gris_oscuro
     private int talla ; //{40,41,42,43}
     private static int[] tallasPosibles= {40,41,42,43};
@@ -13,6 +13,7 @@ public class Calcetines {
     public Calcetines() {
         this.talla=tallasPosibles[rd.nextInt(tallasPosibles.length)];
         this.color=coloresPosibles[rd.nextInt(coloresPosibles.length)];
+
     }
 
 
@@ -27,10 +28,7 @@ public class Calcetines {
 
     @Override
     public String toString() {
-        return "Calcetines{" +
-                "color=" + color +
-                ", talla=" + talla +
-                '}';
+        return color + ", "+talla;
     }
 
     @Override
@@ -45,4 +43,5 @@ public class Calcetines {
     public int hashCode() {
         return Objects.hash(color, talla);
     }
+
 }
