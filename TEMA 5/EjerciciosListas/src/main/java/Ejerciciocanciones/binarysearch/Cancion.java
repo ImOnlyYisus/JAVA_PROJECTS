@@ -72,7 +72,6 @@ public class Cancion implements Comparable<Cancion>{
 
     @Override
     public int compareTo(Cancion o) { //COMPARA POR NOMBRE, ARTISTA, AÑO LANZAMIENTO Y MINUTOS DURACION
-
         return this.nombre.compareToIgnoreCase(o.nombre);
     }
 }

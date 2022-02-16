@@ -3,6 +3,7 @@ package Ejerciciocanciones.binarysearch;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ListaReproducion {
     private ArrayList<Cancion> listaReproducion;
@@ -82,6 +83,30 @@ public class ListaReproducion {
 
         Collections.sort(copiaLista);
         return Collections.binarySearch(copiaLista,c);
+    }
+
+    //Ordenar por el criterio nombre
+    public void ordenarNombre(){
+        Comparator<Cancion> criterioNombre = (c1,c2)->c1.getNombre().compareToIgnoreCase(c2.getNombre());
+        Collections.sort(listaReproducion, criterioNombre);
+    }
+
+    public void ordenarNombreMinutos(){
+        Comparator<Cancion> criterioNombre = (c1,c2)->c1.getNombre().compareToIgnoreCase(c2.getNombre());
+        Comparator<Cancion> criterioMinutos = (c1,c2)->Integer.compare(c1.getMinutosDuracion(), c2.getMinutosDuracion());
+        Comparator<Cancion> criterios = criterioNombre.thenComparing(criterioMinutos);
+        Collections.sort(listaReproducion, criterios);
+    }
+
+    public int buscarCancionNombre(Cancion c){
+        return Collections.binarySearch(listaReproducion,c,(c1,c2)->c1.getNombre().compareToIgnoreCase(c2.getNombre()));
+    }
+
+    public int buscarCancionNombreMinutos(Cancion c){
+        Comparator<Cancion> criterioNombre = (c1,c2)->c1.getNombre().compareToIgnoreCase(c2.getNombre());
+        Comparator<Cancion> criterioMinutos = (c1,c2)->Integer.compare(c1.getMinutosDuracion(), c2.getMinutosDuracion());
+        Comparator<Cancion> criterios = criterioNombre.thenComparing(criterioMinutos);
+        return Collections.binarySearch(listaReproducion,c,criterios);
     }
 
 
