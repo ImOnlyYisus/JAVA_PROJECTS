@@ -1,4 +1,4 @@
-package jesus.ejercicio5d.parteb.ejercicio5d.parteb;
+package jesus.ejercicio5d.parteb;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
