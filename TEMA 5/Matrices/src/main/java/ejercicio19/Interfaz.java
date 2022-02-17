@@ -2,12 +2,16 @@ package ejercicio19;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Interfaz {
-    public static void mainInterfaz(Avion avion){
+    private static Color verde = new Color(66, 245, 132);
+    private static Color rojo = new Color(245, 66, 72);
+
+    public static void mainInterfaz(Avion avion) {
         JFrame frame = new JFrame("VICO´S AIRLINE");
         JPanel panel = new JPanel();
         JButton[][] botones = new JButton[25][4];
@@ -15,32 +19,39 @@ public class Interfaz {
         Container c1 = new Container();
         Container c2 = new Container();
         Container cDerc = new Container();
-        cIzq.setLayout(new GridLayout(25,1,20,5));
-        c1.setLayout(new GridLayout(25,2,10,5));
-        c2.setLayout(new GridLayout(25,2,10,5));
-        cDerc.setLayout(new GridLayout(25,1,20,5));
+        cIzq.setLayout(new GridLayout(25, 1, 20, 5));
+        c1.setLayout(new GridLayout(25, 2, 10, 5));
+        c2.setLayout(new GridLayout(25, 2, 10, 5));
+        cDerc.setLayout(new GridLayout(25, 1, 20, 5));
 
-        panel.setLayout(new GridLayout(1,6,50,0));
+        panel.setLayout(new GridLayout(1, 6, 50, 0));
 
+        Icon icon = new ImageIcon("icon.png");
+        Image scaledImg = ((ImageIcon) icon).getImage().getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH);
+        icon = new ImageIcon(scaledImg);
 
-        for (int i = 0; i <botones.length ; i++) {
-            for (int j = 0; j <botones[i].length ; j++) {
-                botones[i][j]=new JButton(""+i+j);
-                if(j<2){
+        Border border = BorderFactory.createLineBorder(Color.black,1);
+        for (int i = 0; i < botones.length; i++) {
+            for (int j = 0; j < botones[i].length; j++) {
+                botones[i][j] = new JButton(icon);
+                botones[i][j].setText(""+i+j);
+                botones[i][j].setBorder(border);
+                botones[i][j].setFocusPainted(false);
+                if (j < 2) {
                     c1.add(botones[i][j]);
-                }else{
+                } else {
                     c2.add(botones[i][j]);
                 }
 
-                if(avion.getAsientosAvion()[i][j].isOcupado()){
-                    botones[i][j].setBackground(Color.green);
-                } else{
-                    botones[i][j].setBackground(Color.red);
+                if (avion.getAsientosAvion()[i][j].isOcupado()) {
+                    botones[i][j].setBackground(verde);
+                } else {
+                    botones[i][j].setBackground(rojo);
                 }
                 int indexA = i;
                 int indexB = j;
                 botones[i][j].addActionListener(e -> {
-                    cambiarAsientos(avion, indexA, indexB,botones);
+                    cambiarAsientos(avion, indexA, indexB, botones);
                 });
             }
         }
@@ -54,22 +65,24 @@ public class Interfaz {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height;
         int width = pantalla.width;
-        frame.setSize(width/2, height/2);
+        frame.setSize(width / 2, height-100);
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    public static void cambiarAsientos(Avion avion, int i, int j, JButton[][] botones){
-        if(avion.getAsientosAvion()[i][j].isOcupado()){
+    public static void cambiarAsientos(Avion avion, int i, int j, JButton[][] botones) {
+        if (avion.getAsientosAvion()[i][j].isOcupado()) {
             avion.getAsientosAvion()[i][j].reservar();
-            botones[i][j].setBackground(Color.red);
+            botones[i][j].setBackground(rojo);
             System.out.println(avion.getAsientosAvion()[i][j].isEstado());
-        } else{
+        } else {
             avion.getAsientosAvion()[i][j].cancelar();
-            botones[i][j].setBackground(Color.green);
+            botones[i][j].setBackground(verde);
             System.out.println(avion.getAsientosAvion()[i][j].isEstado());
         }
     }
+
+
 
 }
