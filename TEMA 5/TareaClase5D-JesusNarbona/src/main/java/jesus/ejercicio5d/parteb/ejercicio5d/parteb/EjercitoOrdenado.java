@@ -9,13 +9,14 @@ public class EjercitoOrdenado {
 
     public EjercitoOrdenado(int numeroSoldados) {
         conjuntoSoldados=new TreeSet<>();
+        this.numeroSoldados=numeroSoldados;
     }
 
     public void alistarSoldado(Soldado soldado){ //Añade un soldado
         int numeroActuales= numeroSoldados();
-//        if((numeroActuales+1)<numeroSoldados){ controlar que no pueda introducir mas de n numero de soldados
+        if((numeroActuales+1)<=numeroSoldados){ //controlar que no pueda introducir mas de n numero de soldados
             conjuntoSoldados.add(soldado);
-//        }
+        }
     }
 
     public boolean tieneSoldados(){ //Ver si tiene soldados
