@@ -1,15 +1,13 @@
 package jesus.ejercicio5d.parteb.ejercicio5d.parteb;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.TreeSet;
 
-public class Ejercito {
+public class EjercitoOrdenado {
     private int numeroSoldados;
     private TreeSet<Soldado> conjuntoSoldados;
 
-    public Ejercito(int numeroSoldados) {
+    public EjercitoOrdenado(int numeroSoldados) {
         conjuntoSoldados=new TreeSet<>();
     }
 
