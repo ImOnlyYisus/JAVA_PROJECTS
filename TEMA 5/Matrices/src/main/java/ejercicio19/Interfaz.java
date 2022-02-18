@@ -1,11 +1,8 @@
 package ejercicio19;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Interfaz {
     private static Color verde = new Color(66, 245, 132);
@@ -37,6 +34,7 @@ public class Interfaz {
                 botones[i][j].setText(""+i+j);
                 botones[i][j].setBorder(border);
                 botones[i][j].setFocusPainted(false);
+
                 if (j < 2) {
                     c1.add(botones[i][j]);
                 } else {
