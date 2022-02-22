@@ -13,6 +13,12 @@ public class Main {
         diccionario.introducirPalabra("When","Cuando");
         diccionario.introducirPalabra("Find","Buscar");
         diccionario.introducirPalabra("Fix","Arreglar");
+        diccionario.introducirPalabra("Broken","Roto");
+        diccionario.introducirPalabra("Fortnight","Quincena");
+        diccionario.introducirPalabra("Holiday","Vacaciones");
+        diccionario.introducirPalabra("Motorbike","Moto");
+        diccionario.introducirPalabra("Plane","Avion");
+        diccionario.introducirPalabra("Spread","Untar");
 
         diccionario.imprimirValores();
 
@@ -27,11 +33,13 @@ public class Main {
         System.out.println();
         Set<String> listaIngles = diccionario.devolverPalabrasIngles();
         Set<String> listaEspañol = diccionario.devolverPalabrasEspañol();
-
+        System.out.println("--Ingles--");
         listaIngles.forEach(valores-> {
             System.out.print(""+valores);
             System.out.println();
         });
+
+        System.out.println("\n--Español--");
         listaEspañol.forEach(valores-> {
             System.out.print(""+valores);
             System.out.println();
