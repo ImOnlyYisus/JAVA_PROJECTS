@@ -1,4 +1,4 @@
-package jesus.ejercicio5d.partea;
+package partec;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,7 +30,10 @@ public class Ejercito {
     }
 
     public ArrayList<Soldado> sacarSoldados() { //Saca todos los soldados en forma de arrayList
-        return new ArrayList<>(conjuntoSoldados);
+        ArrayList<Soldado> response = new ArrayList<>();
+
+        response.addAll(conjuntoSoldados);
+        return response;
     }
 
     public boolean buscarSoldado(Soldado soldado) { //Ver si el soldado esta alistado
@@ -39,5 +42,13 @@ public class Ejercito {
 
     public void quitarSoldado(Soldado soldado) { //Quita el soldado si esta alistado
         conjuntoSoldados.remove(soldado);
+    }
+
+    @Override
+    public String toString() {
+        return "Ejercito{" +
+                "numeroSoldados=" + numeroSoldados +
+                ", conjuntoSoldados=" + conjuntoSoldados +
+                '}';
     }
 }
