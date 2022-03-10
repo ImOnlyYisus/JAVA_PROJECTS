@@ -1,15 +1,16 @@
 package ejercicio2;
 
-public class Deportivo extends Vehiculo{
+public class Turismo extends Vehiculo{
+
     private int puertas;
     private boolean marchaAutomatica;
-    private String neumaticos;
+    private String color;
 
-    public Deportivo(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchaAutomatica, String neumaticos) {
+    public Turismo(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchasAutomaticas, String color) {
         super(matricula, kilometros, numeroBastidor, marca);
         this.puertas = puertas;
-        this.marchaAutomatica = marchaAutomatica;
-        this.neumaticos= neumaticos;
+        this.marchaAutomatica = marchasAutomaticas;
+        this.color = color;
     }
 
     public int getPuertas() {
@@ -20,7 +21,7 @@ public class Deportivo extends Vehiculo{
         this.puertas = puertas;
     }
 
-    public boolean isMarchaAutomatica() {
+    public boolean getMarchaAutomatica() {
         return marchaAutomatica;
     }
 
@@ -28,28 +29,29 @@ public class Deportivo extends Vehiculo{
         this.marchaAutomatica = marchaAutomatica;
     }
 
-    public String getNeumaticos() {
-        return neumaticos;
+    public String getColor() {
+        return color;
     }
 
-    public void setNeumaticos(String neumaticos) {
-        this.neumaticos = neumaticos;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public void getAtributos(){
         String atributos;
         atributos="Marca: "+super.getMarca()+", Matricula: "+super.getMatricula()+", NumeroBastidor: "+super.getNumeroBastidor()+
                 ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas +
-                ", Neumaticos: "+ this.neumaticos;
+                ", Color: "+ this.color;
 
         System.out.println(atributos);
     }
 
     @Override
     public String toString() {
-        return "Furgoneta{" +
+        return "Turismo{" +
                 "puertas=" + puertas +
-                ", marchaAutomatica=" + marchaAutomatica +
+                ", marchasAutomaticas='" + marchaAutomatica + '\'' +
+                ", color='" + color + '\'' +
                 '}';
     }
 }
