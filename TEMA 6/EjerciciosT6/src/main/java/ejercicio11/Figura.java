@@ -1,6 +1,6 @@
 package ejercicio11;
 
-public class Figura {
+public abstract class Figura {
     private double base;
     private double altura;
 
@@ -12,9 +12,7 @@ public class Figura {
     public Figura() {
     }
 
-    public double calcularArea(){
-        return 0;
-    }
+    public abstract double calcularArea();
 
     public double getBase() {
         return base;
