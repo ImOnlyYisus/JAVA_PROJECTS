@@ -1,6 +1,6 @@
 package ejercicio12;
 
-public class CuentaAhorro extends Cuenta{
+public class CuentaAhorro extends Cuenta {
 
     private double interesVariable;
     private double comisionAnual;
@@ -37,13 +37,15 @@ public class CuentaAhorro extends Cuenta{
 
     @Override
     public void actualiozarSaldo() {
-        setSaldo((getSaldo()+(getSaldo()*interesVariable)-comisionAnual));
+        if (getSaldo() > 0) {
+            setSaldo((getSaldo() + (getSaldo() * interesVariable) - comisionAnual));
+        }
     }
 
     @Override
     public void retirar(double saldo) {
-        if(getSaldo()>0){
-            setSaldo(getSaldo()-saldo);
+        if ((getSaldo()-saldo) > 0) {
+            setSaldo(getSaldo() - saldo);
         }
     }
 }

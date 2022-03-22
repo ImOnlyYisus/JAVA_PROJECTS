@@ -9,6 +9,7 @@ public abstract class Cuenta {
 
     public Cuenta(Persona persona) {
         this.cuenta=RandomStringUtils.randomAlphanumeric(20);
+        this.cliente = persona;
     }
 
     public String getCuenta() {
