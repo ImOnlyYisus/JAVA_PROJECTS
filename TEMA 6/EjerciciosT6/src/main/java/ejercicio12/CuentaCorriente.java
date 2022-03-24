@@ -7,7 +7,6 @@ public class CuentaCorriente extends Cuenta{
 
     public CuentaCorriente(Persona persona, double saldoMinimo) {
         super(persona);
-        this.interesFijo = interesFijo;
         this.saldoMinimo = saldoMinimo;
     }
 
@@ -29,16 +28,18 @@ public class CuentaCorriente extends Cuenta{
 
     @Override
     public String toString() {
-        return "CuentaCorriente{" +
+        return (super.toString()+"\n"+"CuentaCorriente{" +
                 "interesFijo='" + interesFijo + '\'' +
                 ", saldoMinimo=" + saldoMinimo +
-                '}';
+                '}');
     }
 
     @Override
     public void actualiozarSaldo() {
         if(getSaldo()>=1000){
             setSaldo(((getSaldo())+(saldoMinimo*interesFijo)));
+        }else{
+            setSaldo(((getSaldo())+(saldoMinimo+interesFijo)));
         }
 
     }
