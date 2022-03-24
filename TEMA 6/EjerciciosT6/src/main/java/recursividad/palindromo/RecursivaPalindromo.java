@@ -3,19 +3,18 @@ package recursividad.palindromo;
 public class RecursivaPalindromo {
     public static String palabra = "holaloh";
 
-    public static boolean esPalindromo(int palabraLong,int numero) {
-        if (palabraLong<= palabra.length() || palabraLong>0 || numero>0) {
-            if(palabra.charAt(numero)==palabra.charAt(palabraLong)){
-                return esPalindromo(palabraLong-1,numero-1);
-            }else{
-                return false;
-            }
-        }else {
+    public static boolean esPalindromo(int inicioPala, int finalPala) {
+        if (palabra.charAt(inicioPala)!= palabra.charAt(finalPala)) {
             return false;
         }
+
+        if (inicioPala < finalPala + 1)
+            return esPalindromo(inicioPala + 1, finalPala - 1);
+
+        return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(esPalindromo(palabra.length()));
+        System.out.println(esPalindromo(0, palabra.length()-1));
     }
 }
