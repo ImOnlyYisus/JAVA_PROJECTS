@@ -22,4 +22,9 @@ public class Profesor extends Persona {
                 "especialidad='" + especialidad + '\'' +
                 '}';
     }
+
+    @Override
+    public void identificate() {
+        System.out.println("Soy un profesor");
+    }
 }

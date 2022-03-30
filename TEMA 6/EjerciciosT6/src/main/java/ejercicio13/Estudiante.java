@@ -22,4 +22,8 @@ public class Estudiante extends Persona {
                 "id='" + id + '\'' +
                 '}';
     }
+    @Override
+    public void identificate() {
+        System.out.println("Identificado como estudiante");
+    }
 }

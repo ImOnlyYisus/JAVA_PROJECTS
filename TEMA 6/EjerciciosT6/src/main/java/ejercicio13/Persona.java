@@ -45,11 +45,14 @@ public abstract class Persona implements Identificable{
         this.telefono = telefono;
     }
 
-    public String toString(){
-        return "Nombre: " + nombre + "\nApellido: " + apellido + "\nNIF: " + nif + "\nTelefono: " + telefono;
-    }
 
-    public void identificate(){
-        System.out.println("Soy una persona con dni: " + nif);
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", nif='" + nif + '\'' +
+                ", telefono='" + telefono +
+                '}';
     }
 }

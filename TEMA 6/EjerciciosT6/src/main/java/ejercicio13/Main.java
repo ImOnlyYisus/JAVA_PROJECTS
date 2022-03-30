@@ -31,7 +31,8 @@ public class Main {
         identificables.add(new Profesor("Pedro","Perez","123s32aa","665321566","Robotica"));
 
         for (Identificable i: identificables){
-            System.out.println(i.toString());
+            System.out.println(i);
+            System.out.println(i.getClass().getSimpleName());
             i.identificate();
 
             if(i instanceof Estudiante){
