@@ -7,6 +7,7 @@ public abstract class Persona {
     private String apellidos;
     private NIF nif;
 
+    //Constructor
     public Persona(String nombre, String apellidos, NIF nif) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -47,7 +48,7 @@ public abstract class Persona {
     }
 
     //Metodo para renovar el nif
-    public void renovarNIF(LocalDate fechaSolicitud){
+    public void renovarNIF(LocalDate fechaSolicitud) {
         this.nif.renovar(fechaSolicitud);
 
     }

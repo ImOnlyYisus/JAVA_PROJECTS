@@ -1,9 +1,10 @@
 package hospital;
 
-public abstract class Empleado extends Persona{
+public abstract class Empleado extends Persona {
     private String numeroSeguridadSocial;
     private double salario;
 
+    //Constructor
     public Empleado(String nombre, String apellidos, NIF nif, String numeroSeguridadSocial, double salario) {
         super(nombre, apellidos, nif);
         this.numeroSeguridadSocial = numeroSeguridadSocial;

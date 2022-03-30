@@ -1,7 +1,7 @@
 package hospital;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+
 
 public class NIF {
     private String numero;
@@ -9,7 +9,7 @@ public class NIF {
     private LocalDate fechaCaducidad;
 
     public NIF(String numero, LocalDate fechaCaducidad) {
-        if(numero.length()==8){
+        if (numero.length() == 8) {
             this.numero = numero;
             this.fechaCaducidad = fechaCaducidad;
             this.letra = calcularLetra();
@@ -17,13 +17,13 @@ public class NIF {
     }
 
     //Metdodo para calcular la letra segun el numero de DNI
-    private char calcularLetra(){
-        int resto=0;
+    private char calcularLetra() {
+        int resto = 0;
         try {
             resto = Integer.parseInt(numero) % 23;
         } catch (NumberFormatException nfe) {
-            System.out.println("Formato de numero incorrecto "+this.numero);
-            this.numero="0";
+            System.out.println("Formato de numero incorrecto " + this.numero);
+            this.numero = "0";
         }
 
         char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
@@ -31,11 +31,9 @@ public class NIF {
         return letras[resto];
     }
 
-    //Metodo que amplia la fecha de caducidad 10 años
-    public void renovar(LocalDate fechaSolicitudRenovacion){
-        if(ChronoUnit.YEARS.between(this.fechaCaducidad,fechaSolicitudRenovacion)<=10){
-            fechaCaducidad=fechaSolicitudRenovacion;
-        }
+    //Metodo que amplia la fecha de caducidad 10 años, es final
+    public final void renovar(LocalDate fechaSolicitudRenovacion) {
+        fechaCaducidad = fechaSolicitudRenovacion.plusYears(10);
     }
 
     public String getNumero() {

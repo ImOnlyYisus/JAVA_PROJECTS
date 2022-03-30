@@ -1,15 +1,17 @@
 package hospital;
 
-public class Administrativo extends Empleado{
+public class Administrativo extends Empleado {
     private Grupo grupo;
 
+    //Constructor
     public Administrativo(String nombre, String apellidos, NIF nif, String numeroSeguridadSocial, double salario, Grupo grupo) {
         super(nombre, apellidos, nif, numeroSeguridadSocial, salario);
         this.grupo = grupo;
     }
 
-    public void registrarDocumento(String documento){
-        System.out.println(getNombre() + " " + getApellidos() + "registra " + documento + "(" + documento.hashCode() +")");
+    //Metdodo registrarDpcumentos, imprime por consola la persona y el documento
+    public void registrarDocumento(String documento) {
+        System.out.println(getNombre() + " " + getApellidos() + "registra " + documento + "(" + documento.hashCode() + ")");
     }
 
     //Metodo para calcular el irpf sobre su salario, devuelve el irpf calculado
@@ -29,7 +31,7 @@ public class Administrativo extends Empleado{
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+"Administrativo{" +
+        return super.toString() + "\n" + "Administrativo{" +
                 "grupo=" + grupo +
                 '}';
     }

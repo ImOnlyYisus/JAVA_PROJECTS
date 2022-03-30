@@ -6,7 +6,7 @@ public class Hospital {
     private String nombre;
     private String direccion;
     private int numeroCamas;
-    private ArrayList<Empleado> empleados=new ArrayList<>();
+    private ArrayList<Empleado> empleados = new ArrayList<>();
     private ArrayList<Paciente> pacientes = new ArrayList<>();
 
     public Hospital(String nombre, String direccion, int numeroCamas) {
@@ -47,11 +47,13 @@ public class Hospital {
         return pacientes;
     }
 
-    public void contrararEmpleado(Empleado empleado){
+    //Añade un empleado a la lista
+    public void contrararEmpleado(Empleado empleado) {
         empleados.add(empleado);
     }
 
-    public void ingresarPaciente(Paciente paciente){
+    //Añade un paciente a la lista
+    public void ingresarPaciente(Paciente paciente) {
         pacientes.add(paciente);
     }
 

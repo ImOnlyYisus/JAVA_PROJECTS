@@ -2,9 +2,10 @@ package hospital;
 
 import java.util.Random;
 
-public class Paciente extends Persona{
+public class Paciente extends Persona {
     private String numeroHistoria;
 
+    //Constructor
     public Paciente(String nombre, String apellidos, NIF nif, String numeroHistoria) {
         super(nombre, apellidos, nif);
         this.numeroHistoria = numeroHistoria;
@@ -18,16 +19,16 @@ public class Paciente extends Persona{
         this.numeroHistoria = numeroHistoria;
     }
 
-    //Metodo para tomar medicina
-    public void tomarMedicina(String medicina){
+    //Metodo para tomar medicina, random indicando si se ha curado o no
+    public void tomarMedicina(String medicina) {
         Random rd = new Random();
-        System.out.println(getNombre() +" " +getApellidos() +": Tomando " + medicina);
-        System.out.println(rd.nextBoolean() ? "Sigo malo": "Me he curado con "+ medicina);
+        System.out.println(getNombre() + " " + getApellidos() + ": Tomando " + medicina);
+        System.out.println(rd.nextBoolean() ? "Sigo malo" : "Me he curado con " + medicina);
     }
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+"Paciente{" +
+        return super.toString() + "\n" + "Paciente{" +
                 "numeroHistoria='" + numeroHistoria + '\'' +
                 '}';
     }

@@ -21,14 +21,14 @@ public class Medico extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString()+"\n"+"Medico{" +
+        return super.toString() + "\n" + "Medico{" +
                 "especialidad='" + especialidad + '\'' +
                 '}';
     }
 
-    //Metodod para tratar a un paciente
-    public void tratar(Paciente paciente,String medicina){
-        System.out.println("El médico "+ getNombre() +" trata a "+ paciente.getNombre() +" "+paciente.getApellidos() +" con "+medicina);
+    //Metodo para tratar a un paciente, hace un llamada al metodo del paciente
+    public void tratar(Paciente paciente, String medicina) {
+        System.out.println("El médico " + getNombre() + " trata a " + paciente.getNombre() + " " + paciente.getApellidos() + " con " + medicina);
         paciente.tomarMedicina(medicina);
     }
 
@@ -37,7 +37,7 @@ public class Medico extends Empleado {
         double irpf = 0;
         if (especialidad.equalsIgnoreCase("cirugia")) {
             irpf = (getSalario() * IRPF_CIRUGIA) / 100;
-        } else{
+        } else {
             irpf = (getSalario() * IRPF_OTROS) / 100;
         }
 
