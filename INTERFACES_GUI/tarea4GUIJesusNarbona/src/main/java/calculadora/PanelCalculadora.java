@@ -2,8 +2,12 @@ package calculadora;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class PanelCalculadora extends JPanel {
+public class PanelCalculadora extends JPanel implements ActionListener, MouseListener {
     private JButton n1 = new JButton("1");
     private JButton n2 = new JButton("2");
     private JButton n3 = new JButton("3");
@@ -30,6 +34,76 @@ public class PanelCalculadora extends JPanel {
         //Layout
         this.setLayout(new GridLayout(4, 4));
 
+        //Set button properties
+        n1.setFont(new Font("Arial", Font.BOLD, 20));
+        n2.setFont(new Font("Arial", Font.BOLD, 20));
+        n3.setFont(new Font("Arial", Font.BOLD, 20));
+        n4.setFont(new Font("Arial", Font.BOLD, 20));
+        n5.setFont(new Font("Arial", Font.BOLD, 20));
+        n6.setFont(new Font("Arial", Font.BOLD, 20));
+        n7.setFont(new Font("Arial", Font.BOLD, 20));
+        n8.setFont(new Font("Arial", Font.BOLD, 20));
+        n9.setFont(new Font("Arial", Font.BOLD, 20));
+        plus.setFont(new Font("Arial", Font.BOLD, 20));
+        minus.setFont(new Font("Arial", Font.BOLD, 20));
+        equals.setFont(new Font("Arial", Font.BOLD, 20));
+        multiply.setFont(new Font("Arial", Font.BOLD, 20));
+        division.setFont(new Font("Arial", Font.BOLD, 20));
+        clear.setFont(new Font("Arial", Font.BOLD, 20));
+        backspace.setFont(new Font("Arial", Font.BOLD, 20));
+
+        n1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n4.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n5.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n6.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n7.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n8.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n9.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        plus.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        minus.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        equals.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        multiply.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        division.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        clear.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        backspace.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
+        n1.addActionListener(this);
+        n2.addActionListener(this);
+        n3.addActionListener(this);
+        n4.addActionListener(this);
+        n5.addActionListener(this);
+        n6.addActionListener(this);
+        n7.addActionListener(this);
+        n8.addActionListener(this);
+        n9.addActionListener(this);
+        plus.addActionListener(this);
+        minus.addActionListener(this);
+        equals.addActionListener(this);
+        multiply.addActionListener(this);
+        division.addActionListener(this);
+        clear.addActionListener(this);
+        backspace.addActionListener(this);
+
+        n1.addMouseListener(this);
+        n2.addMouseListener(this);
+        n3.addMouseListener(this);
+        n4.addMouseListener(this);
+        n5.addMouseListener(this);
+        n6.addMouseListener(this);
+        n7.addMouseListener(this);
+        n8.addMouseListener(this);
+        n9.addMouseListener(this);
+        plus.addMouseListener(this);
+        minus.addMouseListener(this);
+        equals.addMouseListener(this);
+        multiply.addMouseListener(this);
+        division.addMouseListener(this);
+        clear.addMouseListener(this);
+        backspace.addMouseListener(this);
+
+
         //Add buttons
         this.add(n1);
         this.add(n2);
@@ -48,8 +122,37 @@ public class PanelCalculadora extends JPanel {
         this.add(division);
         this.add(backspace);
 
-        //Set button properties
 
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 }
