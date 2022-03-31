@@ -48,52 +48,68 @@ public class Main {
 
         //Metodo static para convertir en map sin ordenar
         System.out.println("MAP");
-        Map<Vuelo,Integer> vuelosMap = covertirEnMap(vuelos);
+        Map<String,Integer> vuelosMap = covertirEnMap(vuelos);
         vuelosMap.forEach((vuelo,pasajeros)->{
-            System.out.println(vuelo.getCodVuelo() + " -- pasajeros: "+ pasajeros);
+            System.out.println(vuelo+ " -- pasajeros: "+ pasajeros);
         });
 
         //Metodo static para convertir en map ordenado por alfabeticamente por destino
         System.out.println("\nMAP ORDENADO");
-        Map<Vuelo,Integer> vuelosMapSorted = convertirEnMapOrdenado(vuelos);
+        Map<String,Integer> vuelosMapSorted = convertirEnMapOrdenado(vuelos);
         vuelosMapSorted.forEach((vuelo,pasajeros)->{
-            System.out.println(vuelo.getCodVuelo() + " -- pasajeros: "+ pasajeros);
+            System.out.println(vuelo + " -- pasajeros: "+ pasajeros);
         });
 
-        System.out.println(numerosPasajeros(vuelosMapSorted,"d4"));
+        //Map con los codigos de vuelo y lista de pasajeros
+        Map<String,ArrayList<Pasajeros>> mapPasajeros = listaPasajeros(vuelos);
+        mapPasajeros.forEach((cod,pasajeros)->{
+            System.out.println("Vuelo: "+cod+"\n");
+            pasajeros.forEach(System.out::println);
+        });
     }
 
     //Metodo static para convertir en map sin ordenar
-    private static Map<Vuelo,Integer> covertirEnMap(ArrayList<Vuelo> vuelo){
-        Map<Vuelo, Integer> vuelos = new HashMap<>();
+    private static Map<String,Integer> covertirEnMap(ArrayList<Vuelo> vuelo){
+        Map<String, Integer> vuelos = new HashMap<>();
 
         for (int i = 0; i <vuelo.size() ; i++) {
-            vuelos.put(vuelo.get(i),vuelo.get(i).getPasajeros().size());
+            if(vuelos.containsKey(vuelo.get(i).getCiudadDestino())){
+                int suma = vuelos.get(vuelo.get(i).getCiudadDestino()) + vuelo.get(i).getPasajeros().size();
+                vuelos.put(vuelo.get(i).getCiudadDestino(),suma);
+            }else{
+                vuelos.put(vuelo.get(i).getCiudadDestino(),vuelo.get(i).getPasajeros().size());
+            }
+
         }
         return vuelos;
     }
 
     //Metodo static para convertir en map ordenado por alfabeticamente por destino
-    private static TreeMap<Vuelo,Integer> convertirEnMapOrdenado(ArrayList<Vuelo> vuelo){
+    private static TreeMap<String,Integer> convertirEnMapOrdenado(ArrayList<Vuelo> vuelo){
         Comparator<Vuelo> criterioDestino = (destino1,destino2)-> destino1.getCiudadDestino().compareToIgnoreCase(destino2.getCiudadDestino());
         Comparator<Vuelo> criterioOrigen = (origen1,origen2)-> origen1.getCiudadOrigen().compareToIgnoreCase(origen2.getCiudadOrigen()); //Al tener destinos iguales
         Comparator<Vuelo> criterioTotal = criterioDestino.thenComparing(criterioOrigen);
 
-        TreeMap<Vuelo, Integer> vuelos = new TreeMap<>(criterioTotal);
+        TreeMap<String, Integer> vuelos = new TreeMap<>();
         for (int i = 0; i <vuelo.size() ; i++) {
-            vuelos.put(vuelo.get(i),vuelo.get(i).getPasajeros().size());
+            if(vuelos.containsKey(vuelo.get(i).getCiudadDestino())){
+                int suma = vuelos.get(vuelo.get(i).getCiudadDestino()) + vuelo.get(i).getPasajeros().size();
+                vuelos.put(vuelo.get(i).getCiudadDestino(),suma);
+            }else{
+                vuelos.put(vuelo.get(i).getCiudadDestino(),vuelo.get(i).getPasajeros().size());
+            }
         }
         return vuelos;
     }
 
     //Buscar el numero de pasajeros con el codigo de vuelo
-    private static int numerosPasajeros(Map<Vuelo,Integer> mapVuelo, String codVuelo){
-        for (Map.Entry<Vuelo,Integer> vuelos : mapVuelo.entrySet()) {
-            if(vuelos.getKey().getCodVuelo().equals(codVuelo)){
-                return vuelos.getValue();
-            }
+    private static Map<String,ArrayList<Pasajeros>> listaPasajeros(ArrayList<Vuelo> vuelo){
+        Map<String,ArrayList<Pasajeros>> mapPasajeros = new HashMap<>();
+
+        for (int i = 0; i <vuelo.size() ; i++) {
+            mapPasajeros.put(vuelo.get(i).getCodVuelo(),vuelo.get(i).getPasajeros());
         }
-        return -1;
+        return mapPasajeros;
     }
 
 }
