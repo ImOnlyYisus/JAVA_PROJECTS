@@ -20,6 +20,7 @@ public class PanelCalculadora extends JPanel {
     private JButton multiply = new JButton("*");
     private JButton division = new JButton("/");
     private JButton clear = new JButton("C");
+    private JButton backspace = new JButton("<-");
 
     public PanelCalculadora() {
         initComponets();
@@ -45,8 +46,9 @@ public class PanelCalculadora extends JPanel {
         this.add(clear);
         this.add(equals);
         this.add(division);
+        this.add(backspace);
 
-        //Set button events
+        //Set button properties
 
 
     }
