@@ -7,6 +7,10 @@ public class PanelLCD extends JPanel {
     private JLabel calculos = new JLabel("ejemplo");
 
     public PanelLCD() {
+        initComponets();
+    }
+
+    private void initComponets(){
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBackground(Color.BLACK);
 
