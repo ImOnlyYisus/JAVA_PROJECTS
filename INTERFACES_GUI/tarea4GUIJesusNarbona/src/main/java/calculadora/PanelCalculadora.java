@@ -24,13 +24,13 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
     private JButton multiply = new JButton("*");
     private JButton division = new JButton("/");
     private JButton clear = new JButton("C");
-    private JButton backspace = new JButton("<-");
+    private JButton backspace = new JButton("←");
 
     public PanelCalculadora() {
         initComponets();
     }
 
-    private void initComponets(){
+    private void initComponets() {
         //Layout
         this.setLayout(new GridLayout(4, 4));
 
@@ -103,6 +103,23 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         clear.addMouseListener(this);
         backspace.addMouseListener(this);
 
+        n1.setBackground(Color.WHITE);
+        n2.setBackground(Color.WHITE);
+        n3.setBackground(Color.WHITE);
+        n4.setBackground(Color.WHITE);
+        n5.setBackground(Color.WHITE);
+        n6.setBackground(Color.WHITE);
+        n7.setBackground(Color.WHITE);
+        n8.setBackground(Color.WHITE);
+        n9.setBackground(Color.WHITE);
+        plus.setBackground(Color.WHITE);
+        minus.setBackground(Color.WHITE);
+        equals.setBackground(Color.WHITE);
+        multiply.setBackground(Color.WHITE);
+        division.setBackground(Color.WHITE);
+        clear.setBackground(Color.WHITE);
+        backspace.setBackground(Color.WHITE);
+
 
         //Add buttons
         this.add(n1);
@@ -117,42 +134,42 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         this.add(n8);
         this.add(n9);
         this.add(multiply);
+        this.add(division);
         this.add(clear);
+        this.add(backspace);
         this.add(equals);
         this.add(division);
-        this.add(backspace);
-
-
-
     }
 
+    //Action listener
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
 
+    //MouseListener
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        //No tiene uso
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        //No tiene uso
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        //No tiene uso
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        e.getComponent().setBackground(Color.LIGHT_GRAY);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        e.getComponent().setBackground(Color.WHITE);
     }
 }
