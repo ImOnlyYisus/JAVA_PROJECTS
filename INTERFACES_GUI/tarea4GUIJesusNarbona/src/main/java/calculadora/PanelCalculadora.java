@@ -183,11 +183,13 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
 
         }
         if(e.getSource() == minus){
-            if(PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/")){
+            if(PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/") && PanelLCD.calculos.getText().charAt(0)!='-'){
                 PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "-"));
                 PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "-"));
                 PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "-"));
             }else if(!PanelLCD.calculos.getText().contains("-") && !PanelLCD.calculos.getText().contains("=")){
+                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
+            } else if(PanelLCD.calculos.getText().charAt(0)=='-'){
                 PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
             }
         }
