@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelLCD extends JPanel {
-    private JLabel calculos = new JLabel("0");
+    protected static JLabel calculos = new JLabel("0");
 
     public PanelLCD() {
         initComponets();
