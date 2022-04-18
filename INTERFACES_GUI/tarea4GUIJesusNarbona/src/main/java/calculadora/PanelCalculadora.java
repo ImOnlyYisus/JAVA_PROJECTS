@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class PanelCalculadora extends JPanel implements ActionListener, MouseListener {
+    private static int operacion ;
     private JButton n1 = new JButton("1");
     private JButton n2 = new JButton("2");
     private JButton n3 = new JButton("3");
@@ -194,6 +195,18 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
             if(!PanelLCD.calculos.getText().contains("=")){
                 PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "=");
             }
+
+            if (PanelLCD.calculos.getText().contains("+")) {
+                String[] parts = PanelLCD.calculos.getText().substring(0,PanelLCD.calculos.getText().length()-1).split("\\+");
+                operacion = Integer.parseInt(parts[0]) + Integer.parseInt(parts[1]);
+                PanelLCD.calculos.setText(String.valueOf(operacion));
+            }
+            if (PanelLCD.calculos.getText().contains("-")) {
+                String[] parts = PanelLCD.calculos.getText().substring(0,PanelLCD.calculos.getText().length()-1).split("\\-");
+                operacion = Integer.parseInt(parts[0]) - Integer.parseInt(parts[1]);
+                PanelLCD.calculos.setText(String.valueOf(operacion));
+            }
+
         }
         if(e.getSource() == multiply){
             if(PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("/")){
