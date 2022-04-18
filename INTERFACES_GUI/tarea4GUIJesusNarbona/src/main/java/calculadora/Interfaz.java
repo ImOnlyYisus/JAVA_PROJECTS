@@ -14,7 +14,7 @@ public class Interfaz extends JFrame {
         panelPrincipal.add(new PanelLCD(), BorderLayout.NORTH);
 
         this.add(panelPrincipal);
-        this.setSize(300,300);
+        this.setSize(400,300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
