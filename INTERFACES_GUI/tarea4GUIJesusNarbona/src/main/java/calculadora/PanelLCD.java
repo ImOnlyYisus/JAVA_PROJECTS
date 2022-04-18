@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class PanelLCD extends JPanel {
     protected static JLabel calculos = new JLabel("0");
+    protected static JLabel resultado = new JLabel("");
 
     public PanelLCD() {
         initComponets();
@@ -16,6 +17,8 @@ public class PanelLCD extends JPanel {
 
         calculos.setFont(new Font(Font.MONOSPACED,1,29));
         calculos.setForeground(Color.WHITE);
+        resultado.setFont(new Font(Font.MONOSPACED,1,29));
+        resultado.setForeground(Color.green);
         this.add(calculos);
     }
 
