@@ -69,7 +69,7 @@ public class Main {
     }
 
     //Metodo static para convertir en map sin ordenar
-    private static Map<String,Integer> covertirEnMap(ArrayList<Vuelo> vuelo){
+    private static Map<String,Integer> covertirEnMap(List<Vuelo> vuelo){
         Map<String, Integer> vuelos = new HashMap<>();
 
         for (int i = 0; i <vuelo.size() ; i++) {
@@ -85,11 +85,7 @@ public class Main {
     }
 
     //Metodo static para convertir en map ordenado por alfabeticamente por destino
-    private static TreeMap<String,Integer> convertirEnMapOrdenado(ArrayList<Vuelo> vuelo){
-        Comparator<Vuelo> criterioDestino = (destino1,destino2)-> destino1.getCiudadDestino().compareToIgnoreCase(destino2.getCiudadDestino());
-        Comparator<Vuelo> criterioOrigen = (origen1,origen2)-> origen1.getCiudadOrigen().compareToIgnoreCase(origen2.getCiudadOrigen()); //Al tener destinos iguales
-        Comparator<Vuelo> criterioTotal = criterioDestino.thenComparing(criterioOrigen);
-
+    private static TreeMap<String,Integer> convertirEnMapOrdenado(List<Vuelo> vuelo){
         TreeMap<String, Integer> vuelos = new TreeMap<>();
         for (int i = 0; i <vuelo.size() ; i++) {
             if(vuelos.containsKey(vuelo.get(i).getCiudadDestino())){
@@ -103,7 +99,7 @@ public class Main {
     }
 
     //Buscar el numero de pasajeros con el codigo de vuelo
-    private static Map<String,ArrayList<Pasajeros>> listaPasajeros(ArrayList<Vuelo> vuelo){
+    private static Map<String,ArrayList<Pasajeros>> listaPasajeros(List<Vuelo> vuelo){
         Map<String,ArrayList<Pasajeros>> mapPasajeros = new HashMap<>();
 
         for (int i = 0; i <vuelo.size() ; i++) {
