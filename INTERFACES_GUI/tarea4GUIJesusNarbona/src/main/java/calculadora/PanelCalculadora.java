@@ -52,6 +52,23 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         clear.setFont(new Font("Arial", Font.BOLD, 20));
         backspace.setFont(new Font("Arial", Font.BOLD, 20));
 
+        n1.setFocusPainted(false);
+        n2.setFocusPainted(false);
+        n3.setFocusPainted(false);
+        n4.setFocusPainted(false);
+        n5.setFocusPainted(false);
+        n6.setFocusPainted(false);
+        n7.setFocusPainted(false);
+        n8.setFocusPainted(false);
+        n9.setFocusPainted(false);
+        plus.setFocusPainted(false);
+        minus.setFocusPainted(false);
+        equals.setFocusPainted(false);
+        multiply.setFocusPainted(false);
+        division.setFocusPainted(false);
+        clear.setFocusPainted(false);
+        backspace.setFocusPainted(false);
+
         n1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         n2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         n3.setBorder(BorderFactory.createLineBorder(Color.BLACK));

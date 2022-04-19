@@ -11,15 +11,8 @@ public class GenerarArchivoMatriz {
 
         Matriz matriz = new Matriz(4,4);
 
-        //Ficheros
-        BufferedWriter bw = null;
-        FileWriter fw = null;
 
-        try{
-            //Crear el fichero
-            bw = new BufferedWriter(new FileWriter(route));
-
-            //Escribir en el fichero
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(route))){
             for (int i = 0; i <matriz.getMatriz().length ; i++) {
                 for (int j = 0; j <matriz.getMatriz()[i].length ; j++) {
                     bw.write(matriz.getMatriz()[i][j]+"\t");
@@ -30,6 +23,7 @@ public class GenerarArchivoMatriz {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 }
