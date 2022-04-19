@@ -1,4 +1,4 @@
-package vehiculos;
+package ejercicio04.vehiculos;
 
 import java.util.Objects;
 

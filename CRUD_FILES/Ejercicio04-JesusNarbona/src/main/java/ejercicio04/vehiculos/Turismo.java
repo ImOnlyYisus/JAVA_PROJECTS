@@ -1,4 +1,4 @@
-package vehiculos;
+package ejercicio04.vehiculos;
 
 public class Turismo extends Vehiculo{
 

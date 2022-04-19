@@ -1,13 +1,15 @@
-package vehiculos;
+package ejercicio04.vehiculos;
 
-public class Furgoneta extends Vehiculo {
+public class Deportivo extends Vehiculo{
     private int puertas;
     private boolean marchaAutomatica;
+    private String neumaticos;
 
-    public Furgoneta(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchaAutomatica) {
+    public Deportivo(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchaAutomatica, String neumaticos) {
         super(matricula, kilometros, numeroBastidor, marca);
         this.puertas = puertas;
         this.marchaAutomatica = marchaAutomatica;
+        this.neumaticos= neumaticos;
     }
 
     public int getPuertas() {
@@ -26,10 +28,19 @@ public class Furgoneta extends Vehiculo {
         this.marchaAutomatica = marchaAutomatica;
     }
 
+    public String getNeumaticos() {
+        return neumaticos;
+    }
+
+    public void setNeumaticos(String neumaticos) {
+        this.neumaticos = neumaticos;
+    }
+
     public void getAtributos(){
         String atributos;
         atributos="Marca: "+super.getMarca()+", Matricula: "+super.getMatricula()+", NumeroBastidor: "+super.getNumeroBastidor()+
-        ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas;
+                ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas +
+                ", Neumaticos: "+ this.neumaticos;
 
         System.out.println(atributos);
     }
@@ -39,6 +50,4 @@ public class Furgoneta extends Vehiculo {
         return super.toString()+":" + puertas +
                 ":" + marchaAutomatica;
     }
-
-
 }
