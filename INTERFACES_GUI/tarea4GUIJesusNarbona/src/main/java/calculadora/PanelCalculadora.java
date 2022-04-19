@@ -163,52 +163,83 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == n1) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "1");
         }
         if (e.getSource() == n2) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "2");
         }
         if (e.getSource() == n3) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "3");
         }
         if (e.getSource() == n4) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "4");
         }
         if (e.getSource() == n5) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "5");
         }
         if (e.getSource() == n6) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "6");
         }
         if (e.getSource() == n7) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "7");
         }
         if (e.getSource() == n8) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "8");
         }
         if (e.getSource() == n9) {
+            if(PanelLCD.calculos.getText().charAt(0) == '0'){
+                PanelLCD.calculos.setText("");
+            }
             PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "9");
         }
         if (e.getSource() == plus) {
-            if (PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "+"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "+"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "+"));
-            } else if (!PanelLCD.calculos.getText().contains("+") && !PanelLCD.calculos.getText().contains("=")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "+");
+            if(PanelLCD.calculos.getText().charAt(0) != '0') {
+                if (PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "+"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "+"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "+"));
+                } else if (!PanelLCD.calculos.getText().contains("+") && !PanelLCD.calculos.getText().contains("=")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "+");
+                }
+            }
+        }
+        if (e.getSource() == minus) { //TODO: Arreglar poder operar con numeros negativos
+            if(PanelLCD.calculos.getText().charAt(0) != '0'){
+                if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/") && PanelLCD.calculos.getText().charAt(0) != '-') {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "-"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "-"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "-"));
+                } else if (!PanelLCD.calculos.getText().contains("-") && !PanelLCD.calculos.getText().contains("=")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
+                } else if (PanelLCD.calculos.getText().charAt(0) == '-') {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
+                }
             }
 
-        }
-        if (e.getSource() == minus) {
-            if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("*") || PanelLCD.calculos.getText().contains("/") && PanelLCD.calculos.getText().charAt(0) != '-') {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "-"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "-"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "-"));
-            } else if (!PanelLCD.calculos.getText().contains("-") && !PanelLCD.calculos.getText().contains("=")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
-            } else if (PanelLCD.calculos.getText().charAt(0) == '-') {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "-");
-            }
         }
         if (e.getSource() == equals) {
             if (!PanelLCD.calculos.getText().contains("=")) {
@@ -239,22 +270,28 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
 
         }
         if (e.getSource() == multiply) {
-            if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("/")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "*"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "*"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "*"));
-            } else if (!PanelLCD.calculos.getText().contains("*") && !PanelLCD.calculos.getText().contains("=")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "*");
+            if (PanelLCD.calculos.getText().charAt(0) != '0') {
+                if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("/")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "*"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "*"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("/", "*"));
+                } else if (!PanelLCD.calculos.getText().contains("*") && !PanelLCD.calculos.getText().contains("=")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "*");
+                }
             }
+
         }
         if (e.getSource() == division) {
-            if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("*")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "/"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "/"));
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "/"));
-            } else if (!PanelLCD.calculos.getText().contains("/") && !PanelLCD.calculos.getText().contains("=")) {
-                PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "/");
+            if (PanelLCD.calculos.getText().charAt(0) != '0') {
+                if (PanelLCD.calculos.getText().contains("+") || PanelLCD.calculos.getText().contains("-") || PanelLCD.calculos.getText().contains("*")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("+", "/"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("-", "/"));
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText().replace("*", "/"));
+                } else if (!PanelLCD.calculos.getText().contains("/") && !PanelLCD.calculos.getText().contains("=")) {
+                    PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "/");
+                }
             }
+
         }
         if (e.getSource() == clear) {
             PanelLCD.calculos.setText("0");
