@@ -1,0 +1,1 @@
+6.- Implementa un programa que lea el fichero del ejercicio 3 y muestre el contenido del fichero. Además buscará la primera ocurrencia, en cada línea, de las letras seguidas ‘w’, ‘e’, ‘b’, informando de la posición que ocupan en la línea, si es que existe esa ocurrencia.
