@@ -50,6 +50,6 @@ public class Turismo extends Vehiculo{
     public String toString() {
         return super.toString() + ":" + puertas +
                 ":" + marchaAutomatica +
-                ":" + color + '\'';
+                ":" + color ;
     }
 }

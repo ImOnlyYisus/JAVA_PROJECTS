@@ -8,6 +8,7 @@ import ejercicio07.vehiculos.Vehiculo;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ReadAndSelectCars {
@@ -21,9 +22,9 @@ public class ReadAndSelectCars {
         try(Scanner sc = new Scanner(new FileReader(ruta))){
             while(sc.hasNextLine()){
                 String linea = sc.nextLine();
-                String[] parts = linea.substring(2,linea.length()-1).split(":");
+                String[] parts = linea.substring(2).split(":");
 
-                if(linea.charAt(0)==0){
+                if(linea.charAt(0)=='0'){ //Turismo
                     Turismo turismo = new Turismo();
                     turismo.setMatricula(parts[0]);
                     turismo.setKilometros(Double.parseDouble(parts[1]));
@@ -34,7 +35,7 @@ public class ReadAndSelectCars {
                     turismo.setColor(parts[6]);
                     vehiculos.add(turismo);
 
-                }else if(linea.charAt(0)==1){
+                }else if(linea.charAt(0)=='1'){//Deportivo
                     Deportivo deportivo = new Deportivo();
                     deportivo.setMatricula(parts[0]);
                     deportivo.setKilometros(Double.parseDouble(parts[1]));
@@ -42,9 +43,9 @@ public class ReadAndSelectCars {
                     deportivo.setMarca(parts[3]);
                     deportivo.setPuertas(Integer.parseInt(parts[4]));
                     deportivo.setMarchaAutomatica(Boolean.parseBoolean(parts[5]));
-                    deportivo.setNeumaticos(parts[6]!=null?parts[6]:null);
+                    deportivo.setNeumaticos(parts[6]);
                     vehiculos.add(deportivo);
-                }else{
+                }else{//Furgoneta
                     Furgoneta furgoneta = new Furgoneta();
                     furgoneta.setMatricula(parts[0]);
                     furgoneta.setKilometros(Double.parseDouble(parts[1]));
@@ -60,7 +61,9 @@ public class ReadAndSelectCars {
             e.printStackTrace();
         }
 
-
+        //ORDENAR POR MARCA
+        Comparator<Vehiculo> criterioMarca = (v1, v2) -> v1.getMarca().compareTo(v2.getMarca());
+        vehiculos.sort(criterioMarca);
         vehiculos.forEach(coche->{
             System.out.println(coche);
         });

@@ -1,5 +1,7 @@
 package ejercicio07.vehiculos;
 
+import java.util.Objects;
+
 public class Furgoneta extends Vehiculo {
     private int puertas;
     private boolean marchaAutomatica;
@@ -36,6 +38,20 @@ public class Furgoneta extends Vehiculo {
         ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas;
 
         System.out.println(atributos);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Furgoneta)) return false;
+        if (!super.equals(o)) return false;
+        Furgoneta furgoneta = (Furgoneta) o;
+        return puertas == furgoneta.puertas && marchaAutomatica == furgoneta.marchaAutomatica;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), puertas, marchaAutomatica);
     }
 
     @Override

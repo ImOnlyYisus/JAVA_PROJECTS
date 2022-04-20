@@ -1,5 +1,7 @@
 package ejercicio07.vehiculos;
 
+import java.util.Objects;
+
 public class Turismo extends Vehiculo{
 
     private int puertas;
@@ -51,9 +53,23 @@ public class Turismo extends Vehiculo{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Turismo)) return false;
+        if (!super.equals(o)) return false;
+        Turismo turismo = (Turismo) o;
+        return puertas == turismo.puertas && marchaAutomatica == turismo.marchaAutomatica && Objects.equals(color, turismo.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), puertas, marchaAutomatica, color);
+    }
+
+    @Override
     public String toString() {
         return super.toString() + ":" + puertas +
                 ":" + marchaAutomatica +
-                ":" + color + '\'';
+                ":" + color;
     }
 }

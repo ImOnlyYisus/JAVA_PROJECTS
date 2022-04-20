@@ -1,5 +1,7 @@
 package ejercicio07.vehiculos;
 
+import java.util.Objects;
+
 public class Deportivo extends Vehiculo{
     private int puertas;
     private boolean marchaAutomatica;
@@ -50,8 +52,22 @@ public class Deportivo extends Vehiculo{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Deportivo)) return false;
+        if (!super.equals(o)) return false;
+        Deportivo deportivo = (Deportivo) o;
+        return puertas == deportivo.puertas && marchaAutomatica == deportivo.marchaAutomatica && Objects.equals(neumaticos, deportivo.neumaticos);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), puertas, marchaAutomatica, neumaticos);
+    }
+
+    @Override
     public String toString() {
         return super.toString()+":" + puertas +
-                ":" + marchaAutomatica;
+                ":" + marchaAutomatica + ":" + neumaticos;
     }
 }
