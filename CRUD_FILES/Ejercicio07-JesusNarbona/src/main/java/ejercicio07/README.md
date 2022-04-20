@@ -1,0 +1,1 @@
+7.- Realiza un programa que lea los datos del ejercicio 4. Para ello creará una lista de objetos de tipo Vehiculo. El programa irá almacenando en la lista los objetos leídos desde el archivo de texto “vehículos.txt”. Una vez cargados todos los datos en la lista, ordena los vehículos por Marca y muestra el resultado por consola.
