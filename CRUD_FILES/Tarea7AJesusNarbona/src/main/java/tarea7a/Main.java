@@ -10,7 +10,7 @@ public class Main {
         empleados.forEach(System.out::println);
 
         EscrituraProfesDept.escritura(empleados);
-        EscrituraEmp100dias
+        EscrituraEmp100dias.escritura(empleados);
 
 
     }
