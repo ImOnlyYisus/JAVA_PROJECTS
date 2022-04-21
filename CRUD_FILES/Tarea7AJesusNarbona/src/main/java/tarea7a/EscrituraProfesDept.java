@@ -27,6 +27,7 @@ public class EscrituraProfesDept {
 
     }
 
+    //Genera un map con los departamentos y la cantidad de profesores que pertenecen a cada departamento
     private static Map<String,Integer> generarMapProfeDept(ArrayList<Empleado> empleados){
         Map<String,Integer> map = new HashMap<>();
 

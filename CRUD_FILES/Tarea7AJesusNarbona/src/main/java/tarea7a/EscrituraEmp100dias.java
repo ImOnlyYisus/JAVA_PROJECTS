@@ -16,8 +16,11 @@ public class EscrituraEmp100dias {
         //Escritura
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))) {
             Map<Empleado,Long> emp100dias = verEmpleados100Dias(empleados);
+
+            //Escribir cabecera del archivo
             bw.write("Nombre,Apellido,Dni,Puesto,Fecha de toma,Fecha cese,Telefono,Evaluador,Coordinador,Dias trabajados");
             bw.newLine();
+
             for (Map.Entry<Empleado,Long> entry : emp100dias.entrySet()) {
                 bw.write(entry.getKey().getNombre()+","+entry.getKey().getApellido()+","+entry.getKey().getDni()+","+entry.getKey().getPuesto()+","+
                         entry.getKey().getFechaToma()+","+entry.getKey().getFechaCese()+","+entry.getKey().getTelefono()+","+
@@ -31,6 +34,7 @@ public class EscrituraEmp100dias {
 
     }
 
+    //Metodo para calcular los empleados que trabajaron mas de 100 dias
     private static Map<Empleado,Long> verEmpleados100Dias(ArrayList<Empleado> empleados) {
         Map<Empleado,Long> empleadosConMas100dias = new HashMap<>();
         for (int i = 0; i < empleados.size(); i++) {
