@@ -13,15 +13,22 @@ public class ReadAlphabetic {
         //Datos archivos
         String data = "";
         ArrayList<Integer> lineasOcurrencia = new ArrayList<>();
-        int contador =0;
+        int contador = 0;
+        ArrayList<Integer> position = new ArrayList<>();
         //Lectura
-        try(Scanner sc = new Scanner(new FileReader(route))){
-            while(sc.hasNextLine()){
+        try (Scanner sc = new Scanner(new FileReader(route))) {
+            while (sc.hasNextLine()) {
                 String linea = sc.nextLine();
-                data+=linea+"\n";
+                data += linea + "\n";
                 contador++;
-                if(linea.contains("w;e;b") || linea.contains("W;E;B")){
+                if (linea.contains("w;e;b") || linea.contains("W;E;B")) {
                     lineasOcurrencia.add(contador);
+                    for (int i = 0; i < linea.length(); i++) {
+                        if (linea.charAt(i) == 'w' || linea.charAt(i) == 'W') {
+                            position.add(i);
+                            break;
+                        }
+                    }
                 }
             }
         } catch (FileNotFoundException e) {
@@ -29,7 +36,7 @@ public class ReadAlphabetic {
         }
 
         System.out.println(data);
-        lineasOcurrencia.forEach(valor->{
+        lineasOcurrencia.forEach(valor -> {
             System.out.println(valor);
         });
     }
