@@ -23,7 +23,6 @@ public class ReadCvsEmpleados {
             while (bw.hasNextLine()){
                 String lectura = bw.nextLine();
                 lectura=lectura.replaceAll("\"","");
-                lectura=lectura.trim();
                 String[] linea = lectura.split(",");
                 Empleado empleado = new Empleado();
 
