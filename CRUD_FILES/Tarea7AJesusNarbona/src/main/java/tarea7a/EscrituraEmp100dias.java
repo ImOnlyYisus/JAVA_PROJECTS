@@ -21,6 +21,7 @@ public class EscrituraEmp100dias {
             bw.write("Nombre,Apellido,Dni,Puesto,Fecha de toma,Fecha cese,Telefono,Evaluador,Coordinador,Dias trabajados");
             bw.newLine();
 
+            //Escribir empleados con mas de 100 dias
             for (Map.Entry<Empleado,Long> entry : emp100dias.entrySet()) {
                 bw.write(entry.getKey().getNombre()+","+entry.getKey().getApellido()+","+entry.getKey().getDni()+","+entry.getKey().getPuesto()+","+
                         entry.getKey().getFechaToma()+","+entry.getKey().getFechaCese()+","+entry.getKey().getTelefono()+","+
@@ -37,6 +38,7 @@ public class EscrituraEmp100dias {
     //Metodo para calcular los empleados que trabajaron mas de 100 dias
     private static Map<Empleado,Long> verEmpleados100Dias(ArrayList<Empleado> empleados) {
         Map<Empleado,Long> empleadosConMas100dias = new HashMap<>();
+        //Recorrer empleados y verificar si trabajaron mas de 100 dias
         for (int i = 0; i < empleados.size(); i++) {
             LocalDate fechaCese = empleados.get(i).getFechaCese() != null ? empleados.get(i).getFechaCese() : LocalDate.now();
             if (ChronoUnit.DAYS.between(empleados.get(i).getFechaToma(), fechaCese) > 100) {

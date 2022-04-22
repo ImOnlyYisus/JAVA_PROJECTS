@@ -16,6 +16,7 @@ public class EscrituraProfesDept {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))){
             deptEmple = generarMapProfeDept(empleados);
 
+            //Recorre el map y escribe en el archivo
             for(Map.Entry<String,Integer> entry : deptEmple.entrySet()){
                 bw.write(entry.getKey()+"\t"+entry.getValue());
                 bw.newLine();
@@ -31,6 +32,7 @@ public class EscrituraProfesDept {
     private static Map<String,Integer> generarMapProfeDept(ArrayList<Empleado> empleados){
         Map<String,Integer> map = new HashMap<>();
 
+        //Recorre todos los empleados y los diferencia por puesto y cantidad de empleados
         for (int i = 0; i < empleados.size() ; i++) {
             if(map.containsKey(empleados.get(i).getPuesto())){
                 map.put(empleados.get(i).getPuesto(),map.get(empleados.get(i).getPuesto())+1);

@@ -92,6 +92,7 @@ public class Empleado {
     public String toString() {
         return "Empleado{" +
                 "nombre=" + nombre +
+                "apellido=" + apellido +
                 ", dni=" + dni +
                 ", puesto=" + puesto +
                 ", fechaToma=" + fechaToma +
