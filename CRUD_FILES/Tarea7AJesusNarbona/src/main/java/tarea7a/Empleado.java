@@ -91,12 +91,12 @@ public class Empleado {
     @Override
     public String toString() {
         return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", dni='" + dni + '\'' +
-                ", puesto='" + puesto + '\'' +
+                "nombre=" + nombre +
+                ", dni=" + dni +
+                ", puesto=" + puesto +
                 ", fechaToma=" + fechaToma +
                 ", fechaCese=" + fechaCese +
-                ", telefono='" + telefono + '\'' +
+                ", telefono=" + telefono +
                 ", evaluador=" + evaluador +
                 ", coordinador=" + coordinador +
                 '}';
