@@ -1,9 +1,0 @@
-1231a:123.4:21312:Renault:4:false
-1231a:123.4:21312:Opel:4:false
-1231a:123.4:21312:Citroen:4:false
-1231a:123.4:21312:Mercedes:4:false
-1231a:123.4:21312:Citroen:4:false
-1231a:123.4:21312:Mercedes:4:false
-1231a:123.4:21312:Citroen:4:false
-1231a:123.4:21312:Citroen:4:false
-1231a:123.4:21312:Renault:4:false

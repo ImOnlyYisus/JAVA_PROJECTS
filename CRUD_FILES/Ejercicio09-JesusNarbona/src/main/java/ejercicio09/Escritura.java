@@ -27,9 +27,9 @@ public class Escritura {
             }
         });
 
-        escribirFile(turismos,"Turismos.txt");
-        escribirFile(furgonetas,"Furgonetas.txt");
-        escribirFile(deportivos,"Deportivos.txt");
+        escribirFile(turismos,"Turismos.csv");
+        escribirFile(furgonetas,"Furgonetas.csv");
+        escribirFile(deportivos,"Deportivos.csv");
     }
 
     private static void escribirFile (ArrayList<Vehiculo> vehiculos, String nombre){

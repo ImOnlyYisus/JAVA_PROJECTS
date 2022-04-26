@@ -7,7 +7,7 @@ public class Concecionario {
     private ArrayList<Vehiculo> vehiculos = new ArrayList<>();
 
     public Concecionario() {
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i <= 30; i++) {
             Random rd = new Random();
             String[] marcas = {"Renault", "Seat", "Opel", "Mercedes", "Citroen"};
             Vehiculo vehiculo = null;
@@ -15,7 +15,7 @@ public class Concecionario {
                 vehiculo = new Turismo("1231a", 123.4, "21312", marcas[rd.nextInt(marcas.length)], 4, false, "Blanco");
             } else if (i <= 20 && i > 10) {
                 vehiculo = new Deportivo("1231a", 123.4, "21312", marcas[rd.nextInt(marcas.length)], 4, false, "Duros");
-            } else if (i <= 30 && i>20) {
+            } else if (i>20) {
                 vehiculo = new Furgoneta("1231a", 123.4, "21312", marcas[rd.nextInt(marcas.length)], 4, false);
             }
             vehiculos.add(vehiculo);

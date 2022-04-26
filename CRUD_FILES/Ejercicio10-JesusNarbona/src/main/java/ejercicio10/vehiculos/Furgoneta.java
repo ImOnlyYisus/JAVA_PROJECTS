@@ -1,21 +1,19 @@
-package ejercicio09.vehiculos;
+package ejercicio10.vehiculos;
 
 import java.util.Objects;
 
-public class Deportivo extends Vehiculo{
+public class Furgoneta extends Vehiculo {
     private int puertas;
     private boolean marchaAutomatica;
-    private String neumaticos;
 
-    public Deportivo(){
+    public Furgoneta(){
 
     }
 
-    public Deportivo(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchaAutomatica, String neumaticos) {
+    public Furgoneta(String matricula, double kilometros, String numeroBastidor, String marca, int puertas, boolean marchaAutomatica) {
         super(matricula, kilometros, numeroBastidor, marca);
         this.puertas = puertas;
         this.marchaAutomatica = marchaAutomatica;
-        this.neumaticos= neumaticos;
     }
 
     public int getPuertas() {
@@ -34,19 +32,10 @@ public class Deportivo extends Vehiculo{
         this.marchaAutomatica = marchaAutomatica;
     }
 
-    public String getNeumaticos() {
-        return neumaticos;
-    }
-
-    public void setNeumaticos(String neumaticos) {
-        this.neumaticos = neumaticos;
-    }
-
     public void getAtributos(){
         String atributos;
         atributos="Marca: "+super.getMarca()+", Matricula: "+super.getMatricula()+", NumeroBastidor: "+super.getNumeroBastidor()+
-                ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas +
-                ", Neumaticos: "+ this.neumaticos;
+        ", Kilometros: "+super.getKilometros()+ ", MarchaAutomatica: "+this.marchaAutomatica+", Puertas: "+ this.puertas;
 
         System.out.println(atributos);
     }
@@ -54,20 +43,22 @@ public class Deportivo extends Vehiculo{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Deportivo)) return false;
+        if (!(o instanceof Furgoneta)) return false;
         if (!super.equals(o)) return false;
-        Deportivo deportivo = (Deportivo) o;
-        return puertas == deportivo.puertas && marchaAutomatica == deportivo.marchaAutomatica && Objects.equals(neumaticos, deportivo.neumaticos);
+        Furgoneta furgoneta = (Furgoneta) o;
+        return puertas == furgoneta.puertas && marchaAutomatica == furgoneta.marchaAutomatica;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), puertas, marchaAutomatica, neumaticos);
+        return Objects.hash(super.hashCode(), puertas, marchaAutomatica);
     }
 
     @Override
     public String toString() {
         return super.toString()+";" + puertas +
-                ";" + marchaAutomatica + ";" + neumaticos;
+                ";" + marchaAutomatica;
     }
+
+
 }

@@ -1,4 +1,4 @@
-package ejercicio09.vehiculos;
+package ejercicio10.vehiculos;
 
 import java.util.Objects;
 
