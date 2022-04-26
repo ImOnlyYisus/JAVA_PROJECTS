@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class Escritura {
     public static void escritura(ArrayList<Vehiculo> vehiculos){
-        ArrayList<Turismo> turismos = new ArrayList<>();
-        ArrayList<Furgoneta> furgonetas = new ArrayList<>();
-        ArrayList<Deportivo> deportivos = new ArrayList<>();
+        ArrayList<Vehiculo> turismos = new ArrayList<>();
+        ArrayList<Vehiculo> furgonetas = new ArrayList<>();
+        ArrayList<Vehiculo> deportivos = new ArrayList<>();
 
         vehiculos.forEach(vehiculo -> {
             if(vehiculo instanceof Turismo){
@@ -26,13 +26,19 @@ public class Escritura {
                 furgonetas.add((Furgoneta) vehiculo);
             }
         });
+
+        escribirFile(turismos,"Turismos.txt");
+        escribirFile(furgonetas,"Furgonetas.txt");
+        escribirFile(deportivos,"Deportivos.txt");
     }
 
-    public static void escribirFile (ArrayList<Object> vehiculos, String nombre){
+    private static void escribirFile (ArrayList<Vehiculo> vehiculos, String nombre){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(nombre))) {
-            vehiculos.forEach(vehiculo->{
-                bw.write(vehiculos.toString());
-            });
+            for (Vehiculo vehiculo: vehiculos) {
+                bw.write(vehiculo.toString());
+                bw.newLine();
+            }
+            bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
