@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +42,7 @@ public class EscrituraEmp100dias {
         //Recorrer empleados y verificar si trabajaron mas de 100 dias
         for (int i = 0; i < empleados.size(); i++) {
             LocalDate fechaCese = empleados.get(i).getFechaCese() != null ? empleados.get(i).getFechaCese() : LocalDate.now();
+
             if (ChronoUnit.DAYS.between(empleados.get(i).getFechaToma(), fechaCese) > 100) {
                 empleadosConMas100dias.put(empleados.get(i),ChronoUnit.DAYS.between(empleados.get(i).getFechaToma(), fechaCese));
             }
