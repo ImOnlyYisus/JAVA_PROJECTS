@@ -1,9 +1,8 @@
-package ejercicio10;
+package ejercicio11;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.xml.bind.annotation.*;
-import java.util.Locale;
 import java.util.Random;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;

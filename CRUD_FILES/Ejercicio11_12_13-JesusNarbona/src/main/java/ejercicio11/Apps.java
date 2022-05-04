@@ -1,4 +1,4 @@
-package ejercicio10;
+package ejercicio11;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

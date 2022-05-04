@@ -1,13 +1,12 @@
-package ejercicio12;
+package ejercicio13;
 
 import ejercicio11.App;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        List<App> appList = Leer.leecturaFicheroXML("appsXML/aplicaciones.xml");
-
+        ArrayList<App> appList = Leer.leerArchivoJSON("appsJSON/aplicaciones.json");
         appList.forEach(System.out::println);
     }
 }

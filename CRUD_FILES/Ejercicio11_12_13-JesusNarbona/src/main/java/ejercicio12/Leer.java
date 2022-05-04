@@ -1,25 +1,33 @@
 package ejercicio12;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import ejercicio10.App;
+import ejercicio11.App;
+import ejercicio11.Apps;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Leer {
-    public static ArrayList<App> leerArchivoJSON(String nombre){
-        ArrayList<App> apps = new ArrayList<>();
-        ObjectMapper mapeador = new ObjectMapper();
-
+    public static List<App> leecturaFicheroXML(String nombreFichero){
+        List<App> appList = new ArrayList<>();
         try {
-            apps.addAll(mapeador.readValue(new File(nombre),
-                    mapeador.getTypeFactory().constructCollectionType(ArrayList.class, App.class)));
+            // Crea el contexto JAXB
+            JAXBContext contexto = JAXBContext.newInstance(Apps.class);
 
-        } catch (IOException e) {
+            // Crea el objeto Unmarshaller
+            Unmarshaller um = contexto.createUnmarshaller();
+
+            // Llama al método de unmarshalling
+
+           Apps apps = (Apps) um.unmarshal(new File(nombreFichero));
+            appList.addAll(apps.getAppList());
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
 
-        return apps;
+        return appList;
     }
 }
