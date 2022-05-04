@@ -1,0 +1,301 @@
+[ {
+  "codigo" : 0,
+  "nombre" : "app0j",
+  "descripcion" : "App que seleciona los alumnos de un colegio",
+  "tamañoKB" : 865.211607787465,
+  "numeroDescargas" : 21417
+}, {
+  "codigo" : 1,
+  "nombre" : "app1h",
+  "descripcion" : "App que revisa la temperatura",
+  "tamañoKB" : 106.27358287095534,
+  "numeroDescargas" : 26668
+}, {
+  "codigo" : 2,
+  "nombre" : "app2d",
+  "descripcion" : "App para ver videos en straming",
+  "tamañoKB" : 259.892758218183,
+  "numeroDescargas" : 30576
+}, {
+  "codigo" : 3,
+  "nombre" : "app3q",
+  "descripcion" : "App para jugar",
+  "tamañoKB" : 630.1337103324931,
+  "numeroDescargas" : 34365
+}, {
+  "codigo" : 4,
+  "nombre" : "app4o",
+  "descripcion" : "App para jugar",
+  "tamañoKB" : 908.1639754082721,
+  "numeroDescargas" : 42275
+}, {
+  "codigo" : 5,
+  "nombre" : "app5w",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 521.3757734699086,
+  "numeroDescargas" : 29568
+}, {
+  "codigo" : 6,
+  "nombre" : "app6x",
+  "descripcion" : "App que muestra el estado de su vehiculo",
+  "tamañoKB" : 852.0976076033561,
+  "numeroDescargas" : 6847
+}, {
+  "codigo" : 7,
+  "nombre" : "app7c",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 945.5805980029832,
+  "numeroDescargas" : 10125
+}, {
+  "codigo" : 8,
+  "nombre" : "app8f",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 764.5797387522765,
+  "numeroDescargas" : 8105
+}, {
+  "codigo" : 9,
+  "nombre" : "app9y",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 995.1674989236691,
+  "numeroDescargas" : 45031
+}, {
+  "codigo" : 10,
+  "nombre" : "app10m",
+  "descripcion" : "App de seleccion de CV",
+  "tamañoKB" : 231.64795071770527,
+  "numeroDescargas" : 37232
+}, {
+  "codigo" : 11,
+  "nombre" : "app11w",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 574.5005518638625,
+  "numeroDescargas" : 25402
+}, {
+  "codigo" : 12,
+  "nombre" : "app12x",
+  "descripcion" : "App que revisa la temperatura",
+  "tamañoKB" : 186.78036342158487,
+  "numeroDescargas" : 8016
+}, {
+  "codigo" : 13,
+  "nombre" : "app13u",
+  "descripcion" : "App de seleccion de CV",
+  "tamañoKB" : 908.6278548808252,
+  "numeroDescargas" : 20062
+}, {
+  "codigo" : 14,
+  "nombre" : "app14b",
+  "descripcion" : "App que evalua un grupo de persona",
+  "tamañoKB" : 929.4785719847564,
+  "numeroDescargas" : 1499
+}, {
+  "codigo" : 15,
+  "nombre" : "app15a",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 974.8764017863141,
+  "numeroDescargas" : 17586
+}, {
+  "codigo" : 16,
+  "nombre" : "app16s",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 966.8416338121981,
+  "numeroDescargas" : 8255
+}, {
+  "codigo" : 17,
+  "nombre" : "app17a",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 685.5689622687148,
+  "numeroDescargas" : 48371
+}, {
+  "codigo" : 18,
+  "nombre" : "app18n",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 311.55950021308445,
+  "numeroDescargas" : 36836
+}, {
+  "codigo" : 19,
+  "nombre" : "app19o",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 597.5466309413132,
+  "numeroDescargas" : 23557
+}, {
+  "codigo" : 20,
+  "nombre" : "app20t",
+  "descripcion" : "App que revisa la temperatura",
+  "tamañoKB" : 244.859262495015,
+  "numeroDescargas" : 8733
+}, {
+  "codigo" : 21,
+  "nombre" : "app21h",
+  "descripcion" : "App que muestra el estado de su vehiculo",
+  "tamañoKB" : 741.9739867613913,
+  "numeroDescargas" : 3478
+}, {
+  "codigo" : 22,
+  "nombre" : "app22n",
+  "descripcion" : "App para ver videos en straming",
+  "tamañoKB" : 400.41859090264677,
+  "numeroDescargas" : 32516
+}, {
+  "codigo" : 23,
+  "nombre" : "app23j",
+  "descripcion" : "App que evalua un grupo de persona",
+  "tamañoKB" : 732.0720633536658,
+  "numeroDescargas" : 4367
+}, {
+  "codigo" : 24,
+  "nombre" : "app24q",
+  "descripcion" : "App que muestra el estado de su vehiculo",
+  "tamañoKB" : 245.1153492274838,
+  "numeroDescargas" : 19503
+}, {
+  "codigo" : 25,
+  "nombre" : "app25k",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 704.9665369871941,
+  "numeroDescargas" : 42612
+}, {
+  "codigo" : 26,
+  "nombre" : "app26j",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 840.7138453418787,
+  "numeroDescargas" : 24319
+}, {
+  "codigo" : 27,
+  "nombre" : "app27k",
+  "descripcion" : "App que evalua un grupo de persona",
+  "tamañoKB" : 658.7574184945248,
+  "numeroDescargas" : 11889
+}, {
+  "codigo" : 28,
+  "nombre" : "app28z",
+  "descripcion" : "App que revisa la temperatura",
+  "tamañoKB" : 963.1929622201114,
+  "numeroDescargas" : 3598
+}, {
+  "codigo" : 29,
+  "nombre" : "app29z",
+  "descripcion" : "App para jugar",
+  "tamañoKB" : 825.2086461173143,
+  "numeroDescargas" : 30604
+}, {
+  "codigo" : 30,
+  "nombre" : "app30y",
+  "descripcion" : "App que seleciona los alumnos de un colegio",
+  "tamañoKB" : 321.4019835638409,
+  "numeroDescargas" : 29726
+}, {
+  "codigo" : 31,
+  "nombre" : "app31a",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 316.1248015881272,
+  "numeroDescargas" : 21672
+}, {
+  "codigo" : 32,
+  "nombre" : "app32r",
+  "descripcion" : "App que muestra el estado de su vehiculo",
+  "tamañoKB" : 770.085690895357,
+  "numeroDescargas" : 8238
+}, {
+  "codigo" : 33,
+  "nombre" : "app33h",
+  "descripcion" : "App para jugar",
+  "tamañoKB" : 345.5241318587266,
+  "numeroDescargas" : 44749
+}, {
+  "codigo" : 34,
+  "nombre" : "app34c",
+  "descripcion" : "App que revisa la temperatura",
+  "tamañoKB" : 582.0504387994984,
+  "numeroDescargas" : 36678
+}, {
+  "codigo" : 35,
+  "nombre" : "app35v",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 280.1361191386354,
+  "numeroDescargas" : 39795
+}, {
+  "codigo" : 36,
+  "nombre" : "app36j",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 562.3486786017728,
+  "numeroDescargas" : 18887
+}, {
+  "codigo" : 37,
+  "nombre" : "app37p",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 755.5439956303037,
+  "numeroDescargas" : 4486
+}, {
+  "codigo" : 38,
+  "nombre" : "app38i",
+  "descripcion" : "App de seleccion de CV",
+  "tamañoKB" : 893.8394901421814,
+  "numeroDescargas" : 27789
+}, {
+  "codigo" : 39,
+  "nombre" : "app39c",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 170.46088941555178,
+  "numeroDescargas" : 12368
+}, {
+  "codigo" : 40,
+  "nombre" : "app40u",
+  "descripcion" : "App de seleccion de CV",
+  "tamañoKB" : 850.3386109955369,
+  "numeroDescargas" : 17279
+}, {
+  "codigo" : 41,
+  "nombre" : "app41o",
+  "descripcion" : "App que muestra el estado de su vehiculo",
+  "tamañoKB" : 841.1711860393862,
+  "numeroDescargas" : 20212
+}, {
+  "codigo" : 42,
+  "nombre" : "app42d",
+  "descripcion" : "App para jugar",
+  "tamañoKB" : 704.8015289528956,
+  "numeroDescargas" : 46539
+}, {
+  "codigo" : 43,
+  "nombre" : "app43l",
+  "descripcion" : "App para ver videos en straming",
+  "tamañoKB" : 526.0868435794392,
+  "numeroDescargas" : 42942
+}, {
+  "codigo" : 44,
+  "nombre" : "app44v",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 811.5889000631189,
+  "numeroDescargas" : 6188
+}, {
+  "codigo" : 45,
+  "nombre" : "app45i",
+  "descripcion" : "App para llevar las cuentas de un empresario",
+  "tamañoKB" : 236.66103633646622,
+  "numeroDescargas" : 39990
+}, {
+  "codigo" : 46,
+  "nombre" : "app46l",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 649.8440586868093,
+  "numeroDescargas" : 8998
+}, {
+  "codigo" : 47,
+  "nombre" : "app47k",
+  "descripcion" : "App que evalua un grupo de persona",
+  "tamañoKB" : 487.56975276473736,
+  "numeroDescargas" : 16300
+}, {
+  "codigo" : 48,
+  "nombre" : "app48o",
+  "descripcion" : "App para escuchar musica",
+  "tamañoKB" : 251.36742246350252,
+  "numeroDescargas" : 36486
+}, {
+  "codigo" : 49,
+  "nombre" : "app49q",
+  "descripcion" : "App para la escucha de peticiones http",
+  "tamañoKB" : 698.1147766929632,
+  "numeroDescargas" : 22730
+} ]
