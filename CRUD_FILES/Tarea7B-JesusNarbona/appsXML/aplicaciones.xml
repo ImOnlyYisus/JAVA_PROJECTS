@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apps>
+    <app>
+        <codigo>0</codigo>
+        <nombre>app0j</nombre>
+        <descripcion>App que seleciona los alumnos de un colegio</descripcion>
+        <tamañoKB>865.211607787465</tamañoKB>
+        <numeroDescargas>21417</numeroDescargas>
+    </app>
+    <app>
+        <codigo>1</codigo>
+        <nombre>app1h</nombre>
+        <descripcion>App que revisa la temperatura</descripcion>
+        <tamañoKB>106.27358287095534</tamañoKB>
+        <numeroDescargas>26668</numeroDescargas>
+    </app>
+    <app>
+        <codigo>2</codigo>
+        <nombre>app2d</nombre>
+        <descripcion>App para ver videos en straming</descripcion>
+        <tamañoKB>259.892758218183</tamañoKB>
+        <numeroDescargas>30576</numeroDescargas>
+    </app>
+    <app>
+        <codigo>3</codigo>
+        <nombre>app3q</nombre>
+        <descripcion>App para jugar</descripcion>
+        <tamañoKB>630.1337103324931</tamañoKB>
+        <numeroDescargas>34365</numeroDescargas>
+    </app>
+    <app>
+        <codigo>4</codigo>
+        <nombre>app4o</nombre>
+        <descripcion>App para jugar</descripcion>
+        <tamañoKB>908.1639754082721</tamañoKB>
+        <numeroDescargas>42275</numeroDescargas>
+    </app>
+    <app>
+        <codigo>5</codigo>
+        <nombre>app5w</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>521.3757734699086</tamañoKB>
+        <numeroDescargas>29568</numeroDescargas>
+    </app>
+    <app>
+        <codigo>6</codigo>
+        <nombre>app6x</nombre>
+        <descripcion>App que muestra el estado de su vehiculo</descripcion>
+        <tamañoKB>852.0976076033561</tamañoKB>
+        <numeroDescargas>6847</numeroDescargas>
+    </app>
+    <app>
+        <codigo>7</codigo>
+        <nombre>app7c</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>945.5805980029832</tamañoKB>
+        <numeroDescargas>10125</numeroDescargas>
+    </app>
+    <app>
+        <codigo>8</codigo>
+        <nombre>app8f</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>764.5797387522765</tamañoKB>
+        <numeroDescargas>8105</numeroDescargas>
+    </app>
+    <app>
+        <codigo>9</codigo>
+        <nombre>app9y</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>995.1674989236691</tamañoKB>
+        <numeroDescargas>45031</numeroDescargas>
+    </app>
+    <app>
+        <codigo>10</codigo>
+        <nombre>app10m</nombre>
+        <descripcion>App de seleccion de CV</descripcion>
+        <tamañoKB>231.64795071770527</tamañoKB>
+        <numeroDescargas>37232</numeroDescargas>
+    </app>
+    <app>
+        <codigo>11</codigo>
+        <nombre>app11w</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>574.5005518638625</tamañoKB>
+        <numeroDescargas>25402</numeroDescargas>
+    </app>
+    <app>
+        <codigo>12</codigo>
+        <nombre>app12x</nombre>
+        <descripcion>App que revisa la temperatura</descripcion>
+        <tamañoKB>186.78036342158487</tamañoKB>
+        <numeroDescargas>8016</numeroDescargas>
+    </app>
+    <app>
+        <codigo>13</codigo>
+        <nombre>app13u</nombre>
+        <descripcion>App de seleccion de CV</descripcion>
+        <tamañoKB>908.6278548808252</tamañoKB>
+        <numeroDescargas>20062</numeroDescargas>
+    </app>
+    <app>
+        <codigo>14</codigo>
+        <nombre>app14b</nombre>
+        <descripcion>App que evalua un grupo de persona</descripcion>
+        <tamañoKB>929.4785719847564</tamañoKB>
+        <numeroDescargas>1499</numeroDescargas>
+    </app>
+    <app>
+        <codigo>15</codigo>
+        <nombre>app15a</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>974.8764017863141</tamañoKB>
+        <numeroDescargas>17586</numeroDescargas>
+    </app>
+    <app>
+        <codigo>16</codigo>
+        <nombre>app16s</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>966.8416338121981</tamañoKB>
+        <numeroDescargas>8255</numeroDescargas>
+    </app>
+    <app>
+        <codigo>17</codigo>
+        <nombre>app17a</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>685.5689622687148</tamañoKB>
+        <numeroDescargas>48371</numeroDescargas>
+    </app>
+    <app>
+        <codigo>18</codigo>
+        <nombre>app18n</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>311.55950021308445</tamañoKB>
+        <numeroDescargas>36836</numeroDescargas>
+    </app>
+    <app>
+        <codigo>19</codigo>
+        <nombre>app19o</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>597.5466309413132</tamañoKB>
+        <numeroDescargas>23557</numeroDescargas>
+    </app>
+    <app>
+        <codigo>20</codigo>
+        <nombre>app20t</nombre>
+        <descripcion>App que revisa la temperatura</descripcion>
+        <tamañoKB>244.859262495015</tamañoKB>
+        <numeroDescargas>8733</numeroDescargas>
+    </app>
+    <app>
+        <codigo>21</codigo>
+        <nombre>app21h</nombre>
+        <descripcion>App que muestra el estado de su vehiculo</descripcion>
+        <tamañoKB>741.9739867613913</tamañoKB>
+        <numeroDescargas>3478</numeroDescargas>
+    </app>
+    <app>
+        <codigo>22</codigo>
+        <nombre>app22n</nombre>
+        <descripcion>App para ver videos en straming</descripcion>
+        <tamañoKB>400.41859090264677</tamañoKB>
+        <numeroDescargas>32516</numeroDescargas>
+    </app>
+    <app>
+        <codigo>23</codigo>
+        <nombre>app23j</nombre>
+        <descripcion>App que evalua un grupo de persona</descripcion>
+        <tamañoKB>732.0720633536658</tamañoKB>
+        <numeroDescargas>4367</numeroDescargas>
+    </app>
+    <app>
+        <codigo>24</codigo>
+        <nombre>app24q</nombre>
+        <descripcion>App que muestra el estado de su vehiculo</descripcion>
+        <tamañoKB>245.1153492274838</tamañoKB>
+        <numeroDescargas>19503</numeroDescargas>
+    </app>
+    <app>
+        <codigo>25</codigo>
+        <nombre>app25k</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>704.9665369871941</tamañoKB>
+        <numeroDescargas>42612</numeroDescargas>
+    </app>
+    <app>
+        <codigo>26</codigo>
+        <nombre>app26j</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>840.7138453418787</tamañoKB>
+        <numeroDescargas>24319</numeroDescargas>
+    </app>
+    <app>
+        <codigo>27</codigo>
+        <nombre>app27k</nombre>
+        <descripcion>App que evalua un grupo de persona</descripcion>
+        <tamañoKB>658.7574184945248</tamañoKB>
+        <numeroDescargas>11889</numeroDescargas>
+    </app>
+    <app>
+        <codigo>28</codigo>
+        <nombre>app28z</nombre>
+        <descripcion>App que revisa la temperatura</descripcion>
+        <tamañoKB>963.1929622201114</tamañoKB>
+        <numeroDescargas>3598</numeroDescargas>
+    </app>
+    <app>
+        <codigo>29</codigo>
+        <nombre>app29z</nombre>
+        <descripcion>App para jugar</descripcion>
+        <tamañoKB>825.2086461173143</tamañoKB>
+        <numeroDescargas>30604</numeroDescargas>
+    </app>
+    <app>
+        <codigo>30</codigo>
+        <nombre>app30y</nombre>
+        <descripcion>App que seleciona los alumnos de un colegio</descripcion>
+        <tamañoKB>321.4019835638409</tamañoKB>
+        <numeroDescargas>29726</numeroDescargas>
+    </app>
+    <app>
+        <codigo>31</codigo>
+        <nombre>app31a</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>316.1248015881272</tamañoKB>
+        <numeroDescargas>21672</numeroDescargas>
+    </app>
+    <app>
+        <codigo>32</codigo>
+        <nombre>app32r</nombre>
+        <descripcion>App que muestra el estado de su vehiculo</descripcion>
+        <tamañoKB>770.085690895357</tamañoKB>
+        <numeroDescargas>8238</numeroDescargas>
+    </app>
+    <app>
+        <codigo>33</codigo>
+        <nombre>app33h</nombre>
+        <descripcion>App para jugar</descripcion>
+        <tamañoKB>345.5241318587266</tamañoKB>
+        <numeroDescargas>44749</numeroDescargas>
+    </app>
+    <app>
+        <codigo>34</codigo>
+        <nombre>app34c</nombre>
+        <descripcion>App que revisa la temperatura</descripcion>
+        <tamañoKB>582.0504387994984</tamañoKB>
+        <numeroDescargas>36678</numeroDescargas>
+    </app>
+    <app>
+        <codigo>35</codigo>
+        <nombre>app35v</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>280.1361191386354</tamañoKB>
+        <numeroDescargas>39795</numeroDescargas>
+    </app>
+    <app>
+        <codigo>36</codigo>
+        <nombre>app36j</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>562.3486786017728</tamañoKB>
+        <numeroDescargas>18887</numeroDescargas>
+    </app>
+    <app>
+        <codigo>37</codigo>
+        <nombre>app37p</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>755.5439956303037</tamañoKB>
+        <numeroDescargas>4486</numeroDescargas>
+    </app>
+    <app>
+        <codigo>38</codigo>
+        <nombre>app38i</nombre>
+        <descripcion>App de seleccion de CV</descripcion>
+        <tamañoKB>893.8394901421814</tamañoKB>
+        <numeroDescargas>27789</numeroDescargas>
+    </app>
+    <app>
+        <codigo>39</codigo>
+        <nombre>app39c</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>170.46088941555178</tamañoKB>
+        <numeroDescargas>12368</numeroDescargas>
+    </app>
+    <app>
+        <codigo>40</codigo>
+        <nombre>app40u</nombre>
+        <descripcion>App de seleccion de CV</descripcion>
+        <tamañoKB>850.3386109955369</tamañoKB>
+        <numeroDescargas>17279</numeroDescargas>
+    </app>
+    <app>
+        <codigo>41</codigo>
+        <nombre>app41o</nombre>
+        <descripcion>App que muestra el estado de su vehiculo</descripcion>
+        <tamañoKB>841.1711860393862</tamañoKB>
+        <numeroDescargas>20212</numeroDescargas>
+    </app>
+    <app>
+        <codigo>42</codigo>
+        <nombre>app42d</nombre>
+        <descripcion>App para jugar</descripcion>
+        <tamañoKB>704.8015289528956</tamañoKB>
+        <numeroDescargas>46539</numeroDescargas>
+    </app>
+    <app>
+        <codigo>43</codigo>
+        <nombre>app43l</nombre>
+        <descripcion>App para ver videos en straming</descripcion>
+        <tamañoKB>526.0868435794392</tamañoKB>
+        <numeroDescargas>42942</numeroDescargas>
+    </app>
+    <app>
+        <codigo>44</codigo>
+        <nombre>app44v</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>811.5889000631189</tamañoKB>
+        <numeroDescargas>6188</numeroDescargas>
+    </app>
+    <app>
+        <codigo>45</codigo>
+        <nombre>app45i</nombre>
+        <descripcion>App para llevar las cuentas de un empresario</descripcion>
+        <tamañoKB>236.66103633646622</tamañoKB>
+        <numeroDescargas>39990</numeroDescargas>
+    </app>
+    <app>
+        <codigo>46</codigo>
+        <nombre>app46l</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>649.8440586868093</tamañoKB>
+        <numeroDescargas>8998</numeroDescargas>
+    </app>
+    <app>
+        <codigo>47</codigo>
+        <nombre>app47k</nombre>
+        <descripcion>App que evalua un grupo de persona</descripcion>
+        <tamañoKB>487.56975276473736</tamañoKB>
+        <numeroDescargas>16300</numeroDescargas>
+    </app>
+    <app>
+        <codigo>48</codigo>
+        <nombre>app48o</nombre>
+        <descripcion>App para escuchar musica</descripcion>
+        <tamañoKB>251.36742246350252</tamañoKB>
+        <numeroDescargas>36486</numeroDescargas>
+    </app>
+    <app>
+        <codigo>49</codigo>
+        <nombre>app49q</nombre>
+        <descripcion>App para la escucha de peticiones http</descripcion>
+        <tamañoKB>698.1147766929632</tamañoKB>
+        <numeroDescargas>22730</numeroDescargas>
+    </app>
+</apps>
