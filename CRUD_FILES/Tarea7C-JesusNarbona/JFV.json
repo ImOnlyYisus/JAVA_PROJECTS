@@ -1,0 +1,78 @@
+[ {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 1,
+  "hora" : 6
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 1,
+  "hora" : 7
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 2,
+  "hora" : 3
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 2,
+  "hora" : 5
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 3,
+  "hora" : 6
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 3,
+  "hora" : 7
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 4,
+  "hora" : 3
+}, {
+  "curso" : "1DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "PROGR",
+  "aula" : "103",
+  "diaSemana" : 4,
+  "hora" : 5
+}, {
+  "curso" : "2DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "DAWEB",
+  "aula" : "104",
+  "diaSemana" : 4,
+  "hora" : 7
+}, {
+  "curso" : "2DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "DAWEB",
+  "aula" : "104",
+  "diaSemana" : 5,
+  "hora" : 6
+}, {
+  "curso" : "2DAW",
+  "iniciales" : "JFV",
+  "asignatura" : "DAWEB",
+  "aula" : "104",
+  "diaSemana" : 5,
+  "hora" : 7
+} ]
