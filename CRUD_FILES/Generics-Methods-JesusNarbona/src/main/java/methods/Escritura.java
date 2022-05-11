@@ -57,6 +57,7 @@ public class Escritura {
     //---Asegurar de tener correctamente las dependecias--
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 --> (por si hay fechas)
+    //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
     public static <T> void escribirJSON(String nombre, List<T> datos) {
         ObjectMapper mappeador = new ObjectMapper();
 
