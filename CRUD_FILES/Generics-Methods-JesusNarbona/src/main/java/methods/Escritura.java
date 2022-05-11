@@ -21,6 +21,12 @@ import java.util.List;
  */
 
 public class Escritura {
+
+    //Cuando leemos fechas en un csv, tenemos que formaterarlas
+    //   DateTimeFormatter fecha = DateTimeFormatter.ofPattern("d/MM/yyyy");
+    //   LocalDate.parse(fechaX,formatter));
+
+
     //Metodo para escribir un cvs con un array de cualquier tipo de objetos
     //---Asegurarse de tener implentado el toString con formato "x;x;...", en otro caso modificar este mismo metodo con los datos pertinentes--
     public static <T> void escribirCsv(String nombre, List<T> datos) {
