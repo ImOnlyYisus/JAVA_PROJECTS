@@ -49,6 +49,7 @@ public class Lectura {
     //---Asegurar de tener correctamente las dependecias--
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 --> (por si hay fechas)
+    //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
     //JSON: como este --> "https://github.com/yisusturtle/JAVA_PROJECTS/blob/main/CRUD_FILES/Tarea7C-JesusNarbona/JFV.json"
     public static <T> List<T> leerArchivoJSON1(String nombre, Class<T> clase) {
         List<T> datos = new ArrayList<>();
@@ -71,6 +72,7 @@ public class Lectura {
     //---Asegurar de tener correctamente las dependecias--
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 --> (por si hay fechas)
+    //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
     //JSON: como este --> "" //TODO: cambiar por el url json
     public static <T> T leerArchivoJSON2(String nombre, Class<T> clase) {
         T datos = null;
