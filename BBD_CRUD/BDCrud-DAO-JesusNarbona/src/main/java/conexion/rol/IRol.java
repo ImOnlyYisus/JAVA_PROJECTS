@@ -14,4 +14,7 @@ public interface IRol {
     //Metodo para obterner un rol con su nombre
     RolVO findByName(String name) throws SQLException;
 
+    //Metodo para obtener el total de roles
+    String countRols() throws SQLException;
+
 }

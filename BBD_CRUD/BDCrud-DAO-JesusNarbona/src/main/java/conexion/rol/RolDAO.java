@@ -84,4 +84,14 @@ public class RolDAO implements IRol{
 
         return null;
     }
+
+    @Override
+    public String countRols() throws SQLException {
+        try( Statement st = con.createStatement();){
+            ResultSet res = st.executeQuery("SELECT COUNT(*) AS contadorRoles FROM rol");
+            res.next();
+
+            return ""+res.getInt("contadorRoles");
+        }
+    }
 }

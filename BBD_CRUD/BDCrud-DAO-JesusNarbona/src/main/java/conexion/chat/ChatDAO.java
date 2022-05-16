@@ -100,4 +100,14 @@ public class ChatDAO implements IChat{
 
         return null;
     }
+
+    @Override
+    public String countChats() throws SQLException {
+        try( Statement st = con.createStatement();){
+            ResultSet res = st.executeQuery("SELECT COUNT(*) AS contadorChat FROM chat");
+            res.next();
+            
+            return ""+res.getInt("contadorChat");
+        }
+    }
 }

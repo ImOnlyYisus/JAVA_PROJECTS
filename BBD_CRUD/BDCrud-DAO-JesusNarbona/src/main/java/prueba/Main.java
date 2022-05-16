@@ -1,5 +1,6 @@
 package prueba;
 
+import conexion.chat.ChatDAO;
 import conexion.rol.RolDAO;
 import conexion.rol.RolVO;
 import conexion.usuarios.UserDAO;
@@ -12,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         RolDAO rolDao = new RolDAO();
         UserDAO userDao = new UserDAO();
+        ChatDAO chatDao = new ChatDAO();
 
         try {
             List<RolVO> roles = rolDao.getAll();
@@ -22,6 +24,8 @@ public class Main {
 
             List<UserVO> users = userDao.getAllUserByRolName("vip");
             users.forEach(System.out::println);
+            
+            System.out.println(chatDao.countChats());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

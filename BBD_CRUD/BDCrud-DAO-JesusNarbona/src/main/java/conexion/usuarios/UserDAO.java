@@ -202,4 +202,14 @@ public class UserDAO implements IUser{
             return listaDatos;
         }
     }
+
+    @Override
+    public String countUsers() throws SQLException {
+        try( Statement st = con.createStatement();){
+            ResultSet res = st.executeQuery("SELECT COUNT(*) AS contadorUsuario FROM usuario");
+            res.next();
+
+            return ""+res.getInt("contadorUsuario");
+        }
+    }
 }

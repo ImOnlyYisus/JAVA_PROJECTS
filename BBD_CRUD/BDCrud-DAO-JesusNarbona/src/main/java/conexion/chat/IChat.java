@@ -12,4 +12,7 @@ public interface IChat {
 
     //Metodo para obterner un chat con su nombre
     ChatVO findByName(String name) throws SQLException;
+    
+    //Metodo para obtener el total de chats
+    String countChats() throws SQLException;
 }
