@@ -12,14 +12,14 @@ import java.sql.SQLException;
 
 public class Home extends javax.swing.JPanel {
 
-    private ChatDAO chatDao = new ChatDAO();
-    private RolDAO rolDao = new RolDAO();
-    private UserDAO userDao = new UserDAO();
+//    private ChatDAO chatDao = new ChatDAO();
+//    private RolDAO rolDao = new RolDAO();
+//    private UserDAO userDao = new UserDAO();
     public Home() throws SQLException {
         initComponents();
-        card3.setData(new CardModel(new ImageIcon("./iconos/1.png"),"Usuarios",userDao.countUsers(),"Usuarios registrados en la base de datos"));
-        card2.setData(new CardModel(new ImageIcon("./iconos/2.png"),"Chats",chatDao.countChats(),"Chats registrados en la base de datos"));
-        card1.setData(new CardModel(new ImageIcon("./iconos/3.png"),"Roles", rolDao.countRols(), "Roles registrados en la base de datos"));
+        card3.setData(new CardModel(new ImageIcon("./iconos/1.png"),"Usuarios","1","Usuarios registrados en la base de datos"));
+        card2.setData(new CardModel(new ImageIcon("./iconos/2.png"),"Chats","1","Chats registrados en la base de datos"));
+        card1.setData(new CardModel(new ImageIcon("./iconos/3.png"),"Roles", "1", "Roles registrados en la base de datos"));
         card4.setData(new CardModel(new ImageIcon("./iconos/enlace.png"), "Conexion","Correcta","Conexion a la base de datos exitosa!"));
         card5.setData(new CardModel(new ImageIcon("./iconos/documento.png"), "Tablas","3","Tablas almacenadasen  la base de datos"));
         

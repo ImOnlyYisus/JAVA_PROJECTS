@@ -212,4 +212,36 @@ public class UserDAO implements IUser{
             return ""+res.getInt("contadorUsuario");
         }
     }
+
+    @Override
+    public boolean insertUser(UserVO usuario) throws SQLException {
+        boolean numFilas = false;
+        String sql = "insert into usuario values (?,?,?,?,?,?,?,?)";
+
+        if (findByEmail(usuario.getEmail()) != null) {
+            // Existe un registro con esa pk
+            // No se hace la inserción
+            return numFilas;
+        } else {
+            // Instanciamos el objeto PreparedStatement para inserción
+            // de datos. Sentencia parametrizada
+            try (PreparedStatement prest = con.prepareStatement(sql)) {
+
+                // Establecemos los parámetros de la sentencia
+                prest.setString(1,usuario.getEmail());
+                prest.setString(2, usuario.getContraseña());
+                prest.setString(3,usuario.getNombre());
+                prest.setTimestamp(4, Timestamp.valueOf(usuario.getFechaCreacion()));
+                prest.setTimestamp(5,usuario.getUltModPassword()==null ? null : Timestamp.valueOf(usuario.getUltModPassword()));
+                prest.setTimestamp(6,usuario.getUltConexion()==null ? null : Timestamp.valueOf(usuario.getUltConexion()));
+                prest.setString(7,usuario.getKey());
+                prest.setInt(8,usuario.getRol().getRolID());
+
+                prest.executeUpdate();
+
+                numFilas = true;
+            }
+            return numFilas;
+        }
+    }
 }

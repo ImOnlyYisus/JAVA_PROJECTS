@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConexionBDD {
     private static final String NOMBRE_BASE_DATOS = "java-data-base";
-    private static final String SERVIDOR = "jdbc:mysql://imhzbuvhtpfe.eu-central-1.psdb.cloud/"+NOMBRE_BASE_DATOS;
-    private static final String USER = "ms0ogci2zpr2";
-    private static final String PASS = "pscale_pw_nrH2a28VuAIz47EAZLBOxZycBxZPXA41MwaksDsdRnQ";
+    private static final String SERVIDOR = "jdbc:mysql://localhost/"+NOMBRE_BASE_DATOS+"?serverTimezone=Europe/Berlin";
+    private static final String USER = "root";
+    private static final String PASS = "";
 
     private static Connection instancia = null;
 

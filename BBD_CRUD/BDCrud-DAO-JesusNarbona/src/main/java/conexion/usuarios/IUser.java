@@ -19,7 +19,9 @@ public interface IUser {
     //Metodo para obtener todos los usuarios de la tabla usuario con un rol_name especifico
     List<UserVO> getAllUserByRolName(String rolName ) throws SQLException;
 
-    //Metodo para insertar una persona
     //Metodo para obtener el total de roles
     String countUsers() throws SQLException;
+
+    //Metodo para insertar un usuario
+    boolean insertUser(UserVO usuario) throws SQLException;
 }
