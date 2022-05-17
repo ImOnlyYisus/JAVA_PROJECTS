@@ -23,5 +23,16 @@ public interface IUser {
     String countUsers() throws SQLException;
 
     //Metodo para insertar un usuario
-    boolean insertUser(UserVO usuario) throws SQLException;
+    Integer insertUser(UserVO usuario) throws SQLException;
+
+    //Metodo para insertar una lista de usuarios
+    Integer insertListUser(List<UserVO> usuarios) throws SQLException;
+
+    //Metodo para actualizar un usuario con un email especifico
+    Integer updateUser(String email,UserVO usuarioActualizado) throws SQLException;
+
+    //Metodo para borrar un usuario
+    Integer deleteUser(UserVO usuario) throws SQLException;
+
+
 }

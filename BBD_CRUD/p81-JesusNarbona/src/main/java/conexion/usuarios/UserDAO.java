@@ -214,8 +214,8 @@ public class UserDAO implements IUser{
     }
 
     @Override
-    public boolean insertUser(UserVO usuario) throws SQLException {
-        boolean numFilas = false;
+    public Integer insertUser(UserVO usuario) throws SQLException {
+        int numFilas =0;
         String sql = "insert into usuario values (?,?,?,?,?,?,?,?)";
 
         if (findByEmail(usuario.getEmail()) != null) {
@@ -237,11 +237,66 @@ public class UserDAO implements IUser{
                 prest.setString(7,usuario.getKey());
                 prest.setInt(8,usuario.getRol().getRolID());
 
-                prest.executeUpdate();
-
-                numFilas = true;
+                numFilas = prest.executeUpdate();
             }
             return numFilas;
         }
+    }
+
+    @Override
+    public Integer insertListUser(List<UserVO> usuarios) throws SQLException {
+        int numeroFilas=0;
+
+        for(UserVO user : usuarios){
+            numeroFilas+= insertUser(user);
+        }
+
+        return numeroFilas;
+    }
+
+    @Override
+    public Integer updateUser(String email, UserVO usuarioActualizado) throws SQLException {
+        int numFilas = 0;
+        String sql = "update usuario set email=?, contraseña=?,nombre=?,fecha_creacion=?, ult_mod_passwd=?, ultima_conexion=?, key=?, rol_id=?" +
+                " where email=?";
+        if (findByEmail(email) == null) {
+            // La persona a actualizar no existe
+            return numFilas;
+        } else {
+            // Instanciamos el objeto PreparedStatement para inserción
+            // de datos. Sentencia parametrizada
+            try (PreparedStatement prest = con.prepareStatement(sql)) {
+
+                // Establecemos los parámetros de la sentencia
+                prest.setString(1,usuarioActualizado.getEmail());
+                prest.setString(2, usuarioActualizado.getContraseña());
+                prest.setString(3,usuarioActualizado.getNombre());
+                prest.setTimestamp(4, Timestamp.valueOf(usuarioActualizado.getFechaCreacion()));
+                prest.setTimestamp(5,usuarioActualizado.getUltModPassword()==null ? null : Timestamp.valueOf(usuarioActualizado.getUltModPassword()));
+                prest.setTimestamp(6,usuarioActualizado.getUltConexion()==null ? null : Timestamp.valueOf(usuarioActualizado.getUltConexion()));
+                prest.setString(7,usuarioActualizado.getKey());
+                prest.setInt(8,usuarioActualizado.getRol().getRolID());
+
+                numFilas = prest.executeUpdate();
+            }
+            return numFilas;
+        }
+    }
+
+    @Override
+    public Integer deleteUser(UserVO usuario) throws SQLException {
+        int numFilas = 0;
+
+        String sql = "delete from usuario where email = ?";
+
+        // Sentencia parametrizada
+        try (PreparedStatement prest = con.prepareStatement(sql)) {
+
+            // Establecemos los parámetros de la sentencia
+            prest.setString(1, usuario.getEmail());
+            // Ejecutamos la sentencia
+            numFilas = prest.executeUpdate();
+        }
+        return numFilas;
     }
 }

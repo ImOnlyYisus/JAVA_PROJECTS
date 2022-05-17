@@ -19,6 +19,17 @@ public class UserVO {
     public UserVO() {
     }
 
+    public UserVO(String email, String contraseña, String nombre, LocalDateTime fechaCreacion, LocalDateTime ultModPassword, LocalDateTime ultConexion, String key, RolVO rol) {
+        this.email = email;
+        this.contraseña = contraseña;
+        this.nombre = nombre;
+        this.fechaCreacion = fechaCreacion;
+        this.ultModPassword = ultModPassword;
+        this.ultConexion = ultConexion;
+        this.key = key;
+        this.rol = rol;
+    }
+
     public String getEmail() {
         return email;
     }
