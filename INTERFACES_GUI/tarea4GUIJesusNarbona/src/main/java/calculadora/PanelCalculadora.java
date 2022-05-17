@@ -25,7 +25,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
     private JButton multiply = new JButton("*");
     private JButton division = new JButton("/");
     private JButton clear = new JButton("C");
-    private JButton backspace = new JButton("←");
+    private JButton n0 = new JButton("0");
 
     public PanelCalculadora() {
         initComponets();
@@ -51,7 +51,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.setFont(new Font("Arial", Font.BOLD, 20));
         division.setFont(new Font("Arial", Font.BOLD, 20));
         clear.setFont(new Font("Arial", Font.BOLD, 20));
-        backspace.setFont(new Font("Arial", Font.BOLD, 20));
+        n0.setFont(new Font("Arial", Font.BOLD, 20));
 
         n1.setFocusPainted(false);
         n2.setFocusPainted(false);
@@ -68,7 +68,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.setFocusPainted(false);
         division.setFocusPainted(false);
         clear.setFocusPainted(false);
-        backspace.setFocusPainted(false);
+        n0.setFocusPainted(false);
 
         n1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         n2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -85,7 +85,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         division.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         clear.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        backspace.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        n0.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         n1.addActionListener(this);
         n2.addActionListener(this);
@@ -102,7 +102,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.addActionListener(this);
         division.addActionListener(this);
         clear.addActionListener(this);
-        backspace.addActionListener(this);
+        n0.addActionListener(this);
 
         n1.addMouseListener(this);
         n2.addMouseListener(this);
@@ -119,7 +119,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.addMouseListener(this);
         division.addMouseListener(this);
         clear.addMouseListener(this);
-        backspace.addMouseListener(this);
+        n0.addMouseListener(this);
 
         n1.setBackground(Color.WHITE);
         n2.setBackground(Color.WHITE);
@@ -136,7 +136,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         multiply.setBackground(Color.WHITE);
         division.setBackground(Color.WHITE);
         clear.setBackground(Color.WHITE);
-        backspace.setBackground(Color.WHITE);
+        n0.setBackground(Color.WHITE);
 
 
         //Add buttons
@@ -154,7 +154,7 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         this.add(multiply);
         this.add(division);
         this.add(clear);
-        this.add(backspace);
+        this.add(n0);
         this.add(equals);
         this.add(division);
     }
@@ -162,6 +162,9 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
     //Action listener
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == n0) {
+            PanelLCD.calculos.setText(PanelLCD.calculos.getText() + "0");
+        }
         if (e.getSource() == n1) {
             if(PanelLCD.calculos.getText().charAt(0) == '0'){
                 PanelLCD.calculos.setText("");
@@ -295,9 +298,6 @@ public class PanelCalculadora extends JPanel implements ActionListener, MouseLis
         }
         if (e.getSource() == clear) {
             PanelLCD.calculos.setText("0");
-        }
-        if (e.getSource() == backspace) {
-            PanelLCD.calculos.setText(PanelLCD.calculos.getText().substring(0, PanelLCD.calculos.getText().length() - 1));
         }
     }
 
