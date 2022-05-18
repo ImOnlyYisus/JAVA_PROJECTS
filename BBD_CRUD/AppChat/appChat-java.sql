@@ -6,11 +6,11 @@ USE `appChat` ;
 DROP TABLE IF EXISTS `appChat`.`cuenta` ;
 
 CREATE TABLE IF NOT EXISTS `appChat`.`cuenta` (
-  `id_cuenta` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(50) NULL,
   `descripcion` VARCHAR(45) NULL,
   `fecha_creacion` DATETIME NULL,
-  PRIMARY KEY (`id_cuenta`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS `appChat`.`usuario` ;
@@ -26,27 +26,26 @@ CREATE TABLE IF NOT EXISTS `appChat`.`usuario` (
   INDEX `fk_usuario_cuenta1_idx` (`id_cuenta`),
   CONSTRAINT `fk_usuario_cuenta1`
     FOREIGN KEY (`id_cuenta`)
-    REFERENCES `appChat`.`cuenta` (`id_cuenta`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `appChat`.`cuenta` (`id`)
+    ON DELETE CASCADE
+	ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS `appChat`.`chat` ;
 
 CREATE TABLE IF NOT EXISTS `appChat`.`chat` (
-  `id_chat` INT NOT NULL,
-  `nombre` VARCHAR(45) NULL,
-  `descripcion` VARCHAR(100) NULL,
-  `icono` VARCHAR(45) NULL DEFAULT 'iconoEjemplo.png',
-  `usuario_email` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_chat`),
-  INDEX `fk_chat_usuario_idx` (`usuario_email`),
-  CONSTRAINT `fk_chat_usuario`
-    FOREIGN KEY (`usuario_email`)
-    REFERENCES `appChat`.`usuario` (`email`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    `id_chat` INT NOT NULL AUTO_INCREMENT,
+    `nombre` VARCHAR(45) NULL,
+    `descripcion` VARCHAR(100) NULL,
+    `icono` VARCHAR(45) NULL DEFAULT 'iconoEjemplo.png',
+    `usuario_email` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`id_chat`),
+    INDEX `fk_chat_usuario_idx` (`usuario_email`),
+    CONSTRAINT `fk_chat_usuario` FOREIGN KEY (`usuario_email`)
+        REFERENCES `appChat`.`usuario` (`email`)
+         ON DELETE CASCADE
+		ON UPDATE CASCADE
+)  ENGINE=INNODB;
 
 
 INSERT INTO `appchat`.`cuenta` VALUES(1,'roberto123','Viva el betis',now());

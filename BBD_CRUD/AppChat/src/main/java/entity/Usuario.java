@@ -11,12 +11,15 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@NamedQueries({
+	@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u"),
+	@NamedQuery(name="Usuario.findByEmail", query="SELECT u FROM Usuario u where u.email like :email")
+})
+
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String email;
 
 	private String contraseña;
@@ -31,11 +34,12 @@ public class Usuario implements Serializable {
 	private Timestamp ultModPasswd;
 
 	//bi-directional many-to-one association to Chat
-	@OneToMany(mappedBy="usuario")
+	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL)
 	private List<Chat> chats;
 
 	//bi-directional one-to-one association to Cuenta
-	@OneToOne(mappedBy="usuario", fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_cuenta", referencedColumnName="id")
 	private Cuenta cuenta;
 
 	public Usuario() {
@@ -110,5 +114,28 @@ public class Usuario implements Serializable {
 	public void setCuenta(Cuenta cuenta) {
 		this.cuenta = cuenta;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Usuario [email=");
+		builder.append(email);
+		builder.append(", contraseña=");
+		builder.append(contraseña);
+		builder.append(", keyUser=");
+		builder.append(keyUser);
+		builder.append(", ultConexion=");
+		builder.append(ultConexion);
+		builder.append(", ultModPasswd=");
+		builder.append(ultModPasswd);
+		builder.append(", chats=");
+		builder.append(chats);
+		builder.append(", cuenta=");
+		builder.append(cuenta.getId());
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 
 }

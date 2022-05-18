@@ -12,7 +12,7 @@ public class ControladorChat {
 	private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("AppChat");
     private EntityManager em;
     private Query query;
-    /*
+    
     public void borrarChat(Chat chat) {
         em= entityManagerFactory.createEntityManager();
         Chat chatAux = null;
@@ -33,40 +33,41 @@ public class ControladorChat {
         em.close();
     }
 
-    public void modifyUsuario(Usuario usuario) {
+    public void modifyChat(Chat chat) {
         em= entityManagerFactory.createEntityManager();
 
         em.getTransaction().begin();
 
         //Si la identidad del objeto existe se actualizan sus valores en la cache
-        em.merge(usuario);
+        em.merge(chat);
         //Volcamos la informacion del contexto en la base de datos
         em.getTransaction().commit();
         //Cerramos el contexto de persistencia
         em.close();
     }
 
-    public void createUsuario(Usuario usuario) {
+    public void createChat(Chat chat) {
         em= entityManagerFactory.createEntityManager();
 
         em.getTransaction().begin();
         //Guardamos el objeto en el contexto de persistencia
-        em.persist(usuario);
+        em.persist(chat);
         //Volcamos la informacion del contexto en la base de datos
         em.getTransaction().commit();
         //Cerramos el contexto de persistencia
         em.close();
     }
 
-    public Usuario findByEmail(String email) {
+    public Chat findByName(String nombre) {
         em= entityManagerFactory.createEntityManager();
 
-        query= em.createNamedQuery("Usuario.findByEmail");
-        query.setParameter("email", email);
-        Usuario usuarioAux = (Usuario) query.getSingleResult();
+        query= em.createNamedQuery("Chat.findByName");
+        query.setParameter("nombre", nombre);
+        Chat chatAux = (Chat) query.getSingleResult();
         em.close();
-        return usuarioAux;
-    }*/
+        return chatAux;
+    }
+    
 
     public List<Chat> findAll() {
         em= entityManagerFactory.createEntityManager();

@@ -12,61 +12,61 @@ public class ControladorCuenta {
 	private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("AppChat");
     private EntityManager em;
     private Query query;
-    /*
-    public void borrarChat(Chat chat) {
+    
+    public void borrarCuenta(Cuenta cuenta) {
         em= entityManagerFactory.createEntityManager();
-        Chat chatAux = null;
+        Cuenta cuentaAux = null;
 
         em.getTransaction().begin();
 
         //Buscamos si es un objeto manejado por el contexto de persistencia
-        if(!em.contains(chat)){
+        if(!em.contains(cuenta)){
             //Cargamos el objeto en el contexto de persistencia y se guarda en la variable auxiliar
-            chatAux = em.merge(chat);
+            cuentaAux = em.merge(cuenta);
         }
 
         //Eliminamos el objeto
-        em.remove(chatAux);
+        em.remove(cuentaAux);
         //Volcamos la informacion del contexto en la base de datos
         em.getTransaction().commit();
         //Cerramos el contexto de persistencia
         em.close();
     }
 
-    public void modifyUsuario(Usuario usuario) {
+    public void modifyCuenta(Cuenta cuenta) {
         em= entityManagerFactory.createEntityManager();
 
         em.getTransaction().begin();
 
         //Si la identidad del objeto existe se actualizan sus valores en la cache
-        em.merge(usuario);
+        em.merge(cuenta);
         //Volcamos la informacion del contexto en la base de datos
         em.getTransaction().commit();
         //Cerramos el contexto de persistencia
         em.close();
     }
 
-    public void createUsuario(Usuario usuario) {
+    public void createCuenta(Cuenta cuenta) {
         em= entityManagerFactory.createEntityManager();
 
         em.getTransaction().begin();
         //Guardamos el objeto en el contexto de persistencia
-        em.persist(usuario);
+        em.persist(cuenta);
         //Volcamos la informacion del contexto en la base de datos
         em.getTransaction().commit();
         //Cerramos el contexto de persistencia
         em.close();
     }
 
-    public Usuario findByEmail(String email) {
+    public Cuenta findByName(String nombre) {
         em= entityManagerFactory.createEntityManager();
 
-        query= em.createNamedQuery("Usuario.findByEmail");
-        query.setParameter("email", email);
-        Usuario usuarioAux = (Usuario) query.getSingleResult();
+        query= em.createNamedQuery("Cuenta.findByName");
+        query.setParameter("nombre",nombre);
+        Cuenta cuentaAux = (Cuenta) query.getSingleResult();
         em.close();
-        return usuarioAux;
-    }*/
+        return cuentaAux;
+    }
 
     public List<Cuenta> findAll() {
         em= entityManagerFactory.createEntityManager();

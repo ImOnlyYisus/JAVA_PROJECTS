@@ -10,68 +10,88 @@ import java.sql.Timestamp;
  * 
  */
 @Entity
-@NamedQuery(name="Cuenta.findAll", query="SELECT c FROM Cuenta c")
+@NamedQueries({
+	@NamedQuery(name="Cuenta.findAll", query="SELECT c FROM Cuenta c"),
+	@NamedQuery(name="Cuenta.findByName", query="SELECT c FROM Cuenta c where c.nombre like :nombre")
+})
 public class Cuenta implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private String descripcion;
+    @Id
+    private int id;
 
-	@Column(name="fecha_creacion")
-	private Timestamp fechaCreacion;
+    private String descripcion;
 
-	private String nombre;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id_cuenta")
-	private String idCuenta;
+    @Column(name="fecha_creacion")
+    private Timestamp fechaCreacion;
 
-	//bi-directional one-to-one association to Usuario
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="id_cuenta", referencedColumnName="id_cuenta",insertable=false, updatable=false)
-	private Usuario usuario;
+    private String nombre;
 
-	public Cuenta() {
-	}
+    //bi-directional one-to-one association to Usuario
+    @OneToOne(mappedBy="cuenta", fetch=FetchType.LAZY)
+    private Usuario usuario;
 
-	public String getDescripcion() {
-		return this.descripcion;
-	}
+    public Cuenta() {
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public Timestamp getFechaCreacion() {
-		return this.fechaCreacion;
-	}
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public void setFechaCreacion(Timestamp fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
+    public Timestamp getFechaCreacion() {
+        return this.fechaCreacion;
+    }
 
-	public String getNombre() {
-		return this.nombre;
-	}
+    public void setFechaCreacion(Timestamp fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
 
-	public String getIdCuenta() {
-		return idCuenta;
-	}
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
-	public void setIdCuenta(String idCuenta) {
-		this.idCuenta = idCuenta;
-	}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        String usuarioEmail = this.usuario!=null ? this.usuario.getEmail() : "";
+        StringBuilder builder = new StringBuilder();
+        builder.append("Cuenta [id=");
+        builder.append(id);
+        builder.append(", descripcion=");
+        builder.append(descripcion);
+        builder.append(", fechaCreacion=");
+        builder.append(fechaCreacion);
+        builder.append(", nombre=");
+        builder.append(nombre);
+        builder.append(", usuario=");
+        builder.append(usuarioEmail);
+        builder.append("]");
+        return builder.toString();
+    }
+
+
 
 }
