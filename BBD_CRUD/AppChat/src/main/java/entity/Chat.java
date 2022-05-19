@@ -28,7 +28,7 @@ public class Chat implements Serializable {
     private String nombre;
 
     //bi-directional many-to-one association to Usuario
-    @ManyToOne(cascade=CascadeType.ALL ,fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY) /*cascade=CascadeType.REFRESH*/
     private Usuario usuario;
 
     public Chat() {
