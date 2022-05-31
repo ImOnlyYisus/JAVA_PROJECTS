@@ -163,5 +163,69 @@ Matrícula     : 4050 ABJ
 Tarifa        : 90.0
 */
 ~~~
+#### Referencia a null
+Una referencia a un objeto puede no tener asignada una instancia. Esto puede ocurrir porque se ha declarado el objeto pero no se ha instanciado, es decir no se ha creado un objeto con el operador new. Existe un valor especial, llamado null que indica que un objeto no se ha instanciado.
+~~~java
+Vehiculo vehiculo1; 
 
-pagina 12
+// el objeto vehiculo1 se declara pero no se instancia
+
+// la instancia se crea utilizando el operador new
+Vehiculo vehiculo2 = new Vehiculo("2345 JVM", "SEAT", "León", "Negro",80.0);
+
+if (vehiculo1 == null) {
+  System.out.print("vehiculo1 es una referencia null")
+}
+if (vehiculo2 != null) { 
+  System.out.print("vehiculo2 está instanciado")
+}
+
+~~~
+
+#### Referencia a otros objetos (alias)
+Un objeto puede tener varias referencias o nombres. Un alias es otro nombre que referencia al mismo objeto. Un alias es una referencia más al mismo espacio de memoria del objeto original. Por ejemplo, si se crea el objeto  vehiculo1 y  después  se  declara  otro  objeto  vehiculo3 y  a continuación se asigna la referencia de vehiculo1 a vehiculo3, entonces vehiculo3 es un alias de vehiculo1. Esto significa que el espacio de memoria de vehiculo1 y vehiculo3 es el mismo.
+~~~java
+Vehiculo vehiculo1 = new Vehiculo("2345 JVM", "SEAT", "León", "Negro",80.0);
+Vehiculo vehiculo2 = vehiculo2; //Alias, este objeto apunta a la misma direcion de memoria que vehiculo1
+
+//Si modificamos algo de vehiculo1
+vehiculo1.setMarca("MERCEDES");
+System.out.print(vehiculo1);
+System.out.print(vehiculo2); //Al ser un alias tambien cambiaría su valor
+
+//Si modificamos algo del vehiculo2
+vehiculo2.setMarca("RENAULT");
+System.out.print(vehiculo2);
+System.out.print(vehiculo1);
+//Cambiaría el valor del objeto principal, ya que esta apuntando al mismo espacio de memoria
+~~~
+> **Consejo**: para poder copiar un objeto si que sea un alias deberemos crear un objeto nuevo y asignarle los mismo valores.
+
+#### Ciclo de vida de un objeto
+El ciclo de vida de un objeto empieza por su **declaración**, su **instanciación** y su **uso** en un programa Java hasta que finalmente **desaparece**.
+Cuando un objeto deja de ser utilizado, Java libera la memoria asignada al objeto y la reutiliza. Java cuenta con un sistema recolector de basura que se encarga de liberar los objetos y los espacios de memoria que ocupan cuando éstos dejan de ser utilizados en un programa.
+
+## Atributos
+Los atributos son los elementos que almacenan el estado de un objeto. Se definen de la misma forma que las variables, pero dentro del bloque de la clase.
+Existen dos tipos de atributos: 
+* **Los atributos de clase**: existen siempre, no hace falta la instanciacion de un objeto para ser llamados. Se declaran utilizando _**static**_
+  ~~~java
+  public class Vehiculo{
+    public static numeroVehiculos=0; //Un atributo que almacena cuantos coches han sido instanciados
+  }
+
+  //En el main para llamarlo no hace falta crear un nuevo objeto
+  System.out.print(Vehiculo.numeroVehiculos);
+  ~~~
+* **Los atributos de objeto**: existen siempre y cuando el ciclo de vida del objeto permanezca, se crean con la instanciacion del objeto. Estos atributos no tienen una palabra reservada.
+  ~~~java
+  public class Vehiculo{
+    public String marca = "Mercedes";
+  }
+
+  //En el main para llamarlo no hace falta crear un nuevo objeto
+  Vehiculo v1 = new Vehiculo();
+  System.out.print(v1.marca);
+  ~~~
+
+
