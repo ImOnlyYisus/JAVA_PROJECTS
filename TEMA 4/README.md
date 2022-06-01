@@ -130,7 +130,7 @@ circulo1 = new Circulo();
     }
   ~~~
   **Tabla de visibilidad**:
-  |  	| En la propia <br>clase 	| Paquete 	| Subclase<br>(mismo paq.) 	| Subclase<br>(dif. paq.) 	| Total 	|
+  |  	| En la propia <br>clase 	| Paquete 	| Subclase<br>(mismo paq.) 	| Subclase<br>(dif. paq.) 	| Todos 	|
   |---	|---	|---	|---	|---	|---	|
   | public 	| + 	| + 	| + 	| + 	| + 	|
   | protected 	| + 	| + 	| + 	| + 	|  	|
@@ -223,9 +223,86 @@ Existen dos tipos de atributos:
     public String marca = "Mercedes";
   }
 
-  //En el main para llamarlo no hace falta crear un nuevo objeto
+  //En el main para llamarlo hace falta instanciar un nuevo objeto
   Vehiculo v1 = new Vehiculo();
   System.out.print(v1.marca);
   ~~~
+
+> Los atributos puedes darles o no valor, en el caso de que no se de valor se declaran por defecto, es decir objetos en null, int,double,float... en 0 y boolean en false
+
+## Métodos
+Los  métodos  son  funciones  que  determinan el  comportamiento de  los objetos. Un objeto se comporta de una u otra forma dependiendo de los métodos de la clase a la que pertenece.
+Existen tres tipos de métodos:
+* **Constructores**: Como he mencionado antes, permiten instanciar objetos de una clase
+* **Métodos de consulta**:sirven para extraer información de los objetos
+* **Métodos modificadores**:sirven para modificar el valor de los atributos del objeto y las operaciones definen el comportamiento de un objeto.
+~~~java
+public class Circulo {
+  public static final double PI = 3.1415926536;
+  private double radio;
+
+  public Circulo(double radio) { //Metodo modificador, cambia el valor del radio por el pasado por parametro
+    this.radio = radio;
+  }
+
+
+  public double getRadio() { //Metodo de consulta, devuelve el radio del objeto
+    return this.radio;
+  }
+
+
+  public double calcularPerimetro() { //Metodo de operacion
+    return 2 * PI * this.radio;
+  }
+
+
+  public double calcularArea() { //Metodo de operacion
+    return PI * this.radio * this.radio;
+  }
+}
+~~~
+#### Declaración de métodos
+La declaración de un método indica si el método necesita o no argumentos. Los  métodos **‘get’** no tienen argumentos y devuelven un valor, los métodos **‘set’**  necesitan un argumento para indicar el valor del atributo que van a modificar.
+
+El método _**setTarifa(double tarifa)**_ tiene un argumento. El nombre de este parámetro es _**tarifa**_ y su tipo es _**double**_.
+
+Un método se declara con la siguiente sintaxis:
+**tipo-de-acceso [static] tipo_devuelto nombre (lista-parametros);**
+
+El **tipo de acceso** puede ser **private, public protected o no especificado**, al igual que en los atributos. No es obligatorio especificarlo.
+Si el **método devuelve un valor** se debe indicar su **tipo_devuelto**. Este valor puede ser de un tipo **primitivo** de Java o el **identificador de una clase**
+
+La lista de parámetros puede declarar una o más variables separadas por una coma. El tipo puede ser un tipo primitivo de Java o el identificador de una clase.
+#### El valor de retorno
+Un método puede devolver un valor. Los métodos que no devuelven un valor se declaran _**void**_, mientras que los métodos que devuelven un valor indican el tipo que devuelven, por ejemplo: _**int, double, char, String o un tipo de objeto**_.
+#### Parámetros y argumentos
+Los parámetros de un método definen la cantidad y el tipo de dato de los valores que recibe un método para su ejecución. Un método puede tener tantos parámetros como sea necesario.
+
+Por  ejemplo,  el  método  constructor de  la  clase  _**Vehiculo**_ tiene  cinco parámetros, la matrícula, la marca, el modelo, el color del vehículo y su tarifa. Los parámetros _**matricula, marca, modelo y color**_ son de tipo String, _**tarifa**_ es de tipo double.
+~~~java
+public Vehiculo(String matricula, String marca, String modelo, String color,double tarifa) {
+
+}
+~~~
+
+#### Paso de parámetros (por valor y por referencia)
+Cuando se invoca un método se hace una copia de los valores de los argumentos en los parámetros. Esto quiere decir que si el método modifica el valor de un parámetro, nunca se modifica el valor original del argumento. Este paso de parámetros se conoce como **paso por valor**. 
+
+Cuando se pasa una referencia a un objeto se crea un nuevo alias sobre el objeto, de manera que esta nueva referencia utiliza el mismo espacio de memoria del objeto original y esto permite acceder al objeto original. Este paso de parámetros se conoce como **paso por referencia**.
+Por  ejemplo,  el  método  _**recibirVehiculoAlquilado(Vehiculo v)**_ recibe el parámetro _**v de tipo Vehiculo**_. Si el método modifica el estado del objeto _**v**_, en realidad modifica el estado del objeto original _**vehiculo1**_ que recibe como argumento.
+
+#### Sobrecarga de métodos
+La sobrecarga de métodos es útil para que el mismo método opere con parámetros de distinto tipo o que un mismo método reciba una lista de parámetros diferente. Esto quiere decir que puede haber dos métodos con el mismo nombre que realicen dos funciones distintas. La diferencia entre los métodos sobrecargados está en su declaración.
+~~~java
+public void calcularDinero(double dinero){
+  ...
+}
+public void calcularDinero(){
+  ...
+}
+~~~
+
+
+
 
 
