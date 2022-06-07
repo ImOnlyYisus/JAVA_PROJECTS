@@ -55,10 +55,38 @@ listaLetras[8] = 'j';
 System.out.print(listaLetras[0]) //Accedemos a la posicion que queremos mostrar, en este caso 0
 
 //Imprimos todos los valores con un bucle
+//Entrará en el bucle siempre que i sea < a 10
 for(int i=0; i<listaLetras.length; i++){
     System.out.print(listaLetras[i])
 }
 ~~~
 
 >Si nos fijamos hemos utilizado **listaLetras.length** que nos devuelve el tamaño del array, **length** es un metodo que tiene la clase Arrays y nos permite ver el tamaño del array y operar segun necesitemos.
+
+Otra forma de declarar y dar valor a las variables es directamente pasar el array cuando lo creamos:
+~~~java
+char[] listaLetras = {'a','b','c','d','e','f','h','i','j'}
+~~~
+
+#### Excepciones comunes cuando trabajamos con Arrays
+Java cuando opera con arrays guarda exclusivamente en memoria solo los espacios que necesite, es decir si el array es de tamaño 10 solo va a guardar 10 espacios para asignarle un valor.
+En el caso de que accedamos a una posicion inexistente Java nos soltará una excepción **ArrayIndexOutOfBoundsException**. Esto se solucionaría mendiante un uso correcto de bucles y condiciones, intentando que nunca pueda acceder a **-1** y **array.legth + 1**
+
+#### Ordenación de Arrays
+Una de las operaciones más comunes con arrays es la ordenación de sus elementos. Un algoritmo de ordenación clasifica un conjunto de datos de forma ascendente o descendente, según un criterio.
+Hay muchos tipos de algoritmos de ordenación entre los mas comunes están **BubbleSort** y **QuickSort**.
+>Página interesante que muestra como funcionan los algoritmos de ordenacion paso por paso, https://visualgo.net/en/sorting
+
+Java utiliza en su metodo **sort**, **quickSort** que basicamente el algoritmo que realiza es dividir recurvisamente el array en partes iguales, indicando un elemento de inicio, fin y un pivote (o comodín) que nos permitira segmentar nuestra lista. Una vez dividida, lo que hace, es dejar todos los mayores que el pivote a su derecha y todos los menores a su izq.
+
+#### Busqueda binaria
+La busqueda de un elemento es lo mas común en arrays, podríamos hacerlo manualmente con un bucle y buscar el elemento que queramos, aunque Java incorpora un metodo que trabaja con mucha eficiencia el cual es **binarySearch**.
+BinarySearch requiere que el Array este si o si ordenado para poder buscar correctamente.
+El algoritmo que utiliza binarySearch es separar la lista en dos mitades, y compará la ultima posición de la primera parte para ver si es mas grande o mas chico, en el caso de que sea mas chico descarta la segunda lista, en el otro caso descarta la primera, asi continuamente quitandose del medio mucha cantidad de informacion por comparar.
+
+#### Metodos de Arrays
+La clase Arrays contiene muchos metodos que nos son utiles a la hora de operar con ellos.
+>Vease la API de java con todos los metodos, https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
+
+### Arrays multidimensionales (Mátrices)
 
